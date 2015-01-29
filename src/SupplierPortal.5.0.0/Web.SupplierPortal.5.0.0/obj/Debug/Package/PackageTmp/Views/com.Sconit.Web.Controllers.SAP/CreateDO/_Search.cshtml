@@ -1,0 +1,99 @@
+﻿@using System.Data;
+@using com.Sconit.Web.Models.SearchModels.SI.SAP
+<fieldset>
+    @using (Html.BeginForm("List", "CreateDO"))
+    {   
+        <div class="search">
+            <div class="search-label">
+                <label for="FRBNR">
+                    @Resources.SI.CreateDO.CreateDO_DoNo
+                </label>
+            </div>
+            <div class="search-field">
+                @Html.TextBox("DoNo", TempData["CreateDOSearchModel"] != null ? ((CreateDOSearchModel)TempData["CreateDOSearchModel"]).DoNo : string.Empty)
+            </div>
+            <div class="search-label">
+                <label for="FRBNR">
+                    @Resources.SI.CreateDO.CreateDO_OrderNo
+                </label>
+            </div>
+            <div class="search-field">
+                @Html.TextBox("OrderNo", TempData["CreateDOSearchModel"] != null ? ((CreateDOSearchModel)TempData["CreateDOSearchModel"]).OrderNo : string.Empty)
+            </div>
+            <div class="search-label">
+                <label>
+                    @Resources.SI.CreateDO.CreateDO_LocationFrom
+                </label>
+            </div>
+            <div class="search-field">
+                @Html.TextBox("LocationFrom", TempData["CreateDOSearchModel"] != null ? ((CreateDOSearchModel)TempData["CreateDOSearchModel"]).LocationFrom : string.Empty)
+            </div>
+            <div class="search-label">
+                <label>
+                    @Resources.SI.CreateDO.CreateDO_LocationTo
+                </label>
+            </div>
+            <div class="search-field">
+                @Html.TextBox("LocationTo", TempData["CreateDOSearchModel"] != null ? ((CreateDOSearchModel)TempData["CreateDOSearchModel"]).LocationTo : string.Empty)
+            </div>
+             <div class="search-label">
+                <label>
+                    @Resources.SI.CreateDO.CreateDO_Item
+                </label>
+            </div>
+            <div class="search-field">
+                @Html.TextBox("Item", TempData["CreateDOSearchModel"] != null ? ((CreateDOSearchModel)TempData["CreateDOSearchModel"]).Item : string.Empty)
+            </div>
+            <div class="search-label">
+                <label>
+                    @Resources.SI.CreateDO.CreateDO_Status
+                </label>
+            </div>
+            <div class="search-field">
+                @Html.TextBox("Status", TempData["CreateDOSearchModel"] != null ? ((CreateDOSearchModel)TempData["CreateDOSearchModel"]).Status : string.Empty)
+            </div>
+             
+            <div class="search-label">
+                <label for="DateFrom">
+                     创建日期 从
+                </label>
+            </div>
+            <div class="search-field">
+                @(Html.Telerik().DatePicker().Name("CreateDateFrom").Format("yyyy-MM-dd ").HtmlAttributes(new { style = "margin-bottom: 1.3em;width:200px" }))
+            </div>
+            <div class="search-label">
+                <label for="OrderMaster_DateTo">
+                    至
+                </label>
+            </div>
+            <div class="search-field">
+                @(Html.Telerik().DatePicker().Name("CreateDateTo").Format("yyyy-MM-dd ").Value(DateTime.Now.AddDays(1)).HtmlAttributes(new { style = "margin-bottom: 1.3em;width:200px" }))
+            </div>
+        </div>
+        <div class="search-footer">
+            @Html.Hidden("isFromList", true)
+            <button type="submit" id="btnSearch">
+                @Resources.Global.Button_Search</button>
+            <button type="button" id="btnReCreateDO" onclick="doReCreateDO()" style="display: none">
+               重新生成要货单</button>
+        </div>
+    }
+</fieldset>
+<script type="text/javascript">
+    function doReCreateDO() {
+        //Id,cancelId
+        var $checkRecords = $("input[name='checkedRecords']");
+        var doNoStr = "";
+        for (var i = 0; i < $checkRecords.length; i++) {
+            if ($checkRecords[i].checked) {
+                var keys = $checkRecords[i].value;
+                if (doNoStr == "") {
+                    doNoStr = keys;
+                } else {
+                    doNoStr += "," + keys;
+                }
+            }
+        }
+        location.href = "@Url.Content("~/CreateDO/ManuallyReSendCreateDO/?doNoStr=")" + doNoStr;
+    }
+</script>

@@ -1,0 +1,19 @@
+﻿@model com.Sconit.Entity.ORD.OrderMaster
+<script type="text/javascript">
+    function onLoad() { $("#Window").data("tWindow").maximize(); }
+             
+</script>
+@{ Html.Telerik().Window()
+        .Name("Window")
+         .ClientEvents(events => events.OnLoad("onLoad"))
+        .Title("开票通知")
+        .Icon(Url.Content("~/Content/Common/Icons/favicon.png"), "favicon")
+        ////.LoadContentFrom("http://www.sih.cq.cn/portal/les/settel/settelprint.aspx?userName=" + ViewBag.SupplierCode + "&WERKS=0087")
+       //.LoadContentFrom("http://www.sih.cq.cn/portal/les/settel/settelprint.aspx?userName=" + ViewBag.SupplierCode + "&WERKS=0084#0085")
+       .LoadContentFrom("http://www.sih.cq.cn/portal/les/settel/settelprint.aspx?userName=" + ViewBag.SupplierCode + "&WERKS=" + ViewBag.PortalPlant)
+       //.LoadContentFrom("http://dmsqasnet.sih.cq.cn/portal/les/settel/settelprint.aspx?userName=" + ViewBag.SupplierCode + "&WERKS=0087")
+        .Scrollable(false)
+        .Width(800)
+        .Height(600)
+        .Render();
+}

@@ -1,0 +1,157 @@
+﻿@model IEnumerable<com.Sconit.Entity.ORD.IpDetail>
+<fieldset>
+     @(Html.Telerik().Grid(Model)
+        .Name("OrderDetailGrid")
+        .Columns(columns =>
+        {
+            columns.Bound(o => o.IpNo)
+                .ClientTemplate("<input type='checkbox' id='checkedRecords' name='checkedRecords' value='<#= Id #>' onClick='showButtons()'  />")
+                .HeaderTemplate("<input type='checkbox' id='checkAll' name='checkAll' />")
+                .Width(36).HtmlAttributes(new { style = "text-align:center" });
+            //columns.Bound(o => o.Id).Hidden();
+            columns.Bound(o => o.IpNo).Width(100);
+            columns.Bound(o => o.OrderNo).Width(100);
+            columns.Bound(o => o.ExternalOrderNo).Width(100);
+            columns.Bound(o => o.ExternalSequence).Width(100);
+            columns.Bound(o => o.Item).Width(100);
+            columns.Bound(o => o.ReferenceItemCode);
+            columns.Bound(o => o.ItemDescription);
+            columns.Bound(o => o.Uom);
+            columns.Bound(o => o.Qty).Width(100);
+            columns.Bound(o => o.ReceivedQty).Width(100);
+            //columns.Bound(o => o.LocationTo);
+            //columns.Bound(o => o.SAPLocation).Title("SAP库位");
+            columns.Bound(o => o.Flow).Title(Resources.ORD.IpMaster.IpMaster_Flow);
+            //columns.Bound(o => o.IsClose).ClientTemplate("<input type='checkbox' disabled='disabled' name='IsClose' <#= IsClose? checked='checked' : '' #> />");
+            //columns.Bound(o => o.IsInspect).ClientTemplate("<input type='checkbox' disabled='disabled' name='IsInspect' <#= IsInspect? '' : checked='checked' #> />").Title("是否免检");
+            columns.Bound(o => o.MastPartyFrom);
+            //columns.Bound(o => o.MastPartyTo).ReadOnly();
+            //columns.Bound(o => o.MastType);
+            //columns.Bound(o => o.MastStatus);
+            //columns.Bound(o => o.MastCreateDate);
+            //columns.Bound(o => o.IsIncludeTax).ClientTemplate("<input type='checkbox' disabled='disabled' name='IsClose' <#= IsIncludeTax? checked='checked' : '' #> />"); ;
+            //columns.Bound(o => o.IsIncludeTax).Hidden();
+            //columns.Bound(o => o.IsShowConFirm).Hidden();
+            //columns.Command(commands => commands.Custom("ConFirmShip")
+            //.Text("确认发货")
+            //.HtmlAttributes(new { onClick = "ConFirmShipClick(this)", id = "ConFirmShipId", href = "#",width="150px" })
+            //);
+        })
+
+                .DataBinding(dataBinding => dataBinding.Ajax().Select("_AjaxShipConfirmList", "SupplierIpMaster"))
+                .ClientEvents(events => events.OnDataBinding("SupplierIpMasterGrid_OnDataBinding"))//.OnRowDataBound("IpDetailGrid_OnRowDataBound")
+        .Pageable(settings =>
+        {
+            settings.Total(ViewBag.Total == null ? 0 : ViewBag.Total);
+            settings.PageSize(100);
+        })
+        .Scrollable(c => c.Enabled(false))
+         .Sortable()
+        .Resizable(resizing => resizing.Columns(true))
+    )
+
+    <script type="text/javascript">
+        $(function () {
+            $("#checkAll").click(function () {
+                $('input[name="checkedRecords"]').attr("checked", this.checked);
+                showButtons();
+            });
+        });
+
+        function showButtons() {
+            var $checkRecords = $("input[name='checkedRecords']");
+            $("#checkAll").attr("checked", $checkRecords.length == $("input[name='checkedRecords']:checked").length ? true : false);
+            $("#btnConfirm").attr("style", $("input[name='checkedRecords']:checked").length > 0 ? "display:inline" : "display:none");
+//            $("#btnCancelConfirm").attr("style", $("input[name='checkedRecords']:checked").length > 0 ? "display:inline" : "display:none");
+        } 
+
+        function SupplierIpMasterGrid_OnDataBinding(e) {
+            e.data = {
+                IpNo: $('#IpNo').val(),
+                Item: $('#Item').val(),
+                PartyFrom: $('#PartyFrom').val(),
+                Flow: $('#Flow').val(),
+                OrderNo: $('#OrderNo').val(),
+                //WMSNo: $('#WMSNo').val(),
+                StartDate: $('#StartDate').val(),
+                EndDate: $('#EndDate').val()
+//                Status: $('#Status').val(),
+//                ExternalOrderNo: $('#ExternalOrderNo').val(),
+//                ExternalSequence: $('#ExternalSequence').val(),
+//                IsShowGap: $('#IsShowGap').is(':checked')
+            };
+        }
+
+//        var i = 0;
+//        function IpDetailGrid_OnRowDataBound(e) {
+//            if (i != 0) {
+//                return;
+//            }
+//            var rows = $("tbody").children("tr:not(.t-no-data)");
+//            for (var rowIndex = 0; rowIndex < rows.length; rowIndex++) {
+//                var row = $(rows[rowIndex]);
+//                var isIncludeTax = row.children().eq(22).text(); ;
+//                var IsShowConFirm = row.children().eq(23).text(); ;
+//                if (isIncludeTax == "true" && IsShowConFirm == "true") {
+//                    row.children().eq(24).children().replaceWith("<button style='width:80px;height:22px;border:1px solid gray;' onClick = 'CancelConFirmShipClick(this)'>发货冲销</button>");
+//                }
+//                else if (isIncludeTax == "false" && IsShowConFirm == "true") {
+//                    row.children().eq(24).children().replaceWith("<button style='width:80px;height:22px;border:1px solid gray;' onClick = 'ConFirmShipClick(this)' >确认发货</button>");
+//                }
+//                else {
+//                    row.children().eq(24).children().hide();
+//                }
+//            }
+//            i = rows.length;
+
+//        }
+
+//        function ConFirmShipClick(e) {
+//            $(e).attr("href", "#");
+//            if (confirm("确定发货确认吗？")) {
+//                var data = {
+//                    Id: $(e).parent().parent().children().eq(0).text()
+//                }
+//                $.ajax({
+//                    type: "post",
+//                    dataType: "json",
+//                    url: "/SupplierIpMaster/ConFirmShip/",
+//                    data: data,
+//                    success: function (data, ordermstr) {
+//                        DisplayJsonMessages(data);
+//                        $(e).parent().parent().children().eq(21).html("<input type='checkbox' disabled='disabled' name='IsIncludeTax'  checked='checked' />");
+//                        $(e).replaceWith("<button style='width:80px;height:22px;border:1px solid gray;' onClick = 'CancelConFirmShipClick(this)' >发货冲销</button>");
+//                    },
+//                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+//                        DisplayTextMessages(XMLHttpRequest.responseText);
+//                    }
+//                });
+//            }
+//        }
+
+
+//        function CancelConFirmShipClick(e) {
+//            $(e).attr("href", "#");
+//            if (confirm("确定发货冲销吗？")) {
+//                var data = {
+//                    Id: $(e).parent().parent().children().eq(0).text()
+//                }
+//                $.ajax({
+//                    type: "post",
+//                    dataType: "json",
+//                    url: "/SupplierIpMaster/CancelConFirmShip/",
+//                    data: data,
+//                    success: function (data, ordermstr) {
+//                        DisplayJsonMessages(data);
+//                        $(e).parent().parent().children().eq(21).html("<input type='checkbox' disabled='disabled' name='IsIncludeTax'  />");
+//                        $(e).replaceWith("<button style='width:80px;height:22px;border:1px solid gray;' onClick = 'ConFirmShipClick(this)' >确认发货</button>");
+
+//                    },
+//                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+//                        DisplayTextMessages(XMLHttpRequest.responseText);
+//                    }
+//                });
+//            }
+//        }
+    </script>
+</fieldset>

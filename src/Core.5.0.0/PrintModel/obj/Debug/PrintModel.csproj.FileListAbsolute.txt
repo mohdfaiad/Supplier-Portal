@@ -1,0 +1,8 @@
+D:\GIT\sih-les\src\Core.5.0.0\PrintModel\bin\Debug\com.Sconit.PrintModel.dll
+D:\GIT\sih-les\src\Core.5.0.0\PrintModel\bin\Debug\com.Sconit.PrintModel.pdb
+D:\GIT\sih-les\src\Core.5.0.0\PrintModel\obj\Debug\com.Sconit.PrintModel.dll
+D:\GIT\sih-les\src\Core.5.0.0\PrintModel\obj\Debug\com.Sconit.PrintModel.pdb
+D:\GIT\SupplierPortal\src\Core.5.0.0\PrintModel\bin\Debug\com.Sconit.PrintModel.dll
+D:\GIT\SupplierPortal\src\Core.5.0.0\PrintModel\bin\Debug\com.Sconit.PrintModel.pdb
+D:\GIT\SupplierPortal\src\Core.5.0.0\PrintModel\obj\Debug\com.Sconit.PrintModel.dll
+D:\GIT\SupplierPortal\src\Core.5.0.0\PrintModel\obj\Debug\com.Sconit.PrintModel.pdb

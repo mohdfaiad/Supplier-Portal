@@ -1,0 +1,511 @@
+﻿@(Html.Telerik().Splitter()
+      .Name("vertical")
+      .HtmlAttributes(new { style = "height: 100%;" })
+      .Orientation(SplitterOrientation.Vertical)
+      .Panes(verticalPanes =>
+      {
+          verticalPanes.Add()
+            .Scrollable(false)
+            .Collapsible(false)
+            .Resizable(false)
+            .Size("40px")
+            .HtmlAttributes(new { id = "top-pane", style = "font-size: 0.9em;padding-top: 10px;" })
+            .LoadContentFrom(Url.Content("_DocHeader")
+            );
+          verticalPanes.Add()
+              .Scrollable(false)
+              .Collapsible(false)
+              .Resizable(false)
+              .HtmlAttributes(new { id = "foot-pane", style = "font-size: 0.9em;padding-top: 10px;" })
+              .LoadContentFrom(Url.Content("_DocFooter")
+              );
+          verticalPanes.Add()
+            .Scrollable(false)
+            .Collapsible(false)
+            .Resizable(false)
+            .HtmlAttributes(new { id = "middle-pane" })
+            .LoadContentFrom(Url.Content("_DocMaterial")
+            );
+      })
+)
+<div id="matchangeprogress" style="height: 5px; background-color: white;">
+    <div class="finish" style="height: 5px; background-color: black; width: 0;"></div>
+</div>
+<style type="text/css">
+    body {
+        font-family: "黑体", arial, verdana;
+        font-weight: bold;
+        font-size: 20pt;
+        1background-color: #527F2C;
+    }
+
+    .DocAttr {
+        font-weight: bold;
+        padding-top: 5px;
+    }
+
+    .rowhide {
+        display: none;
+    }
+
+    #DateTime {
+        float: right;
+    }
+
+    #infoheader {
+        width: 100%;
+        border-color: white;
+    }
+
+    .t-grid td {
+        font-size: 1.2em;
+    }
+
+    table1 td {
+        1background-color: #82CE83;
+    }
+
+    td.spanfirstrow {
+        background-color: white;
+        border-bottom-width: 1px;
+    }
+
+    .t-header .t-link {
+        font-size: 0.5em;
+    }
+
+    #infoheader > tbody > tr > td {
+        color: black;
+        border: 0 hidden white;
+        font-weight: bold;
+        font-size: 1em;
+        1background-color: #527F2C;
+    }
+
+    #Menu {
+        background-color: #FFFFFF;
+        border: 1px solid #006D4E;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 700px;
+        z-index: 1;
+        display: none;
+    }
+
+    #DocStationName {
+        cursor: pointer;
+    }
+
+    #Menu div {
+        float: left;
+        padding: 20px 0 0 10px;
+        cursor: pointer;
+    }
+</style>
+<script>
+    (function () {
+        var VAN = "-1",
+			Cols = [];
+        var pagesize = 10,
+			CurrentPage = 1,
+			totalpage = 0;
+        var matrefreshtime = 3000;
+        StationRefreshTime = 3000,
+		highlight = "#F77B85",
+		loadpro_i = 0,
+        updateInterID = 0,
+        updateInterID2 = 0;
+        var OP = "",
+            CHARG = "",
+            FontSize = 20;
+        var $menuspot = $("#DocStationName"),
+            $body = $("body"),
+            $menu = $("#Menu"),
+            $pre = $("#PagePrec"),
+            $next = $("#PageNext"),
+            $Restart = $("#ReStart");
+        $(document).ready(function () {
+            iniPara();
+            iniCol();
+            //字体大小
+            $body.css({ 'font-size': FontSize + 'pt' });
+            $menuspot.live("click", function () {
+                ShowMenu();
+            });
+            $menu.live("mouseleave", function () {
+                CloseMenu();
+            });
+            $pre.live("click", function () {
+                if (updateInterID !== 0) {
+                    clearInterval(updateInterID);
+                }
+                clearInterval(updateInterID2);
+                updatePreGridData();
+            });
+            $next.live("click", function () {
+                if (updateInterID !== 0) {
+                    clearInterval(updateInterID);
+                }
+                clearInterval(updateInterID2);
+                updateGridData();
+            });
+            $Restart.live("click", function () {
+                updateInterID = LoopUpdateMat();
+                updateInterID2 = LoopUpdateStation();
+            });
+            if (CHARG != "") {
+                setStationInfo();
+            }
+            else {
+                updateInterID2 = LoopUpdateStation();
+            }
+            updateInterID = LoopUpdateMat();
+            setInterval(settime, 500);
+        });
+
+        function iniPara() {
+            pagesize = 10;
+            matrefreshtime = 10000;
+            highlight = "#F77B85";
+            StationRefreshTime = 5000;
+            OP = URLPara("op");
+            CHARG = URLPara("V");
+            FontSize = URLPara("FS");
+        };
+        /**
+		 * 获取列,为填数据做准备de
+		 * return {[type]}
+		 */
+        function iniCol() {
+            var titles = $("div.t-grid>table>thead>tr>th>span.t-link");
+            var grid = $("#MaterialGrid").data('t-Grid');
+            if (grid === undefined)
+                return false;
+            $.each(titles, function (i, o) {
+                Cols.push(grid.columnFromTitle($(o).text()));
+            });
+        };
+
+        function settime() {
+            $("#DateTime").text(tick());
+        };
+        function LoopUpdateMat() {
+            return setInterval(updateGridData, matrefreshtime);
+        }
+        function LoopUpdateStation() {
+            return setInterval(setStationInfo, StationRefreshTime);
+        }
+        function setStationInfo(result) {
+            getStationInfo(function (obj) {
+                if (VAN != obj.Data.CHARG) {
+                    if (Cols.length !== 0) {
+                        /*
+						如果批次为空重置
+						 */
+                        if (obj.Data.CHARG === null || obj.Data.CHARG === "") {
+                            VAN = "-1";
+                            $("#DocStationName").text(OP);
+                            var tbody = $("div.t-grid>table>tbody");
+                            var tr = $("<tr>", {
+                                "class": "t-no-data"
+                            });
+                            var td = $("<td>", {
+                                "colspan": "7"
+                            });
+                            td.text('没有符合条件的记录。');
+                            tr.append(td);
+                            tbody.html(tr);
+                            return false;
+                        }
+                        /*
+						记录当前工位并获取明细
+						 */
+                        $("#CHARG").text(obj.Data.CHARG);
+                        $("#DocStationName").text(obj.Data.STN);
+                        $("#DocStationDesc").text(obj.Data.DocStationDesc);
+                        $("#AUFNR").text(obj.Data.AUFNR);
+                        $("#GSTRS").text(ChangeDateFormat(obj.Data.GSTRS));
+                        VAN = obj.Data.CHARG;
+                        CurrentPage = 1;
+                        getAllMaterial();
+                    } else {
+                        iniCol();
+                        setStationInfo();
+                    }
+                }
+            });
+        };
+        function getStationInfo(callback) {
+            $.ajax({
+                url: "@Url.Content("~/Documentary/GetStationInfo/")",
+                type: "POST",
+                data: {
+                    "OP": OP,
+                    "CHARG": CHARG
+                },
+                dataType: "json",
+                success: callback
+            });
+
+        };
+
+        function updateGridData() {
+            if (totalpage == 0)
+                return false;
+            var pagebefore = CurrentPage;
+            CurrentPage += 1;
+            if (pagebefore < 1)
+                pagebefore = totalpage;
+            if (CurrentPage > totalpage)
+                CurrentPage = 1;
+            ChangePageContent(pagebefore, CurrentPage)
+            ChangePageInfo();
+            
+            //showprogress();
+        };
+        function updatePreGridData() {
+            if (totalpage == 0)
+                return false;
+            var pagebefore = CurrentPage;
+            CurrentPage -= 1;
+            if (pagebefore > totalpage)
+                pagebefore = 1;
+            if (CurrentPage < 1)
+                CurrentPage = totalpage;
+            ChangePageContent(pagebefore, CurrentPage)
+            ChangePageInfo();
+            //CurrentPage -= 1;
+            //showprogress();
+        };
+        function ChangePageContent(pagebefore, CurrentPage)
+        {
+            var alltr = $("div.t-grid>table>tbody>tr");
+            $.each(alltr, function (i, o) {
+                if ($(o).attr("page") == pagebefore) {
+                    $(o).removeClass("rowshow").addClass("rowhide");
+                }
+                if ($(o).attr("page") == CurrentPage) {
+                    $(o).removeClass("rowhide").addClass("rowshow");
+                }
+            });
+        }
+        function ChangePageInfo() {
+            $("#PageInfo").html("第" + CurrentPage + "页/共" + totalpage + "页");
+        }
+        function ShowMenu() {
+            $("#Menu").css({ "display": "block" });
+        }
+        function CloseMenu() {
+            $("#Menu").css({ "display": "none" });
+        }
+        function getAllMaterial() {
+            var tbody = $("div.t-grid>table>tbody");
+            if (Cols.length === 0)
+                return false;
+            tbody.html("");
+            $.ajax({
+                url: "@Url.Content("~/Documentary/_AjaxListMaterial?rnd=")" + new Date().getTime(),
+                type: "POST",
+                async: false,
+                dataType: "json",
+                data: {
+                    "OP": OP,
+                    "CHARG": CHARG
+                },
+                success: function (json) {
+                    var data = json.data;
+                    /*
+					分页并显示第一页
+					 */
+                    totalpage = Math.floor((data.length + pagesize - 1) /
+						pagesize);
+                    var currentpage = 1;
+                    $.each(data, function (i, o) {
+                        if ((i + 1) > currentpage * pagesize) {
+                            currentpage++;
+                        }
+                        var tr = $("<tr>", {
+                            page: currentpage,
+                            "class": (currentpage === 1 ? "rowshow" : "rowhide")
+                        });
+                        var row = $(o);
+                        buildtd(tbody, tr, row);
+                    })
+
+                }
+            });
+            listData_zebra();
+            listData_Combin();
+        };
+        var buildtd = function (tbody, tr, row) {
+            for (var colindex = 0; colindex < Cols.length; colindex++) {
+                var td = $("<td>");
+                var column = Cols[colindex];
+                var value = row.attr(column.member);
+
+                if (column.type == "Number") {
+                    value = parseFloat(value);
+                } else if (column.type == "Date") {
+                    if (typeof value === "string") {
+                        var date = /^\/Date\((.*?)\)\/$/.exec(value);
+                        if (date) {
+                            value = new Date(parseInt(date[1]));
+                        } else {
+                            var format = column.format ? /\{0(:([^\}]+))?\}/.exec(column.format)[2] : $t.cultureInfo.shortDate;
+                            value = $t.datetime.parse({
+                                value: value,
+                                format: format
+                            }).toDate();
+                        }
+                    }
+                }
+                /*
+				标准件
+				 */
+                if (column.member === "BISMT" && value.substr(0, 1) === "Q")
+                    tr.css("background-color", highlight);
+                td.text(value);
+                tr.append(td);
+            }
+            tbody.append(tr);
+        };
+        /*
+	格式化json时间
+	 */
+        function ChangeDateFormat(time) {
+            if (time != null) {
+                var date = new Date(parseInt(time.replace("/Date(", "").replace(")/", ""), 10));
+                var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+                var currentDate = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+                return date.getFullYear() + "年" + month + "月" + currentDate + "日";
+            }
+            return "";
+        };
+        var listData_zebra = function () {
+            $("div.t-grid>table>tbody>tr:even").addClass("t-alt");
+        };
+        /**
+		 * 合并第1,2列
+		 * return {[type]}
+		 */
+        var listData_Combin = function () {
+            var alltr = $("div.t-grid>table>tbody>tr");
+            var page = "",
+				opid = "",
+				row1, row2, rowspan = 1, allcount = alltr.length;
+            $.each(alltr, function (i, o) {
+                $this = $(o);
+                $cell = $(o).children("td").eq(0);
+                if (i === 0) {
+                    page = $this.attr("page");
+                    opid = $cell.text();
+                    row1 = $cell;
+                    row2 = $cell.next();
+                } else {
+                    if (page == $this.attr("page") && opid == $cell.text()) {
+                        $cell.hide();
+                        $cell.next().hide();
+                        rowspan++;
+                    } else {
+                        row1.attr("rowspan", rowspan).addClass("spanfirstrow");
+                        row2.attr("rowspan", rowspan).addClass("spanfirstrow");
+                        page = $this.attr("page");
+                        opid = $cell.text();
+                        row1 = $cell;
+                        row2 = $cell.next();
+                        rowspan = 1;
+                    }
+                    if (i === allcount - 1) {
+                        row1.attr("rowspan", rowspan + 1).addClass("spanfirstrow");
+                        row2.attr("rowspan", rowspan + 1).addClass("spanfirstrow");
+                    }
+                }
+            });
+        };
+
+        /*
+		进度条
+		*/
+        var showprogress = function () {
+            $("#matchangeprogress .finish").animate({ "width": "100%" }, matrefreshtime, function () {
+                $("#matchangeprogress .finish").css("width", 0);
+            });
+        };
+        /**
+		 * 获取选择的工位
+		 * param {[type]} paramName
+		 */
+        function URLPara(paramName) {
+            var url = unescape(window.location.href);
+            var allargs = url.split("?")[1];
+            if (allargs == undefined) return '';
+            var args = allargs.split("&");
+            var obj = {};
+            for (var i = 0; i < args.length; i++) {
+                var arg = args[i].split("=");
+                if (arg[1].indexOf('#') != -1) {
+                    arg[1] = arg[1].substring(0, arg[1].indexOf('#'));
+                }
+                eval('obj.' + arg[0] + '="' + arg[1] + '";');
+            }
+            if (eval('obj.' + paramName) == undefined) {
+                return '';
+            } else {
+                return eval('obj.' + paramName);
+            }
+        };
+
+        function tick() {
+            var hours, minutes, seconds, xfile;
+            var intHours, intMinutes, intSeconds;
+            var today, theday;
+            today = new Date();
+
+            function initArray() {
+                this.length = initArray.arguments.length
+                for (var i = 0; i < this.length; i++)
+                    this[i + 1] = initArray.arguments[i]
+            }
+            var d = new initArray(
+				" 星期日",
+				" 星期一",
+				" 星期二",
+				" 星期三",
+				" 星期四",
+				" 星期五",
+				" 星期六");
+            theday = today.getFullYear() + "年" + [today.getMonth() + 1] + "月" + today.getDate() + "日" + d[today.getDay() + 1];
+            intHours = today.getHours();
+            intMinutes = today.getMinutes();
+            intSeconds = today.getSeconds();
+            if (intHours == 0) {
+                hours = "12:";
+                xfile = " 午夜 ";
+            } else if (intHours < 12) {
+                hours = intHours + ":";
+                xfile = " 上午 ";
+            } else if (intHours == 12) {
+                hours = "12:";
+                xfile = " 正午 ";
+            } else {
+                intHours = intHours - 12
+                hours = intHours + ":";
+                xfile = " 下午 ";
+            }
+            if (intMinutes < 10) {
+                minutes = "0" + intMinutes + ":";
+            } else {
+                minutes = intMinutes + ":";
+            }
+            if (intSeconds < 10) {
+                seconds = "0" + intSeconds + " ";
+            } else {
+                seconds = intSeconds + " ";
+            }
+            timeString = theday + xfile + hours + minutes + seconds;
+            return timeString;
+        };
+    }).call(this);
+</script>

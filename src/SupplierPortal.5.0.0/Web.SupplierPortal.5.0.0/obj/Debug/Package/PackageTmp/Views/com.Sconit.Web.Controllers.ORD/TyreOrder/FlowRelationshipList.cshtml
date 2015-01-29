@@ -1,0 +1,48 @@
+﻿@model IEnumerable<com.Sconit.Entity.CUST.FlowRelationship>
+<fieldset>
+
+    @(Html.Telerik().Grid(Model)
+               .Name("FlowRelationshipGrid")
+        .DataKeys(keys =>
+        {
+            keys.Add(p => p.Id);
+        })
+        .ToolBar(commands =>
+        {
+
+            commands.Insert();
+
+        })
+        .DataBinding(dataBinding => dataBinding.Ajax()
+                .Select("_AjaxRelationshipList", "TyreOrder")
+                        .Insert("_InsertRelationship", "TyreOrder")
+                        .Update("_UpdateRelationship", "TyreOrder")
+                        .Delete("_DeleteRelationship", "TyreOrder"))
+        .Columns(columns =>
+        {
+            columns.Bound(o => o.ProdLine);
+            columns.Bound(o => o.Flow);
+            columns.Bound(o => o.LastModifyUserName).ReadOnly();
+            columns.Bound(o => o.LastModifyDate).ReadOnly();
+            columns.Command(commands =>
+            {
+                commands.Edit();
+                commands.Delete();
+            });
+
+
+        }).ClientEvents(events =>
+        {
+            events.OnComplete("TelerikGridView_OnComplete");
+        })
+        .EnableCustomBinding(true)
+        .Pageable(settings =>
+        {
+            settings.Total(ViewBag.Total == null ? 0 : ViewBag.Total);
+            settings.PageSize(ViewBag.PageSize);
+        })
+        .Scrollable()
+        .Sortable()
+        .Resizable(resizing => resizing.Columns(true))
+    )
+</fieldset>

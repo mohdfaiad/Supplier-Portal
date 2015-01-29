@@ -1,0 +1,133 @@
+﻿@using System.Data;
+@using com.Sconit.Web.Models.SearchModels.SI.SAP
+<fieldset>
+    @using (Html.BeginForm("List", "CreateDN"))
+    {   
+        <div class="search">
+            <div class="search-label">
+                <label for="FRBNR">
+                    @Resources.SI.CreateDN.CreateDN_IpNo
+                </label>
+            </div>
+            <div class="search-field">
+                @Html.TextBox("IpNo", TempData["CreateDNSearchModel"] != null ? ((CreateDNSearchModel)TempData["CreateDNSearchModel"]).IpNo : string.Empty)
+            </div>
+            <div class="search-label">
+                <label for="FRBNR">
+                    @Resources.SI.CreateDN.CreateDN_MATNR
+                </label>
+            </div>
+            <div class="search-field">
+                @Html.TextBox("MATNR", TempData["CreateDNSearchModel"] != null ? ((CreateDNSearchModel)TempData["CreateDNSearchModel"]).MATNR : string.Empty)
+            </div>
+            <div class="search-label">
+                <label>
+                    @Resources.SI.CreateDN.CreateDN_EBELN
+                </label>
+            </div>
+            <div class="search-field">
+                @Html.TextBox("EBELN", TempData["CreateDNSearchModel"] != null ? ((CreateDNSearchModel)TempData["CreateDNSearchModel"]).EBELN : string.Empty)
+            </div>
+            <div class="search-label">
+                <label>
+                    @Resources.SI.CreateDN.CreateDN_EBELP
+                </label>
+            </div>
+            <div class="search-field">
+                @Html.TextBox("EBELP", TempData["CreateDNSearchModel"] != null ? ((CreateDNSearchModel)TempData["CreateDNSearchModel"]).EBELP : string.Empty)
+            </div>
+             <div class="search-label">
+                <label>
+                    @Resources.SI.CreateDN.CreateDN_LGORT
+                </label>
+            </div>
+            <div class="search-field">
+                @Html.TextBox("LGORT", TempData["CreateDNSearchModel"] != null ? ((CreateDNSearchModel)TempData["CreateDNSearchModel"]).LGORT : string.Empty)
+            </div>
+            <div class="search-label">
+                <label>
+                    @Resources.SI.CreateDN.CreateDN_VBELN_VL
+                </label>
+            </div>
+            <div class="search-field">
+                @Html.TextBox("VBELN_VL", TempData["CreateDNSearchModel"] != null ? ((CreateDNSearchModel)TempData["CreateDNSearchModel"]).VBELN_VL : string.Empty)
+            </div>
+             <div class="search-label">
+                <label>
+                    @Resources.SI.CreateDN.CreateDN_DNSTRDesc
+                </label>
+            </div>
+            <div class="search-field">
+                @{
+        Html.RenderAction("_DNSTRStatusDropDownList", "Common",
+        new
+        {
+            controlName = "DNSTR",
+            selectedValue = TempData["CreateDNSearchModel"] != null ? ((CreateDNSearchModel)TempData["CreateDNSearchModel"]).DNSTR : string.Empty
+        });
+                }                
+            </div>
+             <div class="search-label">
+                <label>
+                    @Resources.SI.CreateDN.CreateDN_GISTRDesc
+                </label>
+            </div>
+            <div class="search-field">
+                @{
+        Html.RenderAction("_GISTRStatusDropDownList", "Common",
+        new
+        {
+            controlName = "GISTR",
+            selectedValue = TempData["CreateDNSearchModel"] != null ? ((CreateDNSearchModel)TempData["CreateDNSearchModel"]).GISTR : string.Empty
+        });
+                }                
+            </div>
+            <div class="search-label">
+                <label for="DateFrom">
+                     创建日期 从
+                </label>
+            </div>
+            <div class="search-field">
+                @(Html.Telerik().DateTimePicker().Name("CreateDateFrom").Format("yyyy-MM-dd HH:mm"))
+            </div>
+            <div class="search-label">
+                <label for="OrderMaster_DateTo">
+                    至
+                </label>
+            </div>
+            <div class="search-field">
+                @(Html.Telerik().DateTimePicker().Name("CreateDateTo").Format("yyyy-MM-dd HH:mm").Value(DateTime.Now))
+            </div>
+        </div>
+        <div class="search-footer">
+            @Html.Hidden("isFromList", true)
+            <button type="submit" id="btnSearch">
+                @Resources.Global.Button_Search</button>
+            <button type="button" id="btnReCreateDN" onclick="doReCreateDN(true)" style="display: none">
+               重发创建DN数据</button>
+            <button type="button" id="btnReCancelCreateDN" onclick="doReCreateDN(false)" style="display: none">
+               重发取消DN数据</button>
+        </div>
+    }
+</fieldset>
+<script type="text/javascript">
+    function doReCreateDN(isCreate) {
+        //Id,cancelId
+        var $checkRecords = $("input[name='checkedRecords']");
+        var idStr = "";
+        var cancelIdStr = "";
+        for (var i = 0; i < $checkRecords.length; i++) {
+            if ($checkRecords[i].checked) {
+                var keys = ($checkRecords[i].value + "").split(",");
+                if (idStr == "") {
+                    idStr = keys[0];
+                    cancelIdStr = keys[1];
+                } else {
+                    idStr += "," + keys[0];
+                    cancelIdStr += "," + keys[1];
+                }
+            }
+        }
+        location.href = "@Url.Content("~/CreateDN/ManuallyReSendCreateDN/?isCreate=")" + isCreate + "&idStr= " + idStr + "&cancelIdStr=" + cancelIdStr;
+    }
+</script>

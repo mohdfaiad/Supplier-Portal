@@ -1,0 +1,19 @@
+﻿@model IEnumerable<com.Sconit.Web.Models.CUST.DocumentaryViewModel>
+<fieldset>
+    @(Html.Telerik().Grid(Model)
+        .Name("MaterialGrid")
+        
+        .Columns(columns =>
+        {
+            columns.Bound(o => o.ZOPID).Width("20%");
+            columns.Bound(o => o.ZOPDS).Width("30%");
+            columns.Bound(o => o.MATNR);
+            columns.Bound(o => o.MAKTX);
+            columns.Bound(o => o.BISMT);
+            columns.Bound(o => o.MENGE).Width("20");
+            columns.Bound(o => o.MEINS).Width("20");
+        })
+        .Scrollable(scroll => scroll.Enabled(false))
+        .Footer(false)
+        )
+</fieldset>

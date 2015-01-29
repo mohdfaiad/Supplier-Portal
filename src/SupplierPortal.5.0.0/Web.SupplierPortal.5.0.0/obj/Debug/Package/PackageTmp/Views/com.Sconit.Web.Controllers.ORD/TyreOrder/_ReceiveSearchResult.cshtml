@@ -1,0 +1,72 @@
+﻿@model IEnumerable<com.Sconit.Entity.ORD.OrderDetail>
+<script type="text/javascript">
+    $(function () {
+        $("#checkAll").attr("checked", false);
+        $("#checkAll").click(function () {
+            $('input[name="checkedRecords"][disabled !="disabled"]').attr("checked", this.checked);
+            showButtons();
+//            $(this).attr("checked", this.checked);
+        });
+    });
+
+    function showButtons() {
+        var $checkRecords = $("input[name='checkedRecords'][disabled !='disabled']");
+        $("#checkAll").attr("checked", $checkRecords.length == $("input[name='checkedRecords'][disabled !='disabled']:checked").length ? true : false);
+        $("#btnReceive").attr("style", $("input[name='checkedRecords']:checked").length > 0 ? "display:inline" : "display:none");
+    } 
+</script> 
+<fieldset>
+
+    @(Html.Telerik().Grid(Model)
+               .Name("OrderDetailGrid")
+        .DataKeys(keys =>
+        {
+            keys.Add(p => p.Id);
+        })
+        
+        .DataBinding(dataBinding => dataBinding.Ajax()
+                .Select("_AjaxReceiveList", "TyreOrder"))
+        .Columns(columns =>
+        {
+            columns.Bound(o => o.Id)
+                .ClientTemplate("<input type='checkbox' id='checkedRecords' name='checkedRecords' <#= OrderedQty==ReceivedQty? disabled='disabled' : '' #> value='<#= Id #>' onClick='showButtons()'  />")
+                .HeaderTemplate("<input type='checkbox' id='checkAll' name='checkAll' />")
+                .Width(36).HtmlAttributes(new { style = "text-align:center" });
+            //columns.Bound(o => o.Id);
+            columns.Bound(o => o.ProdLine).Title("生产线");
+            columns.Bound(o => o.ProdNo).Title("生产单");
+            columns.Bound(o => o.Flow);
+            columns.Bound(o => o.OrderNo);
+            columns.Bound(o => o.ReserveNo);
+            columns.Bound(o => o.Item);
+            columns.Bound(o => o.ReferenceItemCode);
+            columns.Bound(o => o.ItemDescription);
+            columns.Bound(o => o.OrderedQty);
+            columns.Bound(o => o.ShippedQty);
+            columns.Bound(o => o.ReceivedQty);
+            columns.Bound(o => o.CompleteDate).Title("生产单完工时间");
+
+        }).ClientEvents(events =>
+        {
+            events.OnDataBinding("OrderDetailGrid_OnDataBinding").OnComplete("TelerikGridView_OnComplete");
+        })
+        .EnableCustomBinding(true)
+        .Pageable(settings =>
+        {
+            settings.Total(ViewBag.Total == null ? 0 : ViewBag.Total);
+            settings.PageSize(ViewBag.PageSize);
+        })
+        //.Scrollable()
+        .Sortable()
+        .Resizable(resizing => resizing.Columns(true))
+    )
+    <script type="text/javascript">
+        function OrderDetailGrid_OnDataBinding(e) {
+            e.data = {
+                ProdLines: $('#ProdLines').val(),
+                CompleteDateFrom: $('#CompleteDateFrom').val(),
+                CompleteDateTo: $('#CompleteDateTo').val()
+            };
+        }
+        </script>
+</fieldset>

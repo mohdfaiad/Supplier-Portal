@@ -1,0 +1,8 @@
+﻿@{
+    ViewBag.Title = "List";
+    Html.RenderAction("_SiteMapPath", "Common", new { MenuContent = "Url_OrderDetail_Receive_View" });
+}
+
+@Html.Partial("_DetailReceiveSearch")
+
+@Html.Partial("_DetailReceiveSearchResult")

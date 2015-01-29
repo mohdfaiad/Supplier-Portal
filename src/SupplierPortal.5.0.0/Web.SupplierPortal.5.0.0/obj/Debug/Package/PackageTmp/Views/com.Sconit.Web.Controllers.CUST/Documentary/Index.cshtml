@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Html.RenderAction("_SiteMapPath", "Common", new { MenuContent = "Url_Documentary_View" });
+}
+工位(4或5位)<input id="tbOP" type="text" /><br />
+车号(10位)<input id="tbCharg" type="text" /><br />
+字体大小<input id="tbFontSize" type="text" value="20" /><br />
+<input id="btnSubmit" type="button" value="确定" />
+<script>
+    $(document).ready(function () {
+        $("#btnSubmit").click(function () {
+            if ($("#tbOP").val() === "")
+                return false;
+            var OPName = $("#tbOP").val();
+            var CharName = $("#tbCharg").val();
+            var fontsize = $("#tbFontSize").val();
+            window.open("DocumentaryPanel?op=" + OPName + "&V=" + CharName + "&FS=" + fontsize);
+        });
+
+    });
+</script>

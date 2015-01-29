@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="com.Sconit.Entity.SYS.PortalSetting, com.Sconit.Entity" table="SYS_PortalSetting" lazy="false">
+    <id name="Id" column="Id" type="Int32" unsaved-value="0" >
+      <generator class="identity" />
+    </id>
+    <property name="Name" column="Name" type="String" length="50" />
+    <property name="Seq" column="Seq" type="Int32" />
+    <property name="WebServerAddress" column="WebServerAddr" type="String" length="50" />
+    <property name="SIServerAddress" column="SIServerAddr" type="String" length="50" />
+    <property name="SIPort" column="SIPort" type="Int32" />
+    <property name="WebPort" column="WebPort" type="Int32" />
+    <property name="WebVirtualPath" column="WebVirtualPath" type="String" length="50" />
+    <property name="IsPrimary" column="IsPrimary" type="Boolean" />
+  </class>
+</hibernate-mapping>

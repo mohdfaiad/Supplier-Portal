@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="com.Sconit.Entity.ORD.TyreOrderDetail, com.Sconit.Entity" table="ORD_TyreOrderDet" lazy="false">
+    <id name="Id" column="Id" type="Int32" unsaved-value="0" >
+      <generator class="identity" />
+    </id>
+    <property name="DetId" column="DetId" type="Int32"  />
+    <property name="TyreOrderNo" column="TyreOrderNo" type="String" length="50" />
+    <property name="RefOrderNo" column="RefOrderNo" type="String" length="50" />
+    <property name="ProdNo" column="ProdNo" type="String" length="50" />
+    <property name="Flow" column="Flow" type="String" length="50" />
+    <property name="FlowDescription" column="FlowDescription" type="String" length="50" />
+    <property name="ProdLine" column="ProdLine" type="String" length="50" />
+    <property name="ProdLineDescription" column="ProdLineDescription" type="String" length="50" />
+    <property name="SeqGroup" column="SeqGroup" type="String" length="50" />
+    <property name="VanNo" column="VanNo" type="String" length="50" />
+    <property name="Item" column="Item" type="String" length="50" />
+    <property name="ItemDescription" column="ItemDesc" type="String" length="100" />
+    <property name="ReferenceItemCode" column="RefItemCode" type="String" length="50" />
+    <property name="Uom" column="Uom" type="String" length="5" />
+    <property name="UnitCount" column="UC" type="Decimal"  />
+    <property name="OrderedQty" column="OrderQty" type="Decimal"  />
+    <property name="ShippedQty" column="ShipQty" type="Decimal"  />
+    <property name="ReceivedQty" column="RecQty" type="Decimal"  />
+    <property name="LocationFrom" column="LocFrom" type="String" length="50" />
+    <property name="LocationFromName" column="LocFromNm" type="String" length="100" />
+    <property name="LocationTo" column="LocTo" type="String" length="50" />
+    <property name="LocationToName" column="LocToNm" type="String" length="100" />
+    <property name="CompleteDate" column="CompleteDate" type="DateTime"  />
+    <property name="CreateUserId" column="CreateUser" type="Int32" update="false"  />
+    <property name="CreateUserName" column="CreateUserNm" type="String" length="100" update="false" />
+    <property name="CreateDate" column="CreateDate" type="DateTime" update="false"  />
+    <property name="LastModifyUserId" column="LastModifyUser" type="Int32"  />
+    <property name="LastModifyUserName" column="LastModifyUserNm" type="String" length="100" />
+    <property name="LastModifyDate" column="LastModifyDate" type="DateTime"  />
+  </class>
+</hibernate-mapping>
