@@ -20,3 +20,14 @@ D:\GIT\SupplierPortal\src\Core.5.0.0\Entity\bin\Debug\zh-CN\com.Sconit.Globaliza
 D:\GIT\SupplierPortal\src\Core.5.0.0\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
 D:\GIT\SupplierPortal\src\Core.5.0.0\Entity\obj\Debug\com.Sconit.Entity.dll
 D:\GIT\SupplierPortal\src\Core.5.0.0\Entity\obj\Debug\com.Sconit.Entity.pdb
+D:\GIT\Supplier-Portal\src\Core.5.0.0\Entity\bin\Debug\com.Sconit.Entity.dll
+D:\GIT\Supplier-Portal\src\Core.5.0.0\Entity\bin\Debug\com.Sconit.Entity.pdb
+D:\GIT\Supplier-Portal\src\Core.5.0.0\Entity\bin\Debug\com.Sconit.CodeMaster.dll
+D:\GIT\Supplier-Portal\src\Core.5.0.0\Entity\bin\Debug\com.Sconit.Globalization.dll
+D:\GIT\Supplier-Portal\src\Core.5.0.0\Entity\bin\Debug\com.Sconit.Globalization.pdb
+D:\GIT\Supplier-Portal\src\Core.5.0.0\Entity\bin\Debug\com.Sconit.CodeMaster.pdb
+D:\GIT\Supplier-Portal\src\Core.5.0.0\Entity\bin\Debug\en-US\com.Sconit.Globalization.resources.dll
+D:\GIT\Supplier-Portal\src\Core.5.0.0\Entity\bin\Debug\zh-CN\com.Sconit.Globalization.resources.dll
+D:\GIT\Supplier-Portal\src\Core.5.0.0\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
+D:\GIT\Supplier-Portal\src\Core.5.0.0\Entity\obj\Debug\com.Sconit.Entity.dll
+D:\GIT\Supplier-Portal\src\Core.5.0.0\Entity\obj\Debug\com.Sconit.Entity.pdb

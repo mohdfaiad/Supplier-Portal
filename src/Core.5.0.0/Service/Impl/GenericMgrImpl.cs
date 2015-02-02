@@ -11,7 +11,6 @@ namespace com.Sconit.Service.Impl
     using Castle.Services.Transaction;
     using com.Sconit.Entity;
     using com.Sconit.Entity.ACC;
-    using com.Sconit.Entity.SAP;
     using com.Sconit.Persistence;
     using NHibernate.Criterion;
     using NHibernate.Type;
@@ -82,15 +81,6 @@ namespace com.Sconit.Service.Impl
                 auditable.LastModifyDate = dateTimeNow;
             }
 
-            ITraceable traceable = instance as ITraceable;
-            if (traceable != null)
-            {
-                DateTime dateTimeNow = DateTime.Now;
-                traceable.Status = StatusEnum.Pending;
-                traceable.ErrorCount = 0;
-                traceable.CreateDate = dateTimeNow;
-                traceable.LastModifyDate = dateTimeNow;
-            }
 
             dao.Create(instance);
         }
@@ -108,12 +98,6 @@ namespace com.Sconit.Service.Impl
                 auditable.LastModifyDate = dateTimeNow;
             }
 
-            ITraceable traceable = instance as ITraceable;
-            if (traceable != null)
-            {
-                traceable.LastModifyDate = DateTime.Now;
-            }
-            dao.Update(instance);
         }
 
         [Transaction(TransactionMode.Requires)]
@@ -129,11 +113,6 @@ namespace com.Sconit.Service.Impl
                 auditable.LastModifyDate = dateTimeNow;
             }
 
-            ITraceable traceable = instance as ITraceable;
-            if (traceable != null)
-            {
-                traceable.LastModifyDate = DateTime.Now;
-            }
             dao.MergeUpdate(instance);
         }
 

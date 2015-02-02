@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+ 	<class name="com.Sconit.Entity.SAP.ORD.AssemblyHead, com.Sconit.Entity.SAP" table="SAP_AssemblyHead" lazy="false">
+		<id name="AUFNR" column="AUFNR" type="String" unsaved-value="null" >
+      		<generator class="assigned" />
+        </id>
+		<property name="IDENT" column="IDENT" type="Int64"/>	
+		<property name="CHARG" column="CHARG" type="String" length="10"/>	
+		<property name="WERKS" column="WERKS" type="String" length="4"/>	
+		<property name="AUART" column="AUART" type="String" length="4"/>	
+		<property name="PLNBEZ" column="PLNBEZ" type="String" length="18"/>	
+		<property name="CY_SEQNR" column="CY_SEQNR" type="String" length="14"/>	
+		<property name="GSTRS" column="GSTRS" type="String" length="10"/>	
+		<property name="GAMNGSpecified" column="GAMNGSpecified" type="Boolean"/>	
+		<property name="GAMNG" column="GAMNG" type="Decimal"/>	
+		<property name="RSNUM" column="RSNUM" type="String" length="10"/>	
+		<property name="ZLINE" column="ZLINE" type="String" length="1"/>	
+		<property name="KDAUF" column="KDAUF" type="String" length="10"/>	
+		<property name="KDPOS" column="KDPOS" type="String" length="6"/>	
+		<property name="LGORT" column="LGORT" type="String" length="4"/>	
+		<property name="VERID" column="VERID" type="String" length="4"/>	
+		<property name="ZZSVANR" column="ZZSVANR" type="String" length="5"/>	
+		<property name="AUGRU" column="AUGRU" type="String" length="3"/>	
+		<property name="KUNNR" column="KUNNR" type="String" length="10"/>	
+		<property name="BSTNK" column="BSTNK" type="String" length="20"/>	
+		<property name="MANDT" column="MANDT" type="String" length="3"/>	
+  	</class>
+</hibernate-mapping>

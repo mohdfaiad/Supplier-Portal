@@ -6,3 +6,7 @@ D:\GIT\SupplierPortal\src\Core.5.0.0\PrintModel\bin\Debug\com.Sconit.PrintModel.
 D:\GIT\SupplierPortal\src\Core.5.0.0\PrintModel\bin\Debug\com.Sconit.PrintModel.pdb
 D:\GIT\SupplierPortal\src\Core.5.0.0\PrintModel\obj\Debug\com.Sconit.PrintModel.dll
 D:\GIT\SupplierPortal\src\Core.5.0.0\PrintModel\obj\Debug\com.Sconit.PrintModel.pdb
+D:\GIT\Supplier-Portal\src\Core.5.0.0\PrintModel\bin\Debug\com.Sconit.PrintModel.dll
+D:\GIT\Supplier-Portal\src\Core.5.0.0\PrintModel\bin\Debug\com.Sconit.PrintModel.pdb
+D:\GIT\Supplier-Portal\src\Core.5.0.0\PrintModel\obj\Debug\com.Sconit.PrintModel.dll
+D:\GIT\Supplier-Portal\src\Core.5.0.0\PrintModel\obj\Debug\com.Sconit.PrintModel.pdb

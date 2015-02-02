@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+ 	<class name="com.Sconit.Entity.SAP.ORD.AssemblyList, com.Sconit.Entity.SAP" table="SAP_AssemblyList" lazy="false">
+		<id name="IDENT" column="IDENT" type="Int64" unsaved-value="0" >
+      		<generator class="assigned" />
+        </id>
+		<property name="MANDT" column="MANDT" type="String" length="3"/>	
+		<property name="AUFNR" column="AUFNR" type="String" length="12"/>	
+		<property name="RSNUM" column="RSNUM" type="String" length="10"/>	
+		<property name="RSPOS" column="RSPOS" type="String" length="4"/>	
+		<property name="RSART" column="RSART" type="String" length="1"/>	
+		<property name="XLOEX" column="XLOEX" type="String" length="1"/>	
+		<property name="WERKS" column="WERKS" type="String" length="4"/>	
+		<property name="MATNR" column="MATNR" type="String" length="18"/>	
+		<property name="LGORT" column="LGORT" type="String" length="4"/>	
+		<property name="PRVBE" column="PRVBE" type="String" length="10"/>	
+		<property name="CHARG" column="CHARG" type="String" length="10"/>	
+		<property name="BDMNG" column="BDMNG" type="Decimal"/>	
+		<property name="BDMNGSpecified" column="BDMNGSpecified" type="Boolean"/>	
+		<property name="MEINS" column="MEINS" type="String" length="3"/>	
+		<property name="MENGE" column="MENGE" type="Decimal"/>	
+		<property name="MENGESpecified" column="MENGESpecified" type="Boolean"/>	
+		<property name="SHKZG" column="SHKZG" type="String" length="1"/>	
+		<property name="BAUGR" column="BAUGR" type="String" length="18"/>	
+		<property name="BWART" column="BWART" type="String" length="3"/>	
+		<property name="POSTP" column="POSTP" type="String" length="1"/>	
+		<property name="POSNR" column="POSNR" type="String" length="4"/>	
+		<property name="STLTY" column="STLTY" type="String" length="1"/>	
+		<property name="STLNR" column="STLNR" type="String" length="8"/>	
+		<property name="STLKN" column="STLKN" type="String" length="8"/>	
+		<property name="STPOZ" column="STPOZ" type="String" length="8"/>	
+		<property name="DUMPS" column="DUMPS" type="String" length="1"/>	
+		<property name="AUFST" column="AUFST" type="String" length="2"/>	
+		<property name="AUFWG" column="AUFWG" type="String" length="4"/>	
+		<property name="BAUST" column="BAUST" type="String" length="2"/>	
+		<property name="BAUWG" column="BAUWG" type="String" length="4"/>	
+		<property name="AUFPL" column="AUFPL" type="String" length="10"/>	
+		<property name="PLNFL" column="PLNFL" type="String" length="6"/>	
+		<property name="VORNR" column="VORNR" type="String" length="4"/>	
+		<property name="APLZL" column="APLZL" type="String" length="8"/>	
+		<property name="OBJNR" column="OBJNR" type="String" length="22"/>	
+		<property name="RGEKZ" column="RGEKZ" type="String" length="1"/>	
+		<property name="LIFNR" column="LIFNR" type="String" length="10"/>	
+		<property name="KZ" column="KZ" type="String" length="18"/>	
+		<property name="GW" column="GW" type="String" length="6"/>	
+		<property name="WZ" column="WZ" type="String" length="6"/>	
+		<property name="ZOPID" column="ZOPID" type="String" length="18"/>	
+		<property name="ZOPDS" column="ZOPDS" type="String" length="40"/>	
+		<property name="BISMT" column="BISMT" type="String" length="48"/>	
+		<property name="MAKTX" column="MAKTX" type="String" length="80"/>	
+		<property name="DISPO" column="DISPO" type="String" length="3"/>	
+		<property name="BESKZ" column="BESKZ" type="String" length="1"/>	
+		<property name="SOBSL" column="SOBSL" type="String" length="2"/>	
+		<property name="ZZPPKITFLG" column="ZZPPKITFLG" type="String" length="1"/>	
+		<property name="ZZPPVIRFLG" column="ZZPPVIRFLG" type="String" length="1"/>	
+		<property name="MARK" column="MARK" type="String" length="80"/>	
+  	</class>
+</hibernate-mapping>

@@ -60,9 +60,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShortMessageService.cs">
-      <SubType>Component</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\SupplierPortal.5.0.0\WebUtil\WebUtil.csproj">
@@ -80,10 +77,6 @@
     <ProjectReference Include="..\Service\Service.csproj">
       <Project>{C404091C-8C1D-42BE-BA63-919BB8B5900A}</Project>
       <Name>Service</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Util\Utility.csproj">
-      <Project>{3617942C-4554-4B04-927C-5D5AF677D262}</Project>
-      <Name>Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -22,3 +22,15 @@ D:\GIT\SupplierPortal\src\Core.5.0.0\Persistence\bin\Debug\Iesi.Collections.dll
 D:\GIT\SupplierPortal\src\Core.5.0.0\Persistence\obj\Debug\Persistence.csprojResolveAssemblyReference.cache
 D:\GIT\SupplierPortal\src\Core.5.0.0\Persistence\obj\Debug\com.Sconit.Persistence.dll
 D:\GIT\SupplierPortal\src\Core.5.0.0\Persistence\obj\Debug\com.Sconit.Persistence.pdb
+D:\GIT\Supplier-Portal\src\Core.5.0.0\Persistence\bin\Debug\com.Sconit.Persistence.dll
+D:\GIT\Supplier-Portal\src\Core.5.0.0\Persistence\bin\Debug\com.Sconit.Persistence.pdb
+D:\GIT\Supplier-Portal\src\Core.5.0.0\Persistence\bin\Debug\Castle.Core.dll
+D:\GIT\Supplier-Portal\src\Core.5.0.0\Persistence\bin\Debug\Castle.Facilities.NHibernateIntegration.dll
+D:\GIT\Supplier-Portal\src\Core.5.0.0\Persistence\bin\Debug\Castle.Windsor.dll
+D:\GIT\Supplier-Portal\src\Core.5.0.0\Persistence\bin\Debug\NHibernate.dll
+D:\GIT\Supplier-Portal\src\Core.5.0.0\Persistence\bin\Debug\Castle.Services.Transaction.dll
+D:\GIT\Supplier-Portal\src\Core.5.0.0\Persistence\bin\Debug\log4net.dll
+D:\GIT\Supplier-Portal\src\Core.5.0.0\Persistence\bin\Debug\Iesi.Collections.dll
+D:\GIT\Supplier-Portal\src\Core.5.0.0\Persistence\obj\Debug\Persistence.csprojResolveAssemblyReference.cache
+D:\GIT\Supplier-Portal\src\Core.5.0.0\Persistence\obj\Debug\com.Sconit.Persistence.dll
+D:\GIT\Supplier-Portal\src\Core.5.0.0\Persistence\obj\Debug\com.Sconit.Persistence.pdb

@@ -200,27 +200,7 @@
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\ExceptionHandlerController.cs" />
     <Compile Include="Controllers\MainController.cs" />
-    <Compile Include="Controllers\MD\AddressController.cs" />
-    <Compile Include="Controllers\MD\ContainerController.cs" />
-    <Compile Include="Controllers\MD\ItemController.cs" />
-    <Compile Include="Controllers\MD\LocationController.cs" />
-    <Compile Include="Controllers\MD\RegionController.cs" />
-    <Compile Include="Controllers\MD\SupplierController.cs" />
-    <Compile Include="Controllers\MD\UomController.cs" />
     <Compile Include="Controllers\ReportBaseController.cs" />
-    <Compile Include="Controllers\SP\SupplierPortalController.cs" />
-    <Compile Include="Controllers\SP\SupplierOrderIssueController.cs" />
-    <Compile Include="Controllers\SP\SupplierPrintHuController.cs" />
-    <Compile Include="Controllers\SP\SupplierIpMasterController.cs" />
-    <Compile Include="Controllers\SP\SupplierOrderController.cs" />
-    <Compile Include="Controllers\SP\SupplierReceiptController.cs" />
-    <Compile Include="Controllers\SP\SupplierReturnAcceptController.cs" />
-    <Compile Include="Controllers\SP\SupplierSchedulingController.cs" />
-    <Compile Include="Controllers\SP\SupplierSortMasterController.cs" />
-    <Compile Include="Controllers\SP\SupplierConsignmentController.cs" />
-    <Compile Include="Controllers\SP\SYS\CodeMasterController.cs" />
-    <Compile Include="Controllers\SP\SYS\EntityPreferenceController.cs" />
-    <Compile Include="Controllers\SP\SYS\SNRuleController.cs" />
     <Compile Include="Controllers\WebAppBaseController.cs" />
     <Compile Include="Filters\**\*.cs" />
     <Compile Include="Global.asax.cs">
@@ -1241,16 +1221,7 @@
     <Content Include="Scripts\Sconit.js" />
     <Content Include="Scripts\Sconit.Message.js" />
     <Content Include="Scripts\telerik.extensions.js" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrderIssue\ShipEdit.cshtml">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrderIssue\_ShipOrderDetailList.cshtml">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="Config\properties.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Config\component-velocity.config">
       <SubType>Designer</SubType>
     </Content>
     <None Include="Content\Images\psd\SIH.psd" />
@@ -1261,27 +1232,12 @@
     </None>
     <Content Include="Views\Common\_DefectCodeComboBox.cshtml" />
     <Content Include="Views\Common\_FailCodeComboBox.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierPortal\SettlePrint.cshtml" />
     <Content Include="Resource\font\code128.ttf" />
     <Content Include="Resource\Templates\Excel\BarCodeA4.xls" />
     <Content Include="Resource\Templates\Excel\EKanBanCard.xls" />
     <Content Include="Resource\Templates\Excel\KanBanCard.xls" />
     <Content Include="Resource\Templates\Excel\REC_Receipt.xls" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierPrintHu\IPDetailList.cshtml">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierPrintHu\IpMaster.cshtml">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierPrintHu\_IPDetailList.cshtml">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierPortal\ASNCreate.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierPortal\ASNPrint.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierPortal\SettleDetail.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierPortal\WPM.cshtml" />
     <Content Include="Resource\Templates\UploadTemplate\StockTake.xls" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierPrintHu\OrderDetailList.cshtml" />
     <Content Include="Views\Common\_ManufacturePartyComboBox.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\ManufacturePartyGridComboBox.cshtml" />
     <Content Include="Views\Common\_ManufacturePartyDropDownList.cshtml" />
@@ -1300,7 +1256,6 @@
     <Content Include="Resource\Templates\Excel\KBLabel.xls" />
     <Content Include="Resource\Templates\UploadTemplate\EmergencyTransferOrder.xls" />
     <Content Include="Resource\Templates\UploadTemplate\TransferOrder.xls" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SYS\Trigger\Index.cshtml" />
     <Content Include="Resource\Templates\Excel\RejectOrder.xls" />
     <Content Include="Resource\Templates\Excel\StockTaking.xls" />
     <Content Include="Resource\Templates\UploadTemplate\FlowDetail.xls" />
@@ -1336,15 +1291,8 @@
     <None Include="Resource\Templates\UploadTemplate\OutMiscOrder.xls" />
     <None Include="Resource\Templates\UploadTemplate\Procurement.xls" />
     <None Include="Resource\Templates\UploadTemplate\ProductLine.xls" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierScheduling\ScheduleLineItem.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierScheduling\_ScheduleLineList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierScheduling\ScheduleLineItemIndex.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierScheduling\_ScheduleLineItemSearch.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierScheduling\_PreviewShipDetailWindow.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierPortal\ScheduleLine.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\SupplierGridForeignKey.cshtml" />
     <Content Include="Resource\Templates\UploadTemplate\SapOrderImport.xls" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierPortal\Receiving.cshtml" />
     <Content Include="Views\Common\_PickerComboBox.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\StringTime.cshtml" />
     <Content Include="Views\Common\_ShiftMasterDropDownList.cshtml" />
@@ -1366,40 +1314,13 @@
     <Content Include="Views\Common\_SeqGroupComboBox.cshtml" />
     <Content Include="Views\Common\_StatusDropDownList.cshtml" />
     <None Include="Resource\Templates\UploadTemplate\SequenceGroup.xls" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\_ShortSearch.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\_ShortSearchResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\ShortIndex.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\ShortList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SYS\MessageSubscirber\Index.cshtml" />
     <Content Include="Views\Common\_ShiftMasterComboBox.cshtml" />
     <None Include="Resource\Templates\UploadTemplate\TransferFlowDetail.xls" />
     <Content Include="Views\Common\_ContainerComboBox.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierPrintHu\FX80HuIndex.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierPortal\MyMessage.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierScheduling\DemandPlanIndex.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierScheduling\DemandPlanList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierScheduling\_DemandPlanSearch.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierScheduling\_DemandPlanResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrder\ShipIndex.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrder\_ShipSearch.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrder\_ShipSearchResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrder\Ship.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierSortMaster\_OrderDetailList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierSortMaster\_EditOrderDetailList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierSortMaster\_PreviewDetailList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierSortMaster\PreView.cshtml" />
     <Content Include="Views\Common\_CreateOrderCodeComboBox.cshtml" />
     <Content Include="Views\Common\_RegionMultiSelectBox.cshtml" />
     <Content Include="Views\Common\_DNSTRStatusDropDownList.cshtml" />
     <Content Include="Views\Common\_GISTRStatusDropDownList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierIpMaster\_SearchShipConfirm.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierIpMaster\_SearchShipConfirmResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierIpMaster\ShipConfirmIndex.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierIpMaster\ShipConfirmList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierIpMaster\_SearchCancelShipConfirmResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierIpMaster\_SearchCancelShipConfirm.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierIpMaster\CancelShipConfirmIndex.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierIpMaster\CancelShipConfirmList.cshtml" />
     <None Include="Web References\EncryptDencryptService\EncryptDencryptService.wsdl" />
     <None Include="Web References\EncryptDencryptService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -1482,137 +1403,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\PermissionGroup\Edit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\PermissionGroup\Index.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\PermissionGroup\List.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\PermissionGroup\New.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\PermissionGroup\_Edit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\PermissionGroup\_PermissionGroupPermission.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\PermissionGroup\_PermissionGroupRole.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\PermissionGroup\_PermissionGroupUsers.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\PermissionGroup\_Search.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\PermissionGroup\_SearchResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\Role\Edit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\Role\Index.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\Role\List.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\Role\New.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\Role\_Edit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\Role\_RolePermissionGroups.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\Role\_RolePermissions.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\Role\_Roles.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\Role\_RoleUsers.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\Role\_Search.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\Role\_SearchResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\UserFavorite\ChangePassword.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\UserFavorite\Edit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\UserFavorite\Index.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\User\Edit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\User\Index.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\User\List.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\User\New.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\User\_ChangePassword.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\User\_Edit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\User\_Search.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\User\_SearchResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\User\_UserPermissionGroups.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\User\_UserPermissions.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.ACC\User\_UserRoles.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Address\Edit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Address\Index.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Address\List.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Address\New.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Address\_Search.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Address\_SearchResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Container\Edit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Container\Index.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Container\List.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Container\New.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Container\_Search.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Container\_SearchResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\Edit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\Index.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\ItemPackage.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\ItemPackageEdit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\ItemPackageNew.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\ItemRefResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\List.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\New.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\_EditList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\_ItemRefEdit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\_ItemRefNew.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\_Search.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\_SearchResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\location\Edit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\location\Index.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\location\List.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\location\New.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\location\_Edit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\location\_LocationArea.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\location\_LocationAreaEdit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\location\_LocationAreaList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\location\_LocationAreaNew.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\location\_LocationAreaResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\location\_LocationBin.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\location\_LocationBinEdit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\location\_LocationBinList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\location\_LocationBinNew.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\location\_LocationBinResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\location\_Search.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\location\_SearchResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Region\Edit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Region\Index.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Region\List.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Region\New.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Region\_BillAddress.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Region\_BillAddressEdit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Region\_BillAddressList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Region\_BillAddressNew.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Region\_BillAddressResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Region\_Edit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Region\_Search.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Region\_SearchResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Region\_ShipAddress.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Region\_ShipAddressEdit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Region\_ShipAddressList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Region\_ShipAddressNew.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Region\_ShipAddressResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\Edit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\Index.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\List.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\New.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_BillAddress.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_BillAddressEdit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_BillAddressList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_BillAddressNew.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_BillAddressResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_Edit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_Search.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_SearchResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_ShipAddress.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_ShipAddressEdit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_ShipAddressList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_ShipAddressNew.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_ShipAddressResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Uom\Index.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Uom\List.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Uom\New.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Uom\_Edit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Uom\_Search.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Uom\_SearchResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Uom\_UomConvert.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Uom\_UomConvertEdit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Uom\_UomConvertList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Uom\_UomConvertNew.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.MD\Uom\_UomConvertResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SYS\EntityPreference\Index.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SYS\SNRule\Edit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SYS\SNRule\ExtRuleEdit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SYS\SNRule\Index.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SYS\SNRule\List.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SYS\SNRule\New.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SYS\SNRule\ChooseSNRuleBlock.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SYS\SNRule\_Search.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SYS\SNRule\_SearchResult.cshtml" />
     <Content Include="Views\Common\_BomComboBox.cshtml" />
     <Content Include="Views\Common\_CodeMasterDropDownList.cshtml" />
     <Content Include="Views\Common\_CommonDropDownList.cshtml" />
@@ -1700,129 +1490,7 @@
     <Content Include="Views\Common\_RoutingComboBox.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SYS\CodeMaster\Edit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SYS\CodeMaster\Index.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SYS\CodeMaster\List.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SYS\CodeMaster\_List.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SYS\CodeMaster\_Search.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SYS\CodeMaster\_SearchResult.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierIpMaster\_CancelSearch.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierIpMaster\_CancelSearchResult.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierIpMaster\_IpDetailList.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierIpMaster\_Search.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierIpMaster\_SearchResult.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierIpMaster\CancelEdit.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierIpMaster\CancelIndex.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierIpMaster\CancelList.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierIpMaster\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierIpMaster\List.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrder\_Edit.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrder\_OrderDetailList.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrder\_Search.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrder\_SearchResult.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrder\Edit.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrder\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrder\List.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrderIssue\_Search.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrderIssue\_SearchResult.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierReceipt\_Search.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierReceipt\_SearchResult.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierReceipt\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierReceipt\List.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierPrintHu\_FlowDetailList.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierPrintHu\_OrderDetailList.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierPrintHu\_Search.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierPrintHu\_SearchResult.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierPrintHu\FlowMaster.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierPrintHu\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierPrintHu\List.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierPrintHu\New.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierPrintHu\OrderMaster.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrderIssue\_Edit.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrderIssue\ShipIndex.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrderIssue\_OrderDetailList.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrderIssue\_ShipOrderList.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrderIssue\_ShipSearch.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrderIssue\Ship.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\EditorTemplates\GridComboxForeignKey.cshtml" />
@@ -1837,12 +1505,9 @@
     <Content Include="Views\Common\_OrderComboBox.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Config\component-report.config">
+    <Content Include="Config\component-persistence.config">
       <SubType>Designer</SubType>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Config\component-persistence.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Common\_RejectComboBox.cshtml" />
@@ -1871,30 +1536,6 @@
     <Content Include="Views\Common\_ProductLineFacilityComboBox.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierIpMaster\_Edit.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierReceipt\Edit.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierReceipt\_ReceiptDetail.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierScheduling\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierScheduling\_Search.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierScheduling\_SearchResult.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrderIssue\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierScheduling\List.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Account\Logoff.cshtml" />
     <Content Include="Resource\Templates\Excel\ASN_Procurement.xls" />
     <Content Include="Resource\Templates\Excel\ASN_Transfer.xls" />
@@ -1907,59 +1548,10 @@
     <Content Include="Resource\Templates\Excel\ORD_Transfer.xls" />
     <Content Include="Resource\Templates\Excel\PickList.xls" />
     <Content Include="Resource\Templates\Excel\SequenceOrder.xls" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierSortMaster\Index.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierSortMaster\List.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierSortMaster\_Search.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierSortMaster\_SearchResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrder\_ReturnSearch.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrder\_ReturnSearchResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrder\DetaiIndex.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrder\ReturnIndex.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrder\ReturnList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrder\_DetaiSearch.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrder\_SearchDetailResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrder\DetailList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierIpMaster\DetailIndex.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierIpMaster\DetailList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierIpMaster\_DetailSearch.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierIpMaster\_SearchDetailResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierReceipt\DetailList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierReceipt\DetailIndex.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierReceipt\_SearchDetailResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierReceipt\_DetailSearch.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierSortMaster\_DetailSearch.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierSortMaster\_SearchDetailResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierSortMaster\DetailIndex.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierSortMaster\DetailList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrder\_ReturnDetailSearch.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrder\_SearchReturnDetailResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrder\ReturnDetailIndex.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierOrder\ReturnDetailList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierScheduling\ShipEdit.cshtml">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierScheduling\_ShipOrderDetailList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierConsignment\Index.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierConsignment\_Search.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierConsignment\_SearchResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierConsignment\List.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierSortMaster\_SequenceDetailList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierSortMaster\Edit.cshtml" />
     <Content Include="Views\Common\_PickStrategyComboBox.cshtml" />
     <Content Include="Views\Common\_CodeMasterComboBox.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierReturnAccept\DetailIndex.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierReturnAccept\DetailList.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierReturnAccept\Edit.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierReturnAccept\Index.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierReturnAccept\List.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierReturnAccept\_DetailSearch.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierReturnAccept\_ReceiptDetail.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierReturnAccept\_Search.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierReturnAccept\_SearchDetailResult.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierReturnAccept\_SearchResult.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\LocationGridComboBox.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\LocationGridForeignKey.cshtml" />
-    <Content Include="Views\com.Sconit.Web.Controllers.SP\SupplierPrintHu\FlowDetailList.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DefectGridComboBox.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\FailCodeGridComboBox.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\UomGridComboBox.cshtml" />

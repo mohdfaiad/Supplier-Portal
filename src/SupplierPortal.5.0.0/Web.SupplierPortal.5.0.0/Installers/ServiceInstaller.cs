@@ -22,11 +22,11 @@ namespace com.Sconit.Web.Installer
                 .WithService.DefaultInterface()
                 );
 
-            container.Register(AllTypes.FromAssemblyNamed("com.Sconit.Service.SAP")
-             .Pick().If(t => t.Name.EndsWith("MgrImpl"))
-             .Configure(c => c.LifeStyle.Singleton)
-             .WithService.DefaultInterface()
-             );
+            //container.Register(AllTypes.FromAssemblyNamed("com.Sconit.Service.SAP")
+            // .Pick().If(t => t.Name.EndsWith("MgrImpl"))
+            // .Configure(c => c.LifeStyle.Singleton)
+            // .WithService.DefaultInterface()
+            // );
             //Parameter p1 = Parameter.ForKey("dao").Eq("${mainDao}");
             //container.Register(Component.For<IGenericMgr>()
             //    .Named("genericMgr")

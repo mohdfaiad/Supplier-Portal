@@ -78,91 +78,23 @@
     <Compile Include="BaseMgr.cs" />
     <Compile Include="ICastleAwarable.cs" />
     <Compile Include="Impl\PortalSettingMgrImpl.cs" />
-    <Compile Include="Impl\ShortMessageMgrImpl.cs" />
-    <Compile Include="IPortalSettingMgr.cs" />
-    <Compile Include="IShortMessageMgr.cs" />
-    <Compile Include="IBillMgr.cs" />
-    <Compile Include="IBomMgr.cs" />
-    <Compile Include="ICurrencyMgr.cs" />
-    <Compile Include="IEmailMgr.cs" />
-    <Compile Include="IFinanceCalendarMgr.cs" />
-    <Compile Include="IFlowMgr.cs" />
-    <Compile Include="IGenericMgr.cs" />
-    <Compile Include="IHuMgr.cs" />
-    <Compile Include="IInspectMgr.cs" />
-    <Compile Include="IIpMgr.cs" />
-    <Compile Include="IIssueMgr.cs" />
-    <Compile Include="IItemMgr.cs" />
-    <Compile Include="IKanBanCardMgr.cs" />
-    <Compile Include="IKanbanScanMgr.cs" />
-    <Compile Include="IKanbanTransactionMgr.cs" />
-    <Compile Include="ILocationDetailMgr.cs" />
-    <Compile Include="IMiscOrderMgr.cs" />
-    <Compile Include="Impl\BillMgrImpl.cs" />
-    <Compile Include="Impl\BomMgrImpl.cs" />
-    <Compile Include="Impl\CurrencyMgrImpl.cs" />
-    <Compile Include="Impl\EmailMgrImpl.cs" />
-    <Compile Include="Impl\FinanceCalendarMgrImpl.cs" />
-    <Compile Include="Impl\FlowMgrImpl.cs" />
-    <Compile Include="Impl\GenericMgrImpl.cs" />
-    <Compile Include="Impl\HuMgrImpl.cs" />
-    <Compile Include="Impl\InspectMgrImpl.cs" />
-    <Compile Include="Impl\IpMgrImpl.cs" />
-    <Compile Include="Impl\IssueMgrImpl.cs" />
-    <Compile Include="Impl\ItemMgrImpl.cs" />
-    <Compile Include="Impl\KanBanCardMgrImpl.cs" />
-    <Compile Include="Impl\KanbanScanMgrImpl.cs" />
-    <Compile Include="Impl\KanbanTransactionMgrImpl.cs" />
-    <Compile Include="Impl\LocationDetailMgrImpl.cs" />
-    <Compile Include="Impl\MiscOrderMgrImpl.cs" />
-    <Compile Include="Impl\MultiSupplyGroupMgrImpl.cs" />
-    <Compile Include="Impl\NativeSqlStatement.cs" />
-    <Compile Include="Impl\NumberControlMgrImpl.cs" />
-    <Compile Include="Impl\OrderMgrImpl.cs" />
-    <Compile Include="Impl\PartyMgrImpl.cs" />
-    <Compile Include="Impl\PickListMgrImpl.cs" />
-    <Compile Include="Impl\PickTaskMgrImpl.cs" />
-    <Compile Include="Impl\ProductionLineMgrImpl.cs" />
-    <Compile Include="Impl\PubSubMgrImpl.cs" />
-    <Compile Include="Impl\QueryMgrImpl.cs" />
-    <Compile Include="Impl\ReceiptMgrImpl.cs" />
     <Compile Include="Impl\ReportMgrImpl.cs" />
-    <Compile Include="Impl\RoutingMgrImpl.cs" />
-    <Compile Include="Impl\SecurityMgrImpl.cs" />
-    <Compile Include="Impl\ShipListMgrImpl.cs" />
-    <Compile Include="Impl\ShipmentMgrImpl.cs" />
-    <Compile Include="Impl\SQLocationDetailMgrImpl.cs" />
-    <Compile Include="Impl\StockTakeMgrImpl.cs" />
     <Compile Include="Impl\SystemMgrImpl.cs" />
-    <Compile Include="Impl\VehicleInFactoryMgrImpl.cs" />
-    <Compile Include="Impl\WorkingCalendarMgrImpl.cs" />
-    <Compile Include="IMultiSupplyGroupMgr.cs" />
-    <Compile Include="INumberControlMgr.cs" />
-    <Compile Include="IOrderMgr.cs" />
-    <Compile Include="IPartyMgr.cs" />
-    <Compile Include="IPickListMgr.cs" />
-    <Compile Include="IPickTaskMgr.cs" />
-    <Compile Include="IProductionLineMgr.cs" />
-    <Compile Include="IPublishing.cs" />
-    <Compile Include="IPubSubMgr.cs" />
+    <Compile Include="IPortalSettingMgr.cs" />
+    <Compile Include="IGenericMgr.cs" />
+    <Compile Include="Impl\GenericMgrImpl.cs" />
+    <Compile Include="Impl\QueryMgrImpl.cs" />
+    <Compile Include="Impl\SecurityMgrImpl.cs" />
     <Compile Include="IQueryMgr.cs" />
-    <Compile Include="IReceiptMgr.cs" />
-    <Compile Include="IRoutingMgr.cs" />
+    <Compile Include="IReportMgr.cs" />
     <Compile Include="ISecurityMgr.cs" />
-    <Compile Include="IShipListMgr.cs" />
-    <Compile Include="IShipmentMgr.cs" />
-    <Compile Include="ISQLocationDetailMgr.cs" />
-    <Compile Include="IStockTakeMgr.cs" />
     <Compile Include="ISystemMgr.cs" />
-    <Compile Include="IVehicleInFactoryMgr.cs" />
-    <Compile Include="IWorkingCalendarMgr.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="IReportMgr.cs" />
     <Compile Include="Web References\MSWebService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -180,17 +112,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Core.FIS.5.0.0\Entity.FIS\Entity.FIS.csproj">
-      <Project>{1BF00E66-5386-4427-B129-442EBF60F7C7}</Project>
-      <Name>Entity.FIS</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Globalization\Globalization.csproj">
       <Project>{5907015A-4BEC-482D-B4C4-5413E7EE0068}</Project>
       <Name>Globalization</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\SAP.Intergration.1.0.0\Entity.SAP\Entity.SAP.csproj">
-      <Project>{CE4C027B-3135-4888-B6E2-D2DBF3E764D3}</Project>
-      <Name>Entity.SAP</Name>
     </ProjectReference>
     <ProjectReference Include="..\CodeMaster\CodeMaster.csproj">
       <Project>{54A57A3A-8722-451D-983B-9D2990D2D121}</Project>
