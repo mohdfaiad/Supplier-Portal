@@ -6,16 +6,16 @@ using com.Sconit.Entity.SYS;
 
 namespace com.Sconit.Entity.MD
 {
-    [Serializable]
-    public partial class Supplier : Party
+    public partial class Supplier 
     {
         #region Non O/R Mapping Properties
-
-        [Export(ExportName = "ExportSupplierXLS", ExportSeq = 30)]
-        [Display(Name = "Party_Supplier_ShortCode", ResourceType = typeof(Resources.MD.Party))]
-        public string ShortCode { get; set; }
-
-        public DateTime? LastRefreshDate { get; set; }
+        public string CodeDescription
+        {
+            get
+            {
+                return this.Code + " [" + this.Name + "]";
+            }
+        }
         #endregion
     }
 }

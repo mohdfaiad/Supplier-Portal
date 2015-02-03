@@ -234,8 +234,8 @@ namespace com.Sconit.Service.Impl
             {
                 if (string.IsNullOrWhiteSpace(_siServiceAddress))
                 {
-                    _siServiceAddress = this.GetEntityPreferenceValue(
-                        com.Sconit.Entity.SYS.EntityPreference.CodeEnum.SIServiceAddress);
+                    //_siServiceAddress = this.GetEntityPreferenceValue(
+                    //    com.Sconit.Entity.SYS.EntityPreference.CodeEnum.SIServiceAddress);
                 }
                 return _siServiceAddress;
             }
@@ -247,8 +247,8 @@ namespace com.Sconit.Service.Impl
             {
                 if (string.IsNullOrWhiteSpace(_siServicePort))
                 {
-                    _siServicePort = this.GetEntityPreferenceValue(
-                        com.Sconit.Entity.SYS.EntityPreference.CodeEnum.SIServicePort);
+                    //_siServicePort = this.GetEntityPreferenceValue(
+                    //    com.Sconit.Entity.SYS.EntityPreference.CodeEnum.SIServicePort);
                 }
                 return _siServicePort;
             }

@@ -39,7 +39,7 @@ namespace com.Sconit.Web.Controllers.MD
         /// </summary>
         private static string selectStatement = "select s from Supplier as s";
 
-        public IPartyMgr partyMgr { get; set; }
+        public ISupplierMgr supplierMgr { get; set; }
 
         /// <summary>
         /// 
@@ -116,7 +116,7 @@ namespace com.Sconit.Web.Controllers.MD
                 }
                 else
                 {
-                    partyMgr.Create(supplier);
+                    supplierMgr.Create(supplier);
                     SaveSuccessMessage(Resources.MD.Party.Party_Supplier_Added);
                     return RedirectToAction("Edit/" + supplier.Code);
                 }
@@ -243,6 +243,8 @@ namespace com.Sconit.Web.Controllers.MD
         }
         #endregion
         #endregion
+
+        /*
 
         #region 开票地址
         private static string selectBillAddressCountStatement = "select count(*) from PartyAddress as  pa  ";
@@ -515,5 +517,6 @@ namespace com.Sconit.Web.Controllers.MD
             return PartialView("_ShipAddressNew", address);
         }
         #endregion
+         * */
     }
 }

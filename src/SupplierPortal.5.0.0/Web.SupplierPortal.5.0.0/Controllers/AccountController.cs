@@ -40,7 +40,6 @@ namespace com.Sconit.Web.Controllers
         /// Gets or sets the this.SecurityMgr which main consider the user security 
         /// </summary>
         public ISecurityMgr securityMgr { get; set; }
-        public IPortalSettingMgr portalSettingMgr { get; set; }
         #endregion
 
         #region public actions
@@ -66,8 +65,8 @@ namespace com.Sconit.Web.Controllers
             var systemFlag = systemMgr.GetEntityPreferenceValue(Entity.SYS.EntityPreference.CodeEnum.SystemFlag);
             ViewBag.IsShow = systemFlag == "1";
 
-            var systemTitle = systemMgr.GetEntityPreferenceValue(Entity.SYS.EntityPreference.CodeEnum.SystemTitle);
-            ViewBag.SystemTitle = systemTitle;
+            //var systemTitle = systemMgr.GetEntityPreferenceValue(Entity.SYS.EntityPreference.CodeEnum.SystemTitle);
+            //ViewBag.SystemTitle = systemTitle;
             return View();
         }
 
@@ -82,8 +81,8 @@ namespace com.Sconit.Web.Controllers
         {
             var systemFlag = systemMgr.GetEntityPreferenceValue(Entity.SYS.EntityPreference.CodeEnum.SystemFlag);
             ViewBag.IsShow = systemFlag == "1";
-            var systemTitle = systemMgr.GetEntityPreferenceValue(Entity.SYS.EntityPreference.CodeEnum.SystemTitle);
-            ViewBag.SystemTitle = systemTitle;
+            //var systemTitle = systemMgr.GetEntityPreferenceValue(Entity.SYS.EntityPreference.CodeEnum.SystemTitle);
+            //ViewBag.SystemTitle = systemTitle;
             if (ModelState.IsValid)
             {
                 var isUserInDomain = false;
@@ -135,33 +134,7 @@ namespace com.Sconit.Web.Controllers
             return View(model);
         }
 
-        [HttpGet]
-        public ActionResult TokenLogin(String userName, String userToken)
-        {
-            User user = null;
-            try
-            {
-                user = this.securityMgr.GetUserByToken(userName, userToken);
-            }
-            catch (BusinessException ex)
-            {
-                ModelState.AddModelError(string.Empty, ex.GetMessages()[0].GetMessageString());
-            }
-
-            var systemFlag = systemMgr.GetEntityPreferenceValue(Entity.SYS.EntityPreference.CodeEnum.SystemFlag);
-            ViewBag.IsShow = systemFlag == "1";
-
-            if (!user.IsActive && user.Code != "su")
-            {
-                ModelState.AddModelError(string.Empty, "用户帐号已停用。");
-            }
-
-            FormsAuthentication.SetAuthCookie(userName, false);
-            Session.Add(WebConstants.UserSessionKey, user);
-            Session.Add(WebConstants.PortalUserSessionKey, true);
-
-            return RedirectToAction("Default", "Main");
-        }
+        
 
         /// <summary>
         /// Log off action
@@ -175,18 +148,19 @@ namespace com.Sconit.Web.Controllers
             _cookie.Expires = DateTime.Now.AddYears(-1);
             HttpContext.Response.SetCookie(_cookie);
 
-            if (Session[WebConstants.PortalUserSessionKey] != null
-                && (bool)Session[WebConstants.PortalUserSessionKey] == true)
-            {
-                Session.Remove(WebConstants.PortalUserSessionKey);
-                string portalAddress = this.systemMgr.GetEntityPreferenceValue(Entity.SYS.EntityPreference.CodeEnum.PortalAddress);
-                int portalPort = int.Parse(this.systemMgr.GetEntityPreferenceValue(Entity.SYS.EntityPreference.CodeEnum.PortalPort));
-                return Redirect("http://" + portalAddress + ":" + portalPort + "/Account/Login");
-            }
-            else
-            {
-                return RedirectToAction("Login");
-            }
+            //if (Session[WebConstants.PortalUserSessionKey] != null
+            //    && (bool)Session[WebConstants.PortalUserSessionKey] == true)
+            //{
+            //    Session.Remove(WebConstants.PortalUserSessionKey);
+            //    string portalAddress = this.systemMgr.GetEntityPreferenceValue(Entity.SYS.EntityPreference.CodeEnum.PortalAddress);
+            //    int portalPort = int.Parse(this.systemMgr.GetEntityPreferenceValue(Entity.SYS.EntityPreference.CodeEnum.PortalPort));
+            //    return Redirect("http://" + portalAddress + ":" + portalPort + "/Account/Login");
+            //}
+            //else
+            //{
+            //    return RedirectToAction("Login");
+            //}
+            return RedirectToAction("Login");
         }
 
 
@@ -202,25 +176,25 @@ namespace com.Sconit.Web.Controllers
         }
 
 
-        [HttpGet]
-        public ActionResult RedirectSite(string siteId)
-        {
-            User user = SecurityContextHolder.Get();
-            PortalSetting portalSetting = this.portalSettingMgr.GetPortalSetting(int.Parse(siteId));
+        //[HttpGet]
+        //public ActionResult RedirectSite(string siteId)
+        //{
+        //    User user = SecurityContextHolder.Get();
+        //    PortalSetting portalSetting = this.portalSettingMgr.GetPortalSetting(int.Parse(siteId));
 
-            SecurityService.SecurityService securityService = new SecurityService.SecurityService();
-            securityService.Url = ServiceURLHelper.ReplaceServiceUrl(securityService.Url, portalSetting.SIServerAddress, portalSetting.SIPort.ToString());
+        //    SecurityService.SecurityService securityService = new SecurityService.SecurityService();
+        //    securityService.Url = ServiceURLHelper.ReplaceServiceUrl(securityService.Url, portalSetting.SIServerAddress, portalSetting.SIPort.ToString());
 
-            string userToken = securityService.GenerateUserToken(user.Code);
-            if (userToken == null)
-            {
-                return RedirectToAction("Default", "Main");
-            }
-            else
-            {
-                return Redirect("http://" + portalSetting.WebServerAddress + ":" + portalSetting.WebPort + (string.IsNullOrWhiteSpace(portalSetting.WebVirtualPath) ? "" : ("/" + portalSetting.WebVirtualPath)) + "/Account/TokenLogin?userName=" + user.Code + "&userToken=" + userToken);
-            }
-        }
+        //    string userToken = securityService.GenerateUserToken(user.Code);
+        //    if (userToken == null)
+        //    {
+        //        return RedirectToAction("Default", "Main");
+        //    }
+        //    else
+        //    {
+        //        return Redirect("http://" + portalSetting.WebServerAddress + ":" + portalSetting.WebPort + (string.IsNullOrWhiteSpace(portalSetting.WebVirtualPath) ? "" : ("/" + portalSetting.WebVirtualPath)) + "/Account/TokenLogin?userName=" + user.Code + "&userToken=" + userToken);
+        //    }
+        //}
 
         /// <summary>
         ///  Changed password action

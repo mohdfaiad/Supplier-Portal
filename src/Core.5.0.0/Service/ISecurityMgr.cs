@@ -42,8 +42,5 @@ namespace com.Sconit.Service
 
         bool IsDomainAuthenticated(string user, string password);
 
-        string GenerateUserToken(string userCode);
-
-        User GetUserByToken(string userCode, string userToken);
     }
 }

@@ -827,48 +827,8 @@ namespace com.Sconit.Service.Impl
             return authenticated;
         }
 
-        public string GenerateUserToken(string userCode)
-        {
-            string hql = "select Code from User where Code = ?";
-            IList<String> users = genericMgr.FindAll<String>(hql, userCode);
-            if (users != null && users.Count > 0)
-            {
-                UserToken userToken = new UserToken();
-                userToken.Code = userCode;
-                userToken.Token = Guid.NewGuid().ToString();
-                userToken.ExpireDate = DateTime.Now.AddMinutes(10);
+       
 
-                this.genericMgr.Save(userToken);
-
-                return userToken.Token;
-            }
-            else
-            {
-                return null;
-            }
-        }
-
-        public User GetUserByToken(string userCode, string userToken)
-        {
-            User user = this.GetUserWithPermissions(userCode);
-            if (user == null)
-            {
-                throw new BusinessException("用户{0}不存在。", userCode);
-            }
-
-            UserToken token = this.genericMgr.FindAll<UserToken>("from UserToken where Code = ?", new string[] { userCode }).SingleOrDefault();
-
-            if (token == null || !token.Token.Equals(userToken, StringComparison.OrdinalIgnoreCase))
-            {
-                throw new BusinessException("用户{0}的Token不存在或不正确。", userCode);
-            }
-            else if (token.ExpireDate < DateTime.Now)
-            {
-                throw new BusinessException("用户{0}的Token已经过期。", userCode);
-            }
-
-            return user;
-        }
         #endregion
 
         #region private methods      

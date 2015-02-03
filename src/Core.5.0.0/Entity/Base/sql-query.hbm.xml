@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
-  <sql-query name="USP_Busi_GetActiveFlowDet">
+  <!--<sql-query name="USP_Busi_GetActiveFlowDet">
     exec USP_Busi_GetActiveFlowDet ?
-    <!--
+    --><!--
       0	 det.Id, 
       1	 mstr.Code AS Flow, 
       2	 mstr.PartyFrom, 
@@ -38,17 +38,17 @@
       32	 det.MrpTotalAdj, 
       33	 det.ExtraDmdSource,
       34   mstr.ExtraDmdSource
-  -->
+  --><!--
   </sql-query>
 
-  <sql-query name="USP_Busi_GetDeferredFeedOrderBomDet">
+  --><!--<sql-query name="USP_Busi_GetDeferredFeedOrderBomDet">
     <return alias="bfOrderBomDet" class="com.Sconit.Entity.ORD.OrderBomDetail, com.Sconit.Entity"/>
     exec USP_Busi_GetDeferredFeedOrderBomDet ?,?,?
-  </sql-query>
+  </sql-query>--><!--
 
   <sql-query name="USP_Busi_GetOrderPlan4LeanEngine">
     exec USP_Busi_GetOrderPlan4LeanEngine
-    <!--
+    --><!--
       0	LocTo as Loc, 	
       1	Item as ItemCode, 	
       2	BaseUom as Uom, 	
@@ -70,58 +70,58 @@
       9	end as FlowType,	
       10	OrderQty * UnitQty as OrderedQty,    
       11  RecQty * UnitQty as FinishedQty     
-      -->
+      --><!--
   </sql-query>
 
-  <!-- 整车生产单暂停 -->
+  --><!-- 整车生产单暂停 --><!--
   <sql-query name="USP_Busi_PauseVanOrder">
     exec USP_Busi_PauseVanOrder
   </sql-query>
 
-  <!-- 整车生产单恢复后，调整顺序 -->
+  --><!-- 整车生产单恢复后，调整顺序 --><!--
   <sql-query name="USP_Busi_UpdateSeq4RestoreVanOrder">
     exec USP_Busi_UpdateSeq4RestoreVanOrder ?,?,?,?,?
   </sql-query>
 
-  <!-- 生产线暂停 -->
+  --><!-- 生产线暂停 --><!--
   <sql-query name="USP_Busi_PauseProductLine">
     exec USP_Busi_PauseProductLine ?,?,?
   </sql-query>
 
-  <!-- 生产线恢复 -->
+  --><!-- 生产线恢复 --><!--
   <sql-query name="USP_Busi_RestartProductLine">
     exec USP_Busi_RestartProductLine ?,?,?
   </sql-query>
 
-  <!-- 整车生产单顺序调整，目的生产单没有导入，相当于把原生产单调整至没有导入LES的生产单队列中 -->
+  --><!-- 整车生产单顺序调整，目的生产单没有导入，相当于把原生产单调整至没有导入LES的生产单队列中 --><!--
   <sql-query name="USP_Busi_UpdateSeq4AdjVanOrderSeq_TargetVanOrderNotExist">
     exec USP_Busi_UpdateSeq4AdjVanOrderSeq_TargetVanOrderNotExist ?,?,?,?,?,?,?,?
   </sql-query>
 
-  <!-- 整车生产单顺序调整，目的生产单有导入 -->
+  --><!-- 整车生产单顺序调整，目的生产单有导入 --><!--
   <sql-query name="USP_Busi_UpdateSeq4AdjVanOrderSeq_TargetVanOrderExist">
     exec USP_Busi_UpdateSeq4AdjVanOrderSeq_TargetVanOrderExist ?,?,?,?,?,?,?,?,?
   </sql-query>
 
-  <!-- 自动学习没有拉动路线的生产单Bom -->
+  --><!-- 自动学习没有拉动路线的生产单Bom --><!--
   <sql-query name="USP_Busi_AutoAddFlowDet">
     exec USP_Busi_AutoAddFlowDet ?,?,?
   </sql-query>
 
-  <!-- 将LocationLotDet的数据查询全部改到存储过程里面-->
-  <!-- 获取负库存数据 -->
+  --><!-- 将LocationLotDet的数据查询全部改到存储过程里面--><!--
+  --><!-- 获取负库存数据 --><!--
   <sql-query name="USP_Busi_GetMinusInventory">
     <return alias="LocationLotDetail" class="com.Sconit.Entity.INV.LocationLotDetail, com.Sconit.Entity"/>
     exec USP_Busi_GetMinusInventory ?,?,?,?
   </sql-query>
 
-  <!-- 获取供应商寄售库存-->
+  --><!-- 获取供应商寄售库存--><!--
   <sql-query name="USP_Busi_GetManufacturePartyConsignmentInventory">
     <return alias="LocationLotDetail" class="com.Sconit.Entity.INV.LocationLotDetail, com.Sconit.Entity"/>
     exec USP_Busi_GetManufacturePartyConsignmentInventory ?,?,?,?,?,?
   </sql-query>
 
-  <!-- 获取被占用库存-->
+  --><!-- 获取被占用库存--><!--
   <sql-query name="USP_Busi_GetOccupyInventory">
     <return alias="LocationLotDetail" class="com.Sconit.Entity.INV.LocationLotDetail, com.Sconit.Entity"/>
     exec USP_Busi_GetOccupyInventory ?,?,?,?,?,?
@@ -161,22 +161,22 @@
     <return alias="LocationLotDetail" class="com.Sconit.Entity.INV.LocationLotDetail, com.Sconit.Entity"/>
     exec USP_Busi_GetAvailableInventory ?,?
   </sql-query>
-  <!-- 获取待生成排序装箱单明细 -->
+  --><!-- 获取待生成排序装箱单明细 --><!--
   <sql-query name="USP_Busi_GetWaitSeqDet">
     exec USP_Busi_GetWaitSeqDet
   </sql-query>
 
-  <!-- 获取实时库存报表 -->
+  --><!-- 获取实时库存报表 --><!--
   <sql-query name="USP_Report_RealTimeLocationDet">
     exec USP_Report_RealTimeLocationDet ?,?,?,?,?,?
   </sql-query>
 
-  <!-- 产生月结数据 -->
+  --><!-- 产生月结数据 --><!--
   <sql-query name="USP_Busi_SetMonthInv_All">
     exec USP_Busi_SetMonthInv_All ?,?,?,?
   </sql-query>
 
-  <!-- 查询 -->
+  --><!-- 查询 --><!--
 
   <sql-query name="USP_Search_ProcurementOrderCount">
     exec USP_Search_ProcurementOrderCount ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?
@@ -195,7 +195,7 @@
   </sql-query>
 
   <sql-query name="USP_Search_PrintOrderDet">
-    <!--<return alias="OrderDetail" class="com.Sconit.Entity.ORD.OrderDetail, com.Sconit.Entity"/>-->
+    --><!--<return alias="OrderDetail" class="com.Sconit.Entity.ORD.OrderDetail, com.Sconit.Entity"/>--><!--
     exec USP_Search_PrintOrderDet ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?
   </sql-query>
 
@@ -206,7 +206,7 @@
     <return alias="OrderMaster" class="com.Sconit.Entity.ORD.OrderMaster, com.Sconit.Entity"/>
     exec USP_Search_VanProductionOrder ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?
   </sql-query>
-  <!--============================================================================================-->
+  --><!--============================================================================================--><!--
   <sql-query name="USP_Search_IpMstrCount">
     exec USP_Search_IpMstrCount ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?
   </sql-query>
@@ -223,11 +223,11 @@
     exec USP_Search_IpDet ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?
   </sql-query>
   <sql-query name="USP_Search_PrintIpDet">
-    <!--<return alias="OrderDetail" class="com.Sconit.Entity.ORD.OrderDetail, com.Sconit.Entity"/>-->
+    --><!--<return alias="OrderDetail" class="com.Sconit.Entity.ORD.OrderDetail, com.Sconit.Entity"/>--><!--
     exec USP_Search_PrintIpDet ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?
   </sql-query>
 
-  <!--<sql-query name="USP_Search_OrderItemTraceResultCount">
+  --><!--<sql-query name="USP_Search_OrderItemTraceResultCount">
 		exec USP_Search_OrderItemTraceResultCount ?,?,?,?,?,?,?
 	</sql-query>
 	<sql-query name="USP_Search_OrderItemTraceResult">
@@ -236,7 +236,7 @@
 		<return-scalar  column="OpReference" type="string" />
 		<return alias="OrderItemTraceResult" class="com.Sconit.Entity.ORD.OrderItemTraceResult, com.Sconit.Entity"/>
 		exec USP_Search_OrderItemTraceResult ?,?,?,?,?,?,?,?,?,?,?
-	</sql-query>-->
+	</sql-query>--><!--
 
   <sql-query name="USP_Search_RejectReceiptOrderDetailCount">
     exec USP_Search_RejectReceiptOrderDetailCount ?,?,?,?
@@ -273,6 +273,6 @@
   <sql-query name="USP_Search_VanOrderSeq">
     <return alias="VanOrderSeqView" class="com.Sconit.Entity.VIEW.VanOrderSeqView, com.Sconit.Entity"/>
     exec USP_Search_VanOrderSeq ?,?,?,?,?,?
-  </sql-query>
+  </sql-query>-->
 
 </hibernate-mapping>

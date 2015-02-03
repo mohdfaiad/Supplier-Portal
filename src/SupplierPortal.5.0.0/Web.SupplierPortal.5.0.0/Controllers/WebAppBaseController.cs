@@ -32,7 +32,6 @@ namespace com.Sconit.Web.Controllers
     {
         public IGenericMgr genericMgr { get; set; }
         public ISystemMgr systemMgr { get; set; }
-        public IReportMgr reportMgr { get; set; }
 
         private IList<string> errorMessages = null;
         private IList<string> warningMessages = null;
@@ -50,8 +49,8 @@ namespace com.Sconit.Web.Controllers
             {
                 if (siService_TimeOut == null)
                 {
-                    siService_TimeOut = this.genericMgr.FindById<com.Sconit.Entity.SYS.EntityPreference>
-                           ((int)com.Sconit.Entity.SYS.EntityPreference.CodeEnum.SIServiceTimeOut).Value;
+                    //siService_TimeOut = this.genericMgr.FindById<com.Sconit.Entity.SYS.EntityPreference>
+                    //       ((int)com.Sconit.Entity.SYS.EntityPreference.CodeEnum.SIServiceTimeOut).Value;
                 }
 
                 return siService_TimeOut;
@@ -789,51 +788,7 @@ namespace com.Sconit.Web.Controllers
             return GridModel;
         }
 
-        protected GridModel<T> GetReportAjaxPageData<T>(ReportSearchStatementModel reportSearchStatementModel)
-        {
-            GridModel<T> GridModel = new GridModel<T>();
-            List<object> reportResult = this.reportMgr.GetRealTimeLocationDetail(reportSearchStatementModel.ProcedureName, reportSearchStatementModel.Parameters);
-            //reportMgr.GetRealTimeLocationDetail(reportSearchStatementModel.ProcedureName,reportSearchStatementModel.Parameters)
-            GridModel.Total = (int)reportResult[0]; //ExcutePageTotalHql(searchStatementModel);
-            GridModel.Data = (List<T>)reportResult[1];
-            //GridModel.Data = ExcutePageDataHql<T>(searchStatementModel, command);
-            ViewBag.Total = GridModel.Total;
-            return GridModel;
-        }
-        protected GridModel<T> GetReportTransceiversAjaxPageData<T>(ReportSearchStatementModel reportSearchStatementModel)
-        {
-            GridModel<T> GridModel = new GridModel<T>();
-            List<object> reportResult = this.reportMgr.GetReportTransceiversAjaxPageData(reportSearchStatementModel.ProcedureName, reportSearchStatementModel.Parameters);
-            //reportMgr.GetRealTimeLocationDetail(reportSearchStatementModel.ProcedureName,reportSearchStatementModel.Parameters)
-            GridModel.Total = (int)reportResult[0]; //ExcutePageTotalHql(searchStatementModel);
-            GridModel.Data = (List<T>)reportResult[1];
-            //GridModel.Data = ExcutePageDataHql<T>(searchStatementModel, command);
-            ViewBag.Total = GridModel.Total;
-            return GridModel;
-        }
 
-        protected GridModel<T> GetInventoryAgeAjaxPageData<T>(ReportSearchStatementModel reportSearchStatementModel)
-        {
-            GridModel<T> GridModel = new GridModel<T>();
-            List<object> reportResult = this.reportMgr.GetInventoryAgeAjaxPageData(reportSearchStatementModel.ProcedureName, reportSearchStatementModel.Parameters);
-            //reportMgr.GetRealTimeLocationDetail(reportSearchStatementModel.ProcedureName,reportSearchStatementModel.Parameters)
-            GridModel.Total = (int)reportResult[0]; //ExcutePageTotalHql(searchStatementModel);
-            GridModel.Data = (List<T>)reportResult[1];
-            //GridModel.Data = ExcutePageDataHql<T>(searchStatementModel, command);
-            ViewBag.Total = GridModel.Total;
-            return GridModel;
-        }
-        protected GridModel<T> GetHistoryInvAjaxPageData<T>(ReportSearchStatementModel reportSearchStatementModel)
-        {
-            GridModel<T> GridModel = new GridModel<T>();
-            List<object> reportResult = this.reportMgr.GetHistoryInvAjaxPageData(reportSearchStatementModel.ProcedureName, reportSearchStatementModel.Parameters);
-            //reportMgr.GetRealTimeLocationDetail(reportSearchStatementModel.ProcedureName,reportSearchStatementModel.Parameters)
-            GridModel.Total = (int)reportResult[0]; //ExcutePageTotalHql(searchStatementModel);
-            GridModel.Data = (List<T>)reportResult[1];
-            //GridModel.Data = ExcutePageDataHql<T>(searchStatementModel, command);
-            ViewBag.Total = GridModel.Total;
-            return GridModel;
-        }
 
 
         protected int ProcessPageSize(int pageSize)

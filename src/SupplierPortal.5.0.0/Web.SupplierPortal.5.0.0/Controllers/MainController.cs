@@ -13,7 +13,6 @@ namespace com.Sconit.Web.Controllers
     [SconitAuthorize]
     public class MainController : WebAppBaseController
     {
-        public IPortalSettingMgr portalSettingMgr { get; set; }
         public MainController()
         {
 
@@ -21,8 +20,8 @@ namespace com.Sconit.Web.Controllers
 
         public ActionResult Default()
         {
-            var systemTitle = systemMgr.GetEntityPreferenceValue(Entity.SYS.EntityPreference.CodeEnum.SystemTitle);
-            ViewBag.SystemTitle = systemTitle;
+            //var systemTitle = systemMgr.GetEntityPreferenceValue(Entity.SYS.EntityPreference.CodeEnum.SystemTitle);
+            //ViewBag.SystemTitle = systemTitle;
             //if (Request.Cookies[WebConstants.CookieMainPageUrlKey] != null && this.CurrentUser != null)
             //{
             //    string mainPage = Request.Cookies[WebConstants.CookieMainPageUrlKey].Values[this.CurrentUser.Code];

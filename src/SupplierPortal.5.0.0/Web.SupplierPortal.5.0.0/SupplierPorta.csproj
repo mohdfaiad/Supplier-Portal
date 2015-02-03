@@ -197,10 +197,12 @@
     <Compile Include="Controllers\ACC\UserController.cs" />
     <Compile Include="Controllers\ACC\UserFavoriteController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\CommonController.cs" />
+    <Compile Include="Controllers\CommonController.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Controllers\ExceptionHandlerController.cs" />
     <Compile Include="Controllers\MainController.cs" />
-    <Compile Include="Controllers\ReportBaseController.cs" />
+    <Compile Include="Controllers\MD\SupplierController.cs" />
     <Compile Include="Controllers\WebAppBaseController.cs" />
     <Compile Include="Filters\**\*.cs" />
     <Compile Include="Global.asax.cs">
@@ -216,7 +218,6 @@
     <Compile Include="Models\CUST\DocumentaryViewModel.cs" />
     <Compile Include="Models\CUST\ProdBomDetForecastView.cs" />
     <Compile Include="Models\CUST\ProdBomDetForecastChargView.cs" />
-    <Compile Include="Models\INV\LocationTransactionView.cs" />
     <Compile Include="Models\KB\ItemDailyConsumeView.cs" />
     <Compile Include="Models\KB\KanbanOrdertime.cs" />
     <Compile Include="Models\KB\SupplierRegion.cs" />
@@ -338,7 +339,6 @@
     <Compile Include="Models\SearchModels\ORD\InMiscOrderSearchModel.cs" />
     <Compile Include="Models\SearchModels\ORD\IpDetailSearchModel.cs" />
     <Compile Include="Models\SearchModels\ORD\IpMasterSearchModel.cs" />
-    <Compile Include="Models\SearchModels\ORD\OrderBomDetailSearchModel.cs" />
     <Compile Include="Models\SearchModels\ORD\OrderMasterSearchModel.cs" />
     <Compile Include="Models\SearchModels\ORD\OutMiscOrderSearchModel.cs" />
     <Compile Include="Models\SearchModels\ORD\PickListDetailSearchModel.cs" />
@@ -1321,6 +1321,26 @@
     <Content Include="Views\Common\_RegionMultiSelectBox.cshtml" />
     <Content Include="Views\Common\_DNSTRStatusDropDownList.cshtml" />
     <Content Include="Views\Common\_GISTRStatusDropDownList.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.ACC\UserFavorite\ChangePassword.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.ACC\UserFavorite\Edit.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.ACC\UserFavorite\Index.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\Edit.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\Index.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\List.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\New.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_BillAddress.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_BillAddressEdit.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_BillAddressList.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_BillAddressNew.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_BillAddressResult.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_Edit.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_Search.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_SearchResult.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_ShipAddress.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_ShipAddressEdit.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_ShipAddressList.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_ShipAddressNew.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_ShipAddressResult.cshtml" />
     <None Include="Web References\EncryptDencryptService\EncryptDencryptService.wsdl" />
     <None Include="Web References\EncryptDencryptService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
