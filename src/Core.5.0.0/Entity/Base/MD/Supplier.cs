@@ -7,26 +7,27 @@ namespace com.Sconit.Entity.MD
     public partial class Supplier : EntityBase, IAuditable
     {
         #region O/R Mapping Properties
-        [Export(ExportName = "ExportSupplierXLS", ExportSeq = 10)]
-        [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "Errors_Common_FieldRequired", ErrorMessageResourceType = typeof(Resources.ErrorMessage))]
-        [StringLength(50, ErrorMessageResourceName = "Errors_Common_FieldLengthExceed", ErrorMessageResourceType = typeof(Resources.ErrorMessage))]
         [Display(Name = "Party_Code", ResourceType = typeof(Resources.MD.Party))]
         public string Code { get; set; }
 
-        [Export(ExportName = "ExportSupplierXLS", ExportSeq = 20)]
-        [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "Errors_Common_FieldRequired", ErrorMessageResourceType = typeof(Resources.ErrorMessage))]
-        [StringLength(100, ErrorMessageResourceName = "Errors_Common_FieldLengthExceed", ErrorMessageResourceType = typeof(Resources.ErrorMessage))]
         [Display(Name = "Party_Name", ResourceType = typeof(Resources.MD.Party))]
         public string Name { get; set; }
 
-        [Export(ExportName = "ExportSupplierXLS", ExportSeq = 40)]
+        [Display(Name = "Party_Address", ResourceType = typeof(Resources.MD.Party))]
+        public string Address { get; set; }
+
+        [Display(Name = "Party_ContactPerson", ResourceType = typeof(Resources.MD.Party))]
+        public string ContactPerson { get; set; }
+
+        [Display(Name = "Party_ContactPhone", ResourceType = typeof(Resources.MD.Party))]
+        public string ContactPhone { get; set; }
+
+        [Display(Name = "Party_Email", ResourceType = typeof(Resources.MD.Party))]
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; }
+
         [Display(Name = "Party_IsActive", ResourceType = typeof(Resources.MD.Party))]
         public Boolean IsActive { get; set; }
-
-
-        [Export(ExportName = "ExportSupplierXLS", ExportSeq = 30)]
-        [Display(Name = "Party_Supplier_ShortCode", ResourceType = typeof(Resources.MD.Party))]
-        public string ShortCode { get; set; }
 
 
         public Int32 CreateUserId { get; set; }

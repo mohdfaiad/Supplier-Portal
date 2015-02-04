@@ -6,8 +6,11 @@
       <generator class="assigned" />
     </id>
     <property name="Name" column="Name" type="String" length="100" />
+    <property name="Address" column="Address" type="String" length="50" />
+    <property name="Email" column="Email" type="String" length="50" />
+    <property name="ContactPerson" column="ContactPerson" type="String" length="50" />
+    <property name="ContactPhone" column="ContactPhone" type="String" length="50" />
     <property name="IsActive" column="IsActive" type="Boolean"  />
-    <property name="ShortCode" column="ShortCode" type="String" length="50" />
     <property name="CreateUserId" column="CreateUser" type="Int32" update="false"  />
     <property name="CreateUserName" column="CreateUserNm" type="String" length="100" update="false" />
     <property name="CreateDate" column="CreateDate" type="DateTime" update="false"  />

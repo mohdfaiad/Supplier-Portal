@@ -63,7 +63,10 @@
     <Compile Include="Base\ACC\UserPermissionGroup.cs" />
     <Compile Include="Base\ACC\UserRole.cs" />
     <Compile Include="Base\MD\Item.cs" />
+    <Compile Include="Base\MD\Location.cs" />
     <Compile Include="Base\MD\Supplier.cs" />
+    <Compile Include="Base\MD\Uom.cs" />
+    <Compile Include="Base\MD\UomConversion.cs" />
     <Compile Include="Base\SYS\CodeDetail.cs" />
     <Compile Include="Base\SYS\CodeMaster.cs" />
     <Compile Include="Base\SYS\EntityPreference.cs" />
@@ -77,7 +80,10 @@
     <Compile Include="Exception\TechnicalException.cs" />
     <Compile Include="IAuditable.cs" />
     <Compile Include="MD\Item.cs" />
+    <Compile Include="MD\Location.cs" />
     <Compile Include="MD\Supplier.cs" />
+    <Compile Include="MD\Uom.cs" />
+    <Compile Include="MD\UomConversion.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="MessageHolder.cs" />
     <Compile Include="OrderHolder.cs" />
@@ -124,6 +130,11 @@
       <Project>{54A57A3A-8722-451D-983B-9D2990D2D121}</Project>
       <Name>CodeMaster</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Base\MD\Location.hbm.xml" />
+    <EmbeddedResource Include="Base\MD\Uom.hbm.xml" />
+    <EmbeddedResource Include="Base\MD\UomConversion.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

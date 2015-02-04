@@ -16,6 +16,8 @@ namespace com.Sconit.Entity.MD
                 return this.Code + " [" + this.Name + "]";
             }
         }
+
+        public string UserPassword { get; set; }
         #endregion
     }
 }

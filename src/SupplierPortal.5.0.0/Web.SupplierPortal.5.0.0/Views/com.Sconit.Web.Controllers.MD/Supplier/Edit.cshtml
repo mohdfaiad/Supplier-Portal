@@ -12,15 +12,15 @@
                 .LoadContentFrom("_Edit", "Supplier", new { Id = Model })
                  .HtmlAttributes(new { onclick = "CleanTabMessage()" });
 
-            tabstrip.Add()
-                .Text(Resources.MD.Party.Party_Supplier_TabTitle_BillAddress)
-                .LoadContentFrom("_BillAddress", "Supplier", new { Id = Model })
-                 .HtmlAttributes(new { onclick = "CleanTabMessage()" });
+            //tabstrip.Add()
+            //    .Text(Resources.MD.Party.Party_Supplier_TabTitle_BillAddress)
+            //    .LoadContentFrom("_BillAddress", "Supplier", new { Id = Model })
+            //     .HtmlAttributes(new { onclick = "CleanTabMessage()" });
 
-            tabstrip.Add()
-                .Text(Resources.MD.Party.Party_Supplier_TabTitle_ShipAddress)
-                .LoadContentFrom("_ShipAddress", "Supplier", new { Id = Model })
-                 .HtmlAttributes(new { onclick = "CleanTabMessage()" });
+            //tabstrip.Add()
+            //    .Text(Resources.MD.Party.Party_Supplier_TabTitle_ShipAddress)
+            //    .LoadContentFrom("_ShipAddress", "Supplier", new { Id = Model })
+            //     .HtmlAttributes(new { onclick = "CleanTabMessage()" });
         })
         .Render();
 }
