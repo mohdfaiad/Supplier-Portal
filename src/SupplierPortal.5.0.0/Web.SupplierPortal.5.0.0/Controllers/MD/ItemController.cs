@@ -176,22 +176,22 @@ namespace com.Sconit.Web.Controllers.MD
                         SaveErrorMessage(Resources.MD.Item.ItemErrors_NotExisting_Bom);
                     }
                 }
-                if (item.Routing != null)
-                {
-                    if (base.genericMgr.FindAll<RoutingMaster>("from RoutingMaster where Code= ? and IsActive = ? ", new object[] { item.Routing, true }).Count == 0)
-                    {
-                        canSave = false;
-                        SaveErrorMessage(Resources.MD.Item.ItemErrors_NotExisting_Routing);
-                    }
-                }
-                if (item.Location != null)
-                {
-                    if (base.genericMgr.FindAll<Location>("from Location where Code= ? and IsActive = ? ", new object[] { item.Location, true }).Count == 0)
-                    {
-                        canSave = false;
-                        SaveErrorMessage(Resources.MD.Item.ItemErrors_NotExisting_Location);
-                    }
-                }
+                //if (item.Routing != null)
+                //{
+                //    if (base.genericMgr.FindAll<RoutingMaster>("from RoutingMaster where Code= ? and IsActive = ? ", new object[] { item.Routing, true }).Count == 0)
+                //    {
+                //        canSave = false;
+                //        SaveErrorMessage(Resources.MD.Item.ItemErrors_NotExisting_Routing);
+                //    }
+                //}
+                //if (item.Location != null)
+                //{
+                //    if (base.genericMgr.FindAll<Location>("from Location where Code= ? and IsActive = ? ", new object[] { item.Location, true }).Count == 0)
+                //    {
+                //        canSave = false;
+                //        SaveErrorMessage(Resources.MD.Item.ItemErrors_NotExisting_Location);
+                //    }
+                //}
                 if (canSave)
                 {
                     itemMgr.CreateItem(item);
@@ -262,21 +262,21 @@ namespace com.Sconit.Web.Controllers.MD
                         SaveErrorMessage(Resources.MD.Item.ItemErrors_NotExisting_Bom);
                     }
                 }
-                if (item.Routing != null)
-                {
-                    if (base.genericMgr.FindAll<RoutingMaster>("from RoutingMaster where Code= ? and IsActive = ? ", new object[] { item.Routing, true }).Count == 0)
-                    {
-                        canSave = false;
-                        SaveErrorMessage(Resources.MD.Item.ItemErrors_NotExisting_Routing);
-                    }
-                }
+                //if (item.Routing != null)
+                //{
+                //    if (base.genericMgr.FindAll<RoutingMaster>("from RoutingMaster where Code= ? and IsActive = ? ", new object[] { item.Routing, true }).Count == 0)
+                //    {
+                //        canSave = false;
+                //        SaveErrorMessage(Resources.MD.Item.ItemErrors_NotExisting_Routing);
+                //    }
+                //}
                 if (item.Location != null)
                 {
-                    if (base.genericMgr.FindAll<Location>("from Location where Code= ? and IsActive = ? ", new object[] { item.Location, true }).Count == 0)
-                    {
-                        canSave = false;
-                        SaveErrorMessage(Resources.MD.Item.ItemErrors_NotExisting_Location);
-                    }
+                    //if (base.genericMgr.FindAll<Location>("from Location where Code= ? and IsActive = ? ", new object[] { item.Location, true }).Count == 0)
+                    //{
+                    //    canSave = false;
+                    //    SaveErrorMessage(Resources.MD.Item.ItemErrors_NotExisting_Location);
+                    //}
                 }
                 if (canSave)
                 {

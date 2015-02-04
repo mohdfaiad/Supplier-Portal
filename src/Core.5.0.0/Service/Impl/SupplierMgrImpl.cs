@@ -32,6 +32,9 @@ namespace com.Sconit.Service.Impl
         {
             genericMgr.Create(supplier);
 
+            #region   用户
+            #endregion
+
             #region 加权限
             Permission permission = new Permission();
             permission.Code = supplier.Code;

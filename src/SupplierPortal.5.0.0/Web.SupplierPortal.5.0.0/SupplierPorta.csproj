@@ -202,6 +202,7 @@
     </Compile>
     <Compile Include="Controllers\ExceptionHandlerController.cs" />
     <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\MD\ItemController.cs" />
     <Compile Include="Controllers\MD\SupplierController.cs" />
     <Compile Include="Controllers\WebAppBaseController.cs" />
     <Compile Include="Filters\**\*.cs" />
@@ -1341,6 +1342,23 @@
     <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_ShipAddressList.cshtml" />
     <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_ShipAddressNew.cshtml" />
     <Content Include="Views\com.Sconit.Web.Controllers.MD\Supplier\_ShipAddressResult.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\Edit.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\Index.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\ItemPackage.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\ItemPackageEdit.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\ItemPackageNew.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\ItemRefResult.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\List.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\New.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\ShortIndex.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\ShortList.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\_EditList.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\_ItemRefEdit.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\_ItemRefNew.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\_Search.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\_SearchResult.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\_ShortSearch.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\_ShortSearchResult.cshtml" />
     <None Include="Web References\EncryptDencryptService\EncryptDencryptService.wsdl" />
     <None Include="Web References\EncryptDencryptService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>

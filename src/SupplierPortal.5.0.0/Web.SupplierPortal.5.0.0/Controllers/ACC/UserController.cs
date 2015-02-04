@@ -127,30 +127,30 @@ using System;
                     user.Password = FormsAuthentication.HashPasswordForStoringInConfigFile(user.ConfirmPassword, "MD5");
                     base.genericMgr.Create(user);
                     SaveSuccessMessage(Resources.ACC.User.User_Added);
-                    try
-                    {
-                        this.genericMgr.UpdateWithNativeQuery("exec USP_Busi_ChangePassword ?,?",
-                        new object[] { user.Id, user.Password },
-                        new IType[] { NHibernateUtil.String, NHibernateUtil.String });
-                    }
-                    catch (Exception ex)
-                    {
-                        if (ex.InnerException != null)
-                        {
-                            if (ex.InnerException.InnerException != null)
-                            {
-                                SaveErrorMessage(ex.InnerException.InnerException.Message);
-                            }
-                            else
-                            {
-                                SaveErrorMessage(ex.InnerException.Message);
-                            }
-                        }
-                        else
-                        {
-                            SaveErrorMessage(ex.Message);
-                        }
-                    }
+                    //try
+                    //{
+                    //    this.genericMgr.UpdateWithNativeQuery("exec USP_Busi_ChangePassword ?,?",
+                    //    new object[] { user.Id, user.Password },
+                    //    new IType[] { NHibernateUtil.String, NHibernateUtil.String });
+                    //}
+                    //catch (Exception ex)
+                    //{
+                    //    if (ex.InnerException != null)
+                    //    {
+                    //        if (ex.InnerException.InnerException != null)
+                    //        {
+                    //            SaveErrorMessage(ex.InnerException.InnerException.Message);
+                    //        }
+                    //        else
+                    //        {
+                    //            SaveErrorMessage(ex.InnerException.Message);
+                    //        }
+                    //    }
+                    //    else
+                    //    {
+                    //        SaveErrorMessage(ex.Message);
+                    //    }
+                    //}
 
                     return RedirectToAction("Edit/" + user.Id);
                 }
@@ -371,10 +371,11 @@ using System;
                     {
                         User user = base.genericMgr.FindById<User>(model.Id);
                         user.Password = FormsAuthentication.HashPasswordForStoringInConfigFile(model.ConfirmPassword, "MD5");
-                        this.genericMgr.UpdateWithNativeQuery("exec USP_Busi_ChangePassword ?,?",
-                        new object[] { user.Id, user.Password },
-                        new IType[] { NHibernateUtil.String, NHibernateUtil.String });
-                        SaveSuccessMessage(Resources.ACC.User.User_PasswordChanged);
+                        this.genericMgr.Update(user);
+                        //this.genericMgr.UpdateWithNativeQuery("exec USP_Busi_ChangePassword ?,?",
+                        //new object[] { user.Id, user.Password },
+                        //new IType[] { NHibernateUtil.String, NHibernateUtil.String });
+                        //SaveSuccessMessage(Resources.ACC.User.User_PasswordChanged);
                     }
                     catch (Exception ex)
                     {

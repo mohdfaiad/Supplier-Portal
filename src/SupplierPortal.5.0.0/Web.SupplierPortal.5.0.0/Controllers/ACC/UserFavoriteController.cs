@@ -102,37 +102,37 @@ namespace com.Sconit.Web.Controllers.ACC
                 }
                 else
                 {
-                    //CurrentUser.Password = FormsAuthentication.HashPasswordForStoringInConfigFile(model.ConfirmPassword, "MD5");
-                    //CurrentUser.IsActive = true;
-                    //base.genericMgr.Update(CurrentUser);
-                    //SaveSuccessMessage(Resources.ACC.User.User_PasswordChanged);
+                    CurrentUser.Password = FormsAuthentication.HashPasswordForStoringInConfigFile(model.ConfirmPassword, "MD5");
+                    CurrentUser.IsActive = true;
+                    base.genericMgr.Update(CurrentUser);
+                    SaveSuccessMessage(Resources.ACC.User.User_PasswordChanged);
 
-                    try
-                    {
-                        CurrentUser.Password = FormsAuthentication.HashPasswordForStoringInConfigFile(model.ConfirmPassword, "MD5");
-                        this.genericMgr.UpdateWithNativeQuery("exec USP_Busi_ChangePassword ?,?",
-                        new object[] { CurrentUser.Id, CurrentUser.Password },
-                        new IType[] { NHibernateUtil.String, NHibernateUtil.String });
-                        SaveSuccessMessage(Resources.ACC.User.User_PasswordChanged);
-                    }
-                    catch (Exception ex)
-                    {
-                        if (ex.InnerException != null)
-                        {
-                            if (ex.InnerException.InnerException != null)
-                            {
-                                SaveErrorMessage(ex.InnerException.InnerException.Message);
-                            }
-                            else
-                            {
-                                SaveErrorMessage(ex.InnerException.Message);
-                            }
-                        }
-                        else
-                        {
-                            SaveErrorMessage(ex.Message);
-                        }
-                    }
+                    //try
+                    //{
+                    //    CurrentUser.Password = FormsAuthentication.HashPasswordForStoringInConfigFile(model.ConfirmPassword, "MD5");
+                    //    this.genericMgr.UpdateWithNativeQuery("exec USP_Busi_ChangePassword ?,?",
+                    //    new object[] { CurrentUser.Id, CurrentUser.Password },
+                    //    new IType[] { NHibernateUtil.String, NHibernateUtil.String });
+                    //    SaveSuccessMessage(Resources.ACC.User.User_PasswordChanged);
+                    //}
+                    //catch (Exception ex)
+                    //{
+                    //    if (ex.InnerException != null)
+                    //    {
+                    //        if (ex.InnerException.InnerException != null)
+                    //        {
+                    //            SaveErrorMessage(ex.InnerException.InnerException.Message);
+                    //        }
+                    //        else
+                    //        {
+                    //            SaveErrorMessage(ex.InnerException.Message);
+                    //        }
+                    //    }
+                    //    else
+                    //    {
+                    //        SaveErrorMessage(ex.Message);
+                    //    }
+                    //}
                 }
             }
 
