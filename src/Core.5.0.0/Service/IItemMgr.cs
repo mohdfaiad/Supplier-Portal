@@ -13,7 +13,7 @@ namespace com.Sconit.Service
 
         decimal ConvertItemUomQty(string itemCode, string sourceUomCode, decimal sourceQty, string targetUomCode);
 
-        //PriceListDetail GetItemPrice(string itemCode, string uom, string priceList, string currency, DateTime? effectiveDate);
+        //PriceListDetail GetItemPrice(string itemCode, stgring uom, string priceList, string currency, DateTime? effectiveDate);
 
         void CreateItem(Item item);
 

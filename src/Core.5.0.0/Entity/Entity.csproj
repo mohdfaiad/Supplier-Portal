@@ -68,10 +68,10 @@
     <Compile Include="Base\MD\Custodian.cs" />
     <Compile Include="Base\MD\Item.cs" />
     <Compile Include="Base\MD\ItemCategory.cs" />
-    <Compile Include="Base\MD\ItemDiscontinue.cs" />
     <Compile Include="Base\MD\ItemPackage.cs" />
     <Compile Include="Base\MD\ItemReference.cs" />
     <Compile Include="Base\MD\Supplier.cs" />
+    <Compile Include="Base\MD\Uom.cs" />
     <Compile Include="Base\MD\UomConversion.cs" />
     <Compile Include="Base\PRD\BomMaster.cs" />
     <Compile Include="Base\SYS\CodeDetail.cs" />
@@ -92,10 +92,10 @@
     <Compile Include="MD\Custodian.cs" />
     <Compile Include="MD\Item.cs" />
     <Compile Include="MD\ItemCategory.cs" />
-    <Compile Include="MD\ItemDiscontinue.cs" />
     <Compile Include="MD\ItemPackage.cs" />
     <Compile Include="MD\ItemReference.cs" />
     <Compile Include="MD\Supplier.cs" />
+    <Compile Include="MD\Uom.cs" />
     <Compile Include="MD\UomConversion.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="MessageHolder.cs" />
@@ -151,9 +151,9 @@
     <Content Include="Base\CUST\ItemTrace.hbm.xml" />
     <Content Include="Base\MD\Custodian.hbm.xml" />
     <Content Include="Base\MD\ItemCategory.hbm.xml" />
-    <Content Include="Base\MD\ItemDiscontinue.hbm.xml" />
     <Content Include="Base\MD\ItemPackage.hbm.xml" />
     <Content Include="Base\MD\ItemReference.hbm.xml" />
+    <Content Include="Base\MD\Uom.hbm.xml" />
     <Content Include="Base\MD\UomConversion.hbm.xml" />
     <Content Include="Base\PRD\BomMaster.hbm.xml" />
   </ItemGroup>

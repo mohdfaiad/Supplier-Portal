@@ -355,7 +355,64 @@ namespace com.Sconit.Web.Controllers
 
 
         #endregion
+        #region Uom
+        public ActionResult _UomDropDownList(string controlName, string controlId, string selectedValue, bool? includeBlankOption, string blankOptionDescription, string blankOptionValue, bool? enable)
+        {
+            ViewBag.ControlName = controlName;
+            ViewBag.ControlId = controlId;
+            //ViewBag.SelectedValue = selectedValue;
+            ViewBag.Enable = enable;
+            IList<Uom> uomList = base.genericMgr.FindAll<Uom>("from Uom as u order by u.Code desc");
+            if (uomList == null)
+            {
+                uomList = new List<Uom>();
+            }
 
+            if (includeBlankOption.HasValue && includeBlankOption.Value)
+            {
+                Uom blankUom = new Uom();
+                blankUom.Code = blankOptionValue;
+                blankUom.Description = blankOptionDescription;
+
+                uomList.Insert(0, blankUom);
+            }
+            return PartialView(new SelectList(uomList, "Code", "Code", selectedValue));
+        }
+
+        public ActionResult _AjaxLoadingUom(string text, string item)
+        {
+            #region 基本单位
+            IList<string> uomList = new List<string>();
+            if (string.IsNullOrEmpty(item))
+            {
+                Item baseItem = base.genericMgr.FindById<Item>(item);
+                uomList.Add(baseItem.Uom);
+            }
+            #endregion
+
+            #region 单位转换
+            IList<UomConversion> uomConversionList = base.genericMgr.FindAll<UomConversion>("from UomConversion as u where u.Item = ?", item);
+            if (uomConversionList != null && uomConversionList.Count > 0)
+            {
+                foreach (UomConversion uc in uomConversionList)
+                {
+                    if (!uomList.Contains(uc.BaseUom))
+                    {
+                        uomList.Add(uc.BaseUom);
+                    }
+                    if (!uomList.Contains(uc.AlterUom))
+                    {
+                        uomList.Add(uc.AlterUom);
+                    }
+                }
+            }
+            #endregion
+
+            return new JsonResult { Data = new SelectList(uomList) };
+        }
+
+
+        #endregion
 
         #region private methods
 
