@@ -1,0 +1,112 @@
+﻿@model com.Sconit.Entity.MD.Plant  
+@Html.Partial("_AjaxMessage")
+    <fieldset>
+        <legend>@Resources.MD.Party.Party_CurrentParty:@ViewBag.PartyCode </legend>
+        <div class="editor">
+            <div class="editor-label-2">
+            </div>
+            <div class="editor-field-2">
+            </div>
+            <div class="editor-label-2">
+            </div>
+            <div class="editor-field-2">
+                <input type="hidden" name="Plant_Code" id="Plant_Code" value="@Model.Code" />
+                @Html.HiddenFor(model => model.CreateUserName)
+                @Html.HiddenFor(model => model.CreateDate)
+                @Html.HiddenFor(model => model.LastModifyUserName)
+                @Html.HiddenFor(model => model.LastModifyDate)
+            </div>
+
+            <div class="editor-label-2">
+                @Html.LabelFor(model => model.Code)
+            </div>
+            <div class="editor-field-2">
+                @Html.DisplayFor(model => model.Code)
+            </div>
+            <div class="editor-label-2">
+                @Html.LabelFor(model => model.Name)
+            </div>
+            <div class="editor-field-2">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+            <div class="editor-label-2">
+                @Html.LabelFor(model => model.Address)
+            </div>
+            <div class="editor-field-2">
+                @Html.EditorFor(model => model.Address)
+            </div>
+            <div class="editor-label-2">
+                @Html.LabelFor(model => model.Email)
+            </div>
+            <div class="editor-field-2">
+                @Html.EditorFor(model => model.Email)
+            </div>
+            <div class="editor-label-2">
+                @Html.LabelFor(model => model.ContactPerson)
+            </div>
+            <div class="editor-field-2">
+                @Html.EditorFor(model => model.ContactPerson)
+            </div>
+            <div class="editor-label-2">
+                @Html.LabelFor(model => model.ContactPhone)
+            </div>
+            <div class="editor-field-2">
+                @Html.EditorFor(model => model.ContactPhone)
+            </div>
+            <div class="editor-label-2">
+                @Html.LabelFor(model => model.IsActive)
+            </div>
+            <div class="editor-field-2">
+                @Html.EditorFor(model => model.IsActive)
+            </div>
+
+        </div>
+        <div class="editor-footer">
+            @*<button type="button" id="btnSave_Plant" onclick="btnSave_Plant_Click()">
+                @Resources.Global.Button_Save</button>
+            <button type="button" id="btnDelete_Plant" onclick="location.href='@Url.Content("~/Plant/Delete/" + @Model.Code)'">
+                @Resources.Global.Button_Delete</button>*@
+     @Html.Button(Resources.Global.Button_Save, "Url_Plant_Edit", new Dictionary<string, string>()
+	{
+	    {"type", "button"},
+	    {"id", "btnSave_Plant"},
+        {"needconfirm","true"},
+        {"onclick","btnSave_Plant_Click()"}
+        
+	})
+    @Html.Button(Resources.Global.Button_Delete, "Url_Plant_Delete", new Dictionary<string, string>()
+	{
+	    {"type", "button"},
+	    {"id", "btnDelete_Plant"},
+        {"needconfirm","true"},
+        {"onclick","location.href='"+@Url.Content("~/Plant/Delete/" +Model.Code)+"'"}
+	})
+            <button type="button" id="btnBack_Plant" onclick="location.href='@Url.Content("~/Plant/List")'">
+                @Resources.Global.Button_Back</button>
+        </div>
+    </fieldset>
+
+<script type="text/javascript">
+    function btnSave_Plant_Click() {
+        var data = {
+            "Code": $("#Plant_Code").val(),
+            "Name": $("#Name").val(),
+            "Address": $("#Address").val(),
+            "ContactPerson": $("#ContactPerson").val(),
+            "ContactPhone": $("#ContactPhone").val(),
+            "IsActive": $("#IsActive").is(':checked')
+        };
+        $.ajax({
+            type: "post",
+            dataType: "html",
+            url: "@Url.Content("~/Plant/_Edit/")",
+            data: data,
+            success: function (data, textStatus) {
+                var tabStrip = $("#TabStrip");
+                var tabStripContent0 = tabStrip.data("tTabStrip").getContentElement(0);
+                $(tabStripContent0).html(data);
+            }
+        });
+    }
+</script>

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<com.Sconit.Entity.MD.Plant>
+<fieldset>
+    @(Html.Telerik().Grid(Model)
+        .Name("PlantGrid")
+        .DataKeys(keys =>
+        {
+            keys.Add(p => p.Code);
+        })
+        .Columns(columns =>
+        {
+            columns.Bound(o => o.Code)
+                .ClientTemplate(Html.ActionLink("<#=Code#>", "Edit", "Plant", new { ID = "<#=Code #>" }, null).ToString())
+                .HeaderTemplate(Resources.MD.Party.Party_Supplier_Code);
+            columns.Bound(o => o.Name).HeaderTemplate(Resources.MD.Party.Party_Supplier_Name);
+            columns.Bound(o => o.Address);
+            columns.Bound(o => o.Email);
+            columns.Bound(o => o.ContactPerson);
+            columns.Bound(o => o.ContactPhone);
+            columns.Bound(o => o.IsActive).ClientTemplate("<input type='checkbox' disabled='disabled' <#= IsActive?checked='checked':'' #> />").HeaderTemplate(Resources.MD.Party.Party_IsActive);
+        })
+
+        .Scrollable(c => c.Enabled(false))
+        .EnableCustomBinding(true)
+        .DataBinding(dataBinding => dataBinding.Ajax().Select("_AjaxList", "Plant"))
+        .ClientEvents(events => events.OnDataBinding("PlantGrid_OnDataBinding"))
+        .Pageable(settings =>
+        {
+            settings.Total(ViewBag.Total != null ? ViewBag.Total : 0);
+            settings.PageSize(ViewBag.PageSize);
+        })
+        .Sortable()
+        .Resizable(resizing => resizing.Columns(true))
+    )
+    <script type="text/javascript">
+        function PlantGrid_OnDataBinding(e) {
+            e.data = {
+
+                Code: $('#Code').val(),
+                Name: $('#Name').val(),
+                IsActive: $('#IsActive').is(':checked')
+            };
+        } 
+    </script>
+</fieldset>
