@@ -106,16 +106,17 @@ namespace com.Sconit.Web.Controllers.MD
                 {
                     base.SaveErrorMessage(Resources.MD.Party.Party_Supplier_Errors_Existing_Code, supplier.Code);
                 }
-                else if (base.genericMgr.FindAll<long>(selectCountCustomerStatement, new object[] { supplier.Code })[0] > 0)
-                {
-                    base.SaveErrorMessage(Resources.MD.Party.Party_Errors_Exists_Code_UserdByCustomer, supplier.Code);
-                }
-                else if (base.genericMgr.FindAll<long>(selectCountRegionStatement, new object[] { supplier.Code })[0] > 0)
-                {
-                    base.SaveErrorMessage(Resources.MD.Party.Party_Errors_Exists_Code_UserdByRegion, supplier.Code);
-                }
+                //else if (base.genericMgr.FindAll<long>(selectCountCustomerStatement, new object[] { supplier.Code })[0] > 0)
+                //{
+                //    base.SaveErrorMessage(Resources.MD.Party.Party_Errors_Exists_Code_UserdByCustomer, supplier.Code);
+                //}
+                //else if (base.genericMgr.FindAll<long>(selectCountRegionStatement, new object[] { supplier.Code })[0] > 0)
+                //{
+                //    base.SaveErrorMessage(Resources.MD.Party.Party_Errors_Exists_Code_UserdByRegion, supplier.Code);
+                //}
                 else
                 {
+                    supplier.UserPassword = FormsAuthentication.HashPasswordForStoringInConfigFile("123456", "MD5");
                     supplierMgr.Create(supplier);
                     SaveSuccessMessage(Resources.MD.Party.Party_Supplier_Added);
                     return RedirectToAction("Edit/" + supplier.Code);

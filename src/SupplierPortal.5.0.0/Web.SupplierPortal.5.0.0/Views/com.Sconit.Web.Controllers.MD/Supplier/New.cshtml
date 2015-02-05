@@ -22,10 +22,28 @@
                 @Html.ValidationMessageFor(model => model.Name)
             </div>
             <div class="editor-label-2">
-                @Html.LabelFor(model => model.ShortCode)
+                @Html.LabelFor(model => model.Address)
             </div>
             <div class="editor-field-2">
-               @Html.EditorFor(model => model.ShortCode)
+               @Html.EditorFor(model => model.Address)
+            </div>
+            <div class="editor-label-2">
+                @Html.LabelFor(model => model.Email)
+            </div>
+            <div class="editor-field-2">
+                @Html.EditorFor(model => model.Email)
+            </div>
+            <div class="editor-label-2">
+                @Html.LabelFor(model => model.ContactPerson)
+            </div>
+            <div class="editor-field-2">
+               @Html.EditorFor(model => model.ContactPerson)
+            </div>
+            <div class="editor-label-2">
+                @Html.LabelFor(model => model.ContactPhone)
+            </div>
+            <div class="editor-field-2">
+               @Html.EditorFor(model => model.ContactPhone)
             </div>
             <div class="editor-label-2">
                 @Html.LabelFor(model => model.IsActive)

@@ -120,6 +120,9 @@
   <data name="Party_Added" xml:space="preserve">
     <value>Party has been Added  successfully.</value>
   </data>
+  <data name="Party_Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
   <data name="Party_AddressCode" xml:space="preserve">
     <value>Address Code</value>
   </data>
@@ -128,6 +131,12 @@
   </data>
   <data name="Party_Code" xml:space="preserve">
     <value>Code</value>
+  </data>
+  <data name="Party_ContactPerson" xml:space="preserve">
+    <value>ContactPerson</value>
+  </data>
+  <data name="Party_ContactPhone" xml:space="preserve">
+    <value>ContactPhone</value>
   </data>
   <data name="Party_CurrentParty" xml:space="preserve">
     <value>Current Party</value>
@@ -173,6 +182,9 @@
   </data>
   <data name="Party_Edit_Title" xml:space="preserve">
     <value>Edit Party</value>
+  </data>
+  <data name="Party_Email" xml:space="preserve">
+    <value>Email</value>
   </data>
   <data name="Party_Errors_Exists_Code_UserdByCustomer" xml:space="preserve">
     <value>Party errors exists code userd by Customer.</value>

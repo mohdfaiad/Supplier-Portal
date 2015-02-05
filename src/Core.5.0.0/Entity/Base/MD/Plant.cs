@@ -4,7 +4,7 @@ using com.Sconit.Entity.SYS;
 namespace com.Sconit.Entity.MD
 {
     [Serializable]
-    public partial class Supplier : EntityBase, IAuditable
+    public partial class Plant : EntityBase, IAuditable
     {
         #region O/R Mapping Properties
         [Display(Name = "Party_Code", ResourceType = typeof(Resources.MD.Party))]
@@ -53,7 +53,7 @@ namespace com.Sconit.Entity.MD
 
         public override bool Equals(object obj)
         {
-            Supplier another = obj as Supplier;
+            Plant another = obj as Plant;
 
             if (another == null)
             {

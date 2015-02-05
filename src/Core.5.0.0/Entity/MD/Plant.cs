@@ -6,7 +6,7 @@ using com.Sconit.Entity.SYS;
 
 namespace com.Sconit.Entity.MD
 {
-    public partial class Supplier 
+    public partial class Plant 
     {
         #region Non O/R Mapping Properties
         public string CodeDescription
@@ -17,7 +17,6 @@ namespace com.Sconit.Entity.MD
             }
         }
 
-        public string UserPassword { get; set; }
         #endregion
     }
 }

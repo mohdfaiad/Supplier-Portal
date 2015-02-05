@@ -33,6 +33,17 @@ namespace com.Sconit.Service.Impl
             genericMgr.Create(supplier);
 
             #region   用户
+            User u = new User();
+            u.Code = supplier.Code;
+            u.Password = supplier.UserPassword;
+            u.FirstName = supplier.Address;
+            u.Type = com.Sconit.CodeMaster.UserType.Normal;
+            u.Email = supplier.Email;
+            u.TelPhone = supplier.ContactPhone;
+            u.Language = "zh-CN";
+            u.IsActive = true;
+            genericMgr.Create(u);
+
             #endregion
 
             #region 加权限
