@@ -17,17 +17,11 @@ namespace com.Sconit.Entity.MD
         [Display(Name = "Location_Name", ResourceType = typeof(Resources.MD.Location))]
 		public string Name { get; set; }
 
-        [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "Errors_Common_FieldRequired", ErrorMessageResourceType = typeof(Resources.ErrorMessage))]
-        [StringLength(50, ErrorMessageResourceName = "Errors_Common_FieldLengthExceed", ErrorMessageResourceType = typeof(Resources.ErrorMessage))]
-        [Display(Name = "Location_Region", ResourceType = typeof(Resources.MD.Location))]
-		public string Region { get; set; }
+        [Display(Name = "Location_Plant", ResourceType = typeof(Resources.MD.Location))]
+        public string Plant { get; set; }
 
         [Display(Name = "Location_IsActive", ResourceType = typeof(Resources.MD.Location))]
 		public Boolean IsActive { get; set; }
-
-
-        [Display(Name = "Location_IsCS", ResourceType = typeof(Resources.MD.Location))]
-		public Boolean IsConsignment { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "Errors_Common_FieldRequired", ErrorMessageResourceType = typeof(Resources.ErrorMessage))]
         [Display(Name = "Location_SAPLocation", ResourceType = typeof(Resources.MD.Location))]

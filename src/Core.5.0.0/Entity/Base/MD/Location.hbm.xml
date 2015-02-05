@@ -6,9 +6,8 @@
       <generator class="assigned" />
     </id>
     <property name="Name" column="Name" type="String" length="50" />
-    <property name="Region" column="Region" type="String" length="50" />
+    <property name="Plant" column="Plant" type="String" length="50" />
     <property name="IsActive" column="IsActive" type="Boolean"  />
-    <property name="IsConsignment" column="IsCS" type="Boolean"  />
     <property name="SAPLocation" column="SAPLocation" type="String" length="50" />
     <property name="CreateUserId" column="CreateUser" type="Int32" update="false"  />
     <property name="CreateUserName" column="CreateUserNm" type="String" length="100" update="false" />

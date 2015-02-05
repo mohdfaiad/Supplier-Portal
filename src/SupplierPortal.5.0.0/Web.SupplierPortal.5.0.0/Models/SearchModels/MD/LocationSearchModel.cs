@@ -20,6 +20,7 @@ using System.Web;
         public string SAPLocation { get; set; }
         public Boolean AllowNegativeConsignment { get; set; }
         public bool IsSource { get; set; }
+        public string Plant { get; set; }
         
     }
 }
