@@ -191,19 +191,7 @@ namespace com.Sconit.Service.Impl
 
             genericMgr.Update(item);
         }
-
-        public IList<ItemDiscontinue> GetItemDiscontinues(string itemCode, DateTime effectiveDate)
-        {
-            string hql = "from ItemDiscontinue where Item = ? and StartDate < ? and (EndDate is null or EndDate >= ?)";
-            return this.genericMgr.FindAll<ItemDiscontinue>(hql, new object[] { itemCode, effectiveDate, effectiveDate });
-        }
-
-        public IList<ItemDiscontinue> GetParentItemDiscontinues(string itemCode, DateTime effectiveDate)
-        {
-            string hql = "from ItemDiscontinue where DiscontinueItem = ? and StartDate < ? and (EndDate is null or EndDate >= ?)";
-            return this.genericMgr.FindAll<ItemDiscontinue>(hql, new object[] { itemCode, effectiveDate, effectiveDate });
-        }
-
+ 
         public IList<Item> GetItems(IList<string> itemCodeList)
         {
             if (itemCodeList != null && itemCodeList.Count > 0)
