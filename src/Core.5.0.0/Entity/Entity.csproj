@@ -161,10 +161,10 @@
     <Content Include="Base\MD\ItemDiscontinue.hbm.xml" />
     <Content Include="Base\MD\ItemPackage.hbm.xml" />
     <Content Include="Base\MD\ItemReference.hbm.xml" />
-    <Content Include="Base\MD\Location.hbm.xml" />
-    <Content Include="Base\MD\Plant.hbm.xml" />
-    <Content Include="Base\MD\Uom.hbm.xml" />
-    <Content Include="Base\MD\UomConversion.hbm.xml" />
+    <EmbeddedResource Include="Base\MD\Location.hbm.xml" />
+    <EmbeddedResource Include="Base\MD\Plant.hbm.xml" />
+    <EmbeddedResource Include="Base\MD\Uom.hbm.xml" />
+    <EmbeddedResource Include="Base\MD\UomConversion.hbm.xml" />
     <Content Include="Base\PRD\BomMaster.hbm.xml" />
     <Content Include="Base\SCM\SCMSupplierPlant.hbm.xml" />
   </ItemGroup>

@@ -252,4 +252,25 @@
   <data name="Party_Updated" xml:space="preserve">
     <value>Party has been Updated successfully.</value>
   </data>
+  <data name="Plant_Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Plant_Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="Plant_ContactPerson" xml:space="preserve">
+    <value>ContactPerson</value>
+  </data>
+  <data name="Plant_ContactPhone" xml:space="preserve">
+    <value>ContactPhone</value>
+  </data>
+  <data name="Plant_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Plant_IsActive" xml:space="preserve">
+    <value>IsActive</value>
+  </data>
+  <data name="Plant_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
 </root>

@@ -1,3 +1,0 @@
-IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_ORD_ORDE_REFERENCE_PRD_BOMM2]') AND parent_object_id = OBJECT_ID(N'[dbo].[ORD_OrderBomDet]'))
-ALTER TABLE [dbo].[ORD_OrderBomDet] DROP CONSTRAINT [FK_ORD_ORDE_REFERENCE_PRD_BOMM2]
-GO

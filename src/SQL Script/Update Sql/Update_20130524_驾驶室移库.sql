@@ -1,1 +1,0 @@
-insert into acc_permission values('Client_CabTransfer','º› ª ““∆ø‚','Terminal')

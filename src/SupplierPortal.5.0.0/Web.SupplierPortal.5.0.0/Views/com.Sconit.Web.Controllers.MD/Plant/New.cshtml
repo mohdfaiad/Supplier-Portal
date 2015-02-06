@@ -1,8 +1,8 @@
 ﻿@model com.Sconit.Entity.MD.Supplier 
 @{
-    Html.RenderAction("_SiteMapPath", "Common", new { MenuContent = "Url_Supplier_View" });
+    Html.RenderAction("_SiteMapPath", "Common", new { MenuContent = "Url_Plant_View" });
 }
-@using (Html.BeginForm("New", "Supplier"))
+@using (Html.BeginForm("New", "Plant"))
 {
     <fieldset>
         <legend>@Resources.MD.Party.Party_Supplier_Edit_Title  </legend>
@@ -53,13 +53,13 @@
             </div>
         </div>
         <div class="editor-footer">
-     @Html.Button(Resources.Global.Button_New, "Url_Supplier_New", new Dictionary<string, string>()
+     @Html.Button(Resources.Global.Button_New, "Url_Plant_New", new Dictionary<string, string>()
 	{
 	    {"type", "submit"},
 	    {"id", "btnNew"},
         {"needconfirm","true"}
 	})
-            <button type="button" id="btnBack" onclick="location.href='@Url.Content("~/Supplier/List")'">
+            <button type="button" id="btnBack" onclick="location.href='@Url.Content("~/Plant/List")'">
                 @Resources.Global.Button_Back</button>
         </div>
     </fieldset>

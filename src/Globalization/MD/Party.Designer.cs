@@ -464,5 +464,68 @@ namespace Resources.MD {
                 return ResourceManager.GetString("Party_Updated", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string Plant_Address {
+            get {
+                return ResourceManager.GetString("Plant_Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Code.
+        /// </summary>
+        public static string Plant_Code {
+            get {
+                return ResourceManager.GetString("Plant_Code", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ContactPerson.
+        /// </summary>
+        public static string Plant_ContactPerson {
+            get {
+                return ResourceManager.GetString("Plant_ContactPerson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ContactPhone.
+        /// </summary>
+        public static string Plant_ContactPhone {
+            get {
+                return ResourceManager.GetString("Plant_ContactPhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string Plant_Email {
+            get {
+                return ResourceManager.GetString("Plant_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IsActive.
+        /// </summary>
+        public static string Plant_IsActive {
+            get {
+                return ResourceManager.GetString("Plant_IsActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string Plant_Name {
+            get {
+                return ResourceManager.GetString("Plant_Name", resourceCulture);
+            }
+        }
     }
 }

@@ -7,26 +7,26 @@ namespace com.Sconit.Entity.MD
     public partial class Plant : EntityBase, IAuditable
     {
         #region O/R Mapping Properties
-        [Display(Name = "Party_Code", ResourceType = typeof(Resources.MD.Party))]
+        [Display(Name = "Plant_Code", ResourceType = typeof(Resources.MD.Party))]
         public string Code { get; set; }
 
-        [Display(Name = "Party_Name", ResourceType = typeof(Resources.MD.Party))]
+        [Display(Name = "Plant_Name", ResourceType = typeof(Resources.MD.Party))]
         public string Name { get; set; }
 
-        [Display(Name = "Party_Address", ResourceType = typeof(Resources.MD.Party))]
+        [Display(Name = "Plant_Address", ResourceType = typeof(Resources.MD.Party))]
         public string Address { get; set; }
 
-        [Display(Name = "Party_ContactPerson", ResourceType = typeof(Resources.MD.Party))]
+        [Display(Name = "Plant_ContactPerson", ResourceType = typeof(Resources.MD.Party))]
         public string ContactPerson { get; set; }
 
-        [Display(Name = "Party_ContactPhone", ResourceType = typeof(Resources.MD.Party))]
+        [Display(Name = "Plant_ContactPhone", ResourceType = typeof(Resources.MD.Party))]
         public string ContactPhone { get; set; }
 
-        [Display(Name = "Party_Email", ResourceType = typeof(Resources.MD.Party))]
+        [Display(Name = "Plant_Email", ResourceType = typeof(Resources.MD.Party))]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [Display(Name = "Party_IsActive", ResourceType = typeof(Resources.MD.Party))]
+        [Display(Name = "Plant_IsActive", ResourceType = typeof(Resources.MD.Party))]
         public Boolean IsActive { get; set; }
 
 

@@ -79,8 +79,10 @@
     <Compile Include="ICastleAwarable.cs" />
     <Compile Include="IItemMgr.cs" />
     <Compile Include="Impl\ItemMgrImpl.cs" />
+    <Compile Include="Impl\PlantMgrImpl.cs" />
     <Compile Include="Impl\SupplierMgrImpl.cs" />
     <Compile Include="Impl\SystemMgrImpl.cs" />
+    <Compile Include="IPlantMgr.cs" />
     <Compile Include="ISupplierMgr.cs" />
     <Compile Include="IGenericMgr.cs" />
     <Compile Include="Impl\GenericMgrImpl.cs" />

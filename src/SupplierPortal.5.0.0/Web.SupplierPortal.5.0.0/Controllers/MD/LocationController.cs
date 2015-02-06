@@ -69,6 +69,7 @@ namespace com.Sconit.Web.Controllers.MD
         private static string locationAreaDuiplicateVerifyStatement = @"select count(*) from LocationArea as l where l.Code = ?";
 
         #endregion
+
         #region location
         /// <summary>
         /// Index action for Location controller
@@ -166,30 +167,11 @@ namespace com.Sconit.Web.Controllers.MD
             }
             else
             {
-                ViewBag.LocationCode = id;
-                return View("Edit", string.Empty, id);
+                Location location = base.genericMgr.FindById<Location>(id);
+                return View(location);
             }
         }
 
-        /// <summary>
-        /// Edit action
-        /// </summary>
-        /// <param name="id">location id for edit</param>
-        /// <returns>return to the result view</returns>
-        [HttpGet]
-        [SconitAuthorize(Permissions = "Url_Location_Edit")]
-        public ActionResult _Edit(string id)
-        {
-            if (string.IsNullOrEmpty(id))
-            {
-                return HttpNotFound();
-            }
-            else
-            {
-                Location location = base.genericMgr.FindById<Location>(id);
-                return PartialView(location);
-            }
-        }
 
         /// <summary>
         /// Edit action
@@ -198,7 +180,7 @@ namespace com.Sconit.Web.Controllers.MD
         /// <returns>return to edit action</returns>
         [HttpPost]
         [SconitAuthorize(Permissions = "Url_Location_Edit")]
-        public ActionResult _Edit(Location location)
+        public ActionResult Edit(Location location)
         {
             if (ModelState.IsValid)
             {
@@ -206,7 +188,7 @@ namespace com.Sconit.Web.Controllers.MD
                 SaveSuccessMessage(Resources.MD.Location.Location_Updated);
             }
 
-            return PartialView(location);
+            return View(location);
         }
 
         /// <summary>
@@ -226,319 +208,6 @@ namespace com.Sconit.Web.Controllers.MD
                 base.genericMgr.DeleteById<Location>(id);
                 SaveSuccessMessage(Resources.MD.Location.Location_Deleted);
                 return RedirectToAction("List");
-            }
-        }
-        #endregion
-
-        #region LocationArea
-        /// <summary>
-        /// _LocationArea action
-        /// </summary>
-        /// <param name="id">Location Code</param>
-        /// <returns>rediret view</returns>
-        [HttpGet]
-        [SconitAuthorize(Permissions = "Url_Location_Edit")]
-        public ActionResult _LocationArea(string id)
-        {
-            if (string.IsNullOrEmpty(id))
-            {
-                return HttpNotFound();
-            }
-            else
-            {
-                ViewBag.LocationCode = id;
-                return PartialView();
-            }
-        }
-
-        /// <summary>
-        /// LocationAreaList action
-        /// </summary>
-        /// <param name="command">Telerik GridCommand</param>
-        /// <param name="searchModel">Location Search Model</param>
-        /// <param name="locationCode">location Code</param>
-        /// <returns>return to the result view</returns>
-        [GridAction]
-        [SconitAuthorize(Permissions = "Url_Location_View")]
-        public ActionResult _LocationAreaList(GridCommand command, LocationAreaSearchModel searchModel, string locationCode)
-        {
-            ViewBag.LocationCode = locationCode;
-            ViewBag.PageSize = base.ProcessPageSize(command.PageSize);
-            SearchCacheModel searchCacheModel = ProcessSearchModel(command, searchModel);
-            SearchStatementModel searchStatementModel = this.LocationAreaPrepareSearchStatement(command, (LocationAreaSearchModel)searchCacheModel.SearchObject, locationCode);
-            return PartialView(GetPageData<LocationArea>(searchStatementModel, command));
-        }
-
-        /// <summary>
-        /// AjaxLocationAreaList action
-        /// </summary>
-        /// <param name="command">Telerik GridCommand</param>
-        /// <param name="searchModel">LocationArea Search Model</param>
-        /// <param name="locationCode">Location Code</param>
-        /// <returns>return to the result view</returns>
-        [GridAction(EnableCustomBinding = true)]
-        [SconitAuthorize(Permissions = "Url_Location_View")]
-        public ActionResult _AjaxLocationAreaList(GridCommand command, LocationAreaSearchModel searchModel, string locationCode)
-        {
-            SearchStatementModel searchStatementModel = this.LocationAreaPrepareSearchStatement(command, searchModel, locationCode);
-            return PartialView(GetAjaxPageData<LocationArea>(searchStatementModel, command));
-        }
-
-        /// <summary>
-        /// LocationAreaNew action
-        /// </summary>
-        /// <param name="locationCode">Location Code</param>
-        /// <returns>rediret view</returns>
-        [SconitAuthorize(Permissions = "Url_Location_Edit")]
-        public ActionResult _LocationAreaNew(string locationCode)
-        {
-            ViewBag.LocationCode = locationCode;
-            return PartialView();
-        }
-
-        /// <summary>
-        /// LocationAreaNew action
-        /// </summary>
-        /// <param name="locationArea">LocationArea Model</param>
-        /// <param name="locationCode">Location Code</param>
-        /// <returns>return to the result view</returns>
-        [HttpPost]
-        [SconitAuthorize(Permissions = "Url_Location_Edit")]
-        public ActionResult _LocationAreaNew(LocationArea locationArea, string locationCode)
-        {
-            locationArea.Location = locationCode;
-            if (ModelState.IsValid)
-            {
-                if (base.genericMgr.FindAll<long>(locationAreaDuiplicateVerifyStatement, new object[] { locationArea.Code })[0] > 0)
-                {
-                    SaveErrorMessage(Resources.ErrorMessage.Errors_Existing_Code, locationArea.Code);
-                }
-                else
-                {
-                    base.genericMgr.Create(locationArea);
-                    SaveSuccessMessage(Resources.MD.LocationArea.LocationArea_Added);
-                    return RedirectToAction("_LocationAreaEdit/" + locationArea.Code);
-                }
-            }
-            ViewBag.LocationCode = locationCode;
-            return PartialView(locationArea);
-        }
-
-        /// <summary>
-        /// LocationAreaEdit action
-        /// </summary>
-        /// <param name="id">LocationArea id for Edit</param>
-        /// <returns>return to the result view</returns>
-        [HttpGet]
-        [SconitAuthorize(Permissions = "Url_Location_Edit")]
-        public ActionResult _LocationAreaEdit(string id)
-        {
-            if (string.IsNullOrEmpty(id))
-            {
-                return HttpNotFound();
-            }
-            else
-            {
-                LocationArea locationArea = base.genericMgr.FindById<LocationArea>(id);
-                return PartialView(locationArea);
-            }
-        }
-
-        /// <summary>
-        /// LocationAreaEdit action
-        /// </summary>
-        /// <param name="locationArea">LocationArea Model</param>
-        /// <returns>return to LocationAreaEdit action</returns>
-        [HttpPost]
-        [SconitAuthorize(Permissions = "Url_Location_Edit")]
-        public ActionResult _LocationAreaEdit(LocationArea locationArea)
-        {
-            if (ModelState.IsValid)
-            {
-                base.genericMgr.Update(locationArea);
-                SaveSuccessMessage(Resources.MD.LocationArea.LocationArea_Updated);
-            }
-
-            return PartialView(locationArea);
-        }
-
-        /// <summary>
-        /// LocationAreaDelete action
-        /// </summary>
-        /// <param name="id">LocationArea id for delete</param>
-        /// <param name="locationCode">location Code</param>
-        /// <returns>return to LocationAreaList action</returns>
-        [SconitAuthorize(Permissions = "Url_Location_Delete")]
-        public ActionResult _LocationAreaDelete(string id, string locationCode)
-        {
-            if (string.IsNullOrEmpty(id))
-            {
-                return HttpNotFound();
-            }
-            else
-            {
-                base.genericMgr.DeleteById<LocationArea>(id);
-                SaveSuccessMessage(Resources.MD.LocationArea.LocationArea_Deleted);
-                return new RedirectToRouteResult(new RouteValueDictionary  
-                                                   { 
-                                                       { "action", "_LocationAreaList" }, 
-                                                       { "controller", "Location" },
-                                                       { "LocationCode", locationCode }
-                                                   });
-
-            }
-        }
-        #endregion
-
-        #region LocationBin
-        /// <summary>
-        /// LocationBin action
-        /// </summary>
-        /// <param name="id">Location Code</param>
-        /// <returns>rediret view</returns>
-        [HttpGet]
-        [SconitAuthorize(Permissions = "Url_Location_Edit")]
-        public ActionResult _LocationBin(string id)
-        {
-            ViewBag.LocationCode = id;
-            return PartialView();
-        }
-
-        /// <summary>
-        /// LocationBinList action
-        /// </summary>
-        /// <param name="command">Telerik GridCommand</param>
-        /// <param name="searchModel">LocationBin Search Model</param>
-        /// <param name="locationCode">location Code</param>
-        /// <returns>return to the result view</returns>
-        [GridAction]
-        [SconitAuthorize(Permissions = "Url_Location_View")]
-        public ActionResult _LocationBinList(GridCommand command, LocationBinSearchModel searchModel, string locationCode)
-        {
-            ViewBag.LocationCode = locationCode;
-            ViewBag.PageSize = base.ProcessPageSize(command.PageSize);
-            SearchCacheModel searchCacheModel = ProcessSearchModel(command, searchModel);
-            SearchStatementModel searchStatementModel = this.LocationBinPrepareSearchStatement(command, (LocationBinSearchModel)searchCacheModel.SearchObject, locationCode);
-            return PartialView(GetPageData<LocationBin>(searchStatementModel, command));
-        }
-
-        /// <summary>
-        /// LocationBinList action
-        /// </summary>
-        /// <param name="command">Telerik GridCommand</param>
-        /// <param name="searchModel">LocationBin Search Model</param>
-        /// <param name="locationCode">location Code</param>
-        /// <returns>return to the result view</returns>
-        [GridAction(EnableCustomBinding = true)]
-        [SconitAuthorize(Permissions = "Url_Location_View")]
-        public ActionResult _AjaxLocationBinList(GridCommand command, LocationBinSearchModel searchModel, string locationCode)
-        {
-            SearchStatementModel searchStatementModel = this.LocationBinPrepareSearchStatement(command, searchModel, locationCode);
-            return PartialView(GetAjaxPageData<LocationBin>(searchStatementModel, command));
-        }
-
-        /// <summary>
-        /// LocationBinNew action
-        /// </summary>
-        /// <param name="locationCode">Location Code</param>
-        /// <returns>rediret view</returns>
-        [SconitAuthorize(Permissions = "Url_Location_Edit")]
-        public ActionResult _LocationBinNew(string locationCode)
-        {
-            ViewBag.LocationCode = locationCode;
-            return PartialView();
-        }
-
-        /// <summary>
-        /// LocationBinNew action
-        /// </summary>
-        /// <param name="locationBin">LocationBin Model</param>
-        /// <param name="locationCode">location Code</param>
-        /// <returns>return to the result view</returns>
-        [HttpPost]
-        [SconitAuthorize(Permissions = "Url_Location_Edit")]
-        public ActionResult _LocationBinNew(LocationBin locationBin, string locationCode)
-        {
-            locationBin.Location = locationCode;
-            ViewBag.LocationCode = locationCode;
-            if (ModelState.IsValid)
-            {
-                if (base.genericMgr.FindAll<long>(locationBinDuiplicateVerifyStatement, new object[] { locationBin.Code })[0] > 0)
-                {
-                    SaveErrorMessage(Resources.ErrorMessage.Errors_Existing_Code, locationBin.Code);
-                }
-                else
-                {
-                    base.genericMgr.Create(locationBin);
-                    SaveSuccessMessage(Resources.MD.LocationBin.LocationBin_Added);
-                    return RedirectToAction("_LocationBinEdit/" + locationBin.Code);
-                }
-            }
-
-            return PartialView(locationBin);
-        }
-
-        /// <summary>
-        /// LocationBinEdit action
-        /// </summary>
-        /// <param name="id">LocationBin id for Edit</param>
-        /// <returns>return to the result view</returns>
-        [HttpGet]
-        [SconitAuthorize(Permissions = "Url_Location_Edit")]
-        public ActionResult _LocationBinEdit(string id)
-        {
-            if (string.IsNullOrEmpty(id))
-            {
-                return HttpNotFound();
-            }
-            else
-            {
-                LocationBin locationBin = base.genericMgr.FindById<LocationBin>(id);
-                return PartialView(locationBin);
-            }
-        }
-
-        /// <summary>
-        /// LocationBinEdit action
-        /// </summary>
-        /// <param name="locationBin">LocationBin Model</param>
-        /// <returns>return to the result view</returns>
-        [HttpPost]
-        [SconitAuthorize(Permissions = "Url_Location_Edit")]
-        public ActionResult _LocationBinEdit(LocationBin locationBin)
-        {
-            if (ModelState.IsValid)
-            {
-                base.genericMgr.Update(locationBin);
-                SaveSuccessMessage(Resources.MD.LocationBin.LocationBin_Updated);
-            }
-
-            return PartialView(locationBin);
-        }
-
-        /// <summary>
-        /// LocationBinDelete action
-        /// </summary>
-        /// <param name="id">LocationBin id for delete</param>
-        /// <param name="locationCode">location Code</param>
-        /// <returns>return to the result view</returns>
-        [SconitAuthorize(Permissions = "Url_Location_Delete")]
-        public ActionResult _LocationBinDelete(string id, string locationCode)
-        {
-            if (string.IsNullOrEmpty(id))
-            {
-                return HttpNotFound();
-            }
-            else
-            {
-                base.genericMgr.DeleteById<LocationBin>(id);
-                SaveSuccessMessage(Resources.MD.LocationBin.LocationBin_Deleted);
-                return new RedirectToRouteResult(new RouteValueDictionary  
-                                                   { 
-                                                       { "action", "_LocationBinList" }, 
-                                                       { "controller", "Location" },
-                                                       { "LocationCode", locationCode }
-                                                   });
             }
         }
         #endregion
