@@ -1,0 +1,77 @@
+﻿@using com.Sconit.Entity.SCM
+@using com.Sconit.Entity.SYS
+@using com.Sconit.Web.Models.SearchModels.MD
+<fieldset>
+    @using (Html.BeginForm("List", "SCMSupplierPlant"))
+    {   
+        <div class="search">
+            <div class="search-label">
+                <label for="SCMSupplierPlant_Code">
+                    @Resources.SCM.SCMSupplierPlant.SCMSupplierPlant_Code
+                </label>
+            </div>
+            <div class="search-field">
+                @Html.TextBox("Code", TempData["SCMSupplierPlantSearchModel"] != null ? ((SCMSupplierPlantSearchModel)TempData["SCMSupplierPlantSearchModel"]).Code : string.Empty)
+            </div>
+            <div class="search-label">
+                <label for="SCMSupplierPlant_Code">
+                    @Resources.SCM.SCMSupplierPlant.SCMSupplierPlant_Desc1
+                </label>
+            </div>
+            <div class="search-field">
+                @Html.TextBox("Description", TempData["SCMSupplierPlantSearchModel"] != null ? ((SCMSupplierPlantSearchModel)TempData["SCMSupplierPlantSearchModel"]).Description : string.Empty)
+            </div>
+            <div class="search-label">
+                <label for="SCMSupplierPlant_Code">
+                    @Resources.SCM.SCMSupplierPlant.SCMSupplierPlant_SupplierCode
+                </label>
+            </div>
+            <div class="search-field">
+                @Html.TextBox("SupplierCode", TempData["SCMSupplierPlantSearchModel"] != null ? ((SCMSupplierPlantSearchModel)TempData["SCMSupplierPlantSearchModel"]).SupplierCode : string.Empty)
+            </div>
+            <div class="search-label">
+                <label for="SCMSupplierPlant_Code">
+                    @Resources.SCM.SCMSupplierPlant.SCMSupplierPlant_SupplierName
+                </label>
+            </div>
+            <div class="search-field">
+                @Html.TextBox("SupplierName", TempData["SCMSupplierPlantSearchModel"] != null ? ((SCMSupplierPlantSearchModel)TempData["SCMSupplierPlantSearchModel"]).SupplierName : string.Empty)
+            </div>
+            <div class="search-label">
+                <label for="SCMSupplierPlant_Code">
+                    @Resources.SCM.SCMSupplierPlant.SCMSupplierPlant_PlantCode
+                </label>
+            </div>
+            <div class="search-field">
+                @Html.TextBox("PlantCode", TempData["SCMSupplierPlantSearchModel"] != null ? ((SCMSupplierPlantSearchModel)TempData["SCMSupplierPlantSearchModel"]).PlantCode : string.Empty)
+            </div>
+            <div class="search-label">
+                <label for="SCMSupplierPlant_Code">
+                    @Resources.SCM.SCMSupplierPlant.SCMSupplierPlant_PlantName
+                </label>
+            </div>
+            <div class="search-field">
+                @Html.TextBox("PlantName", TempData["SCMSupplierPlantSearchModel"] != null ? ((SCMSupplierPlantSearchModel)TempData["SCMSupplierPlantSearchModel"]).PlantName : string.Empty)
+            </div>
+        </div>
+        <div class="search-footer">
+            @Html.Hidden("isFromList", true)
+            @*<button type="submit" id="btnSearch">
+                @Resources.Global.Button_Search</button>
+            <button type="button" id="btnNew" onclick="location.href='@Url.Content("~/SCMSupplierPlant/New")'">
+                @Resources.Global.Button_New</button>*@
+            @Html.Button(Resources.Global.Button_Search, "Url_SCMSupplierPlant_View", new Dictionary<string, string>()
+	{
+	    {"type", "submit"},
+	    {"id", "btnSearch"}
+	})
+            @Html.Button(Resources.Global.Button_New, "Url_SCMSupplierPlant_Edit", new Dictionary<string, string>()
+	{
+	    {"type", "button"},
+	    {"id", "btnNew"},
+        {"onclick","location.href='"+@Url.Content("~/SCMSupplierPlant/New")+"'"}
+	})
+        </div>
+
+    }
+</fieldset>

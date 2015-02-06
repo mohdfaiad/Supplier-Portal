@@ -1,0 +1,98 @@
+﻿@using com.Sconit.Entity.SYS
+@model com.Sconit.Entity.SCM.SCMSupplierPlant
+@{
+    Html.RenderAction("_SiteMapPath", "Common", new { MenuContent = "Url_SCMSupplierPlant_View" });
+}
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>@Resources.SCM.SCMSupplierPlant.SCMSupplierPlant_New_Title</legend>
+        <div class="editor">
+            <div class="editor-label-2">
+                @Html.LabelFor(model => model.Code)
+            </div>
+            <div class="editor-field-2">
+                @Html.EditorFor(model => model.Code)
+            </div>
+            <div class="editor-label-2">
+                @Html.LabelFor(model => model.Description)
+            </div>
+            <div class="editor-field-2">
+                @Html.EditorFor(model => model.Description)
+            </div>
+            <div class="editor-label-2">
+                @Html.LabelFor(model => model.SupplierCode)
+            </div>
+            <div class="editor-field-2">
+                @Html.EditorFor(model => model.SupplierCode)
+            </div>
+             <div class="editor-label-2">
+                @Html.LabelFor(model => model.SupplierName)
+            </div>
+            <div class="editor-field-2">
+                @Html.EditorFor(model => model.SupplierName)
+            </div>
+             <div class="editor-label-2">
+                @Html.LabelFor(model => model.SupplierAddress)
+            </div>
+            <div class="editor-field-2">
+                @Html.EditorFor(model => model.SupplierAddress)
+            </div>
+             <div class="editor-label-2">
+                @Html.LabelFor(model => model.SupplierContactPerson)
+            </div>
+            <div class="editor-field-2">
+                @Html.EditorFor(model => model.SupplierContactPerson)
+            </div>
+             <div class="editor-label-2">
+                @Html.LabelFor(model => model.SupplierContactPhone)
+            </div>
+            <div class="editor-field-2">
+                @Html.EditorFor(model => model.SupplierContactPhone)
+            </div>
+            <div class="editor-label-2">
+                @Html.LabelFor(model => model.PlantCode)
+            </div>
+            <div class="editor-field-2">
+                @Html.EditorFor(model => model.PlantCode)
+            </div>
+            <div class="editor-label-2">
+                @Html.LabelFor(model => model.PlantName)
+            </div>
+            <div class="editor-field-2">
+                @Html.EditorFor(model => model.PlantName)
+            </div>
+            <div class="editor-label-2">
+                @Html.LabelFor(model => model.PlantAddress)
+            </div>
+            <div class="editor-field-2">
+                @Html.EditorFor(model => model.PlantAddress)
+            </div>
+            <div class="editor-label-2">
+                @Html.LabelFor(model => model.PlantContactPerson)
+            </div>
+            <div class="editor-field-2">
+                @Html.EditorFor(model => model.PlantContactPerson)
+            </div>
+            <div class="editor-label-2">
+                @Html.LabelFor(model => model.PlantContactPhone)
+            </div>
+            <div class="editor-field-2">
+                @Html.EditorFor(model => model.PlantContactPhone)
+            </div>
+            <div class="editor-label-2">
+                @Html.LabelFor(model => model.Dock)
+            </div>
+            <div class="editor-field-2">
+                @Html.EditorFor(model => model.Dock)
+            </div>
+        </div>
+        <div class="editor-footer">
+            <button type="submit" id="btnNew">
+                @Resources.Global.Button_New</button>
+            <button type="button" id="btnBack" onclick="location.href='@Url.Content("~/SCMSupplierPlant/List")'">
+                @Resources.Global.Button_Back</button>
+        </div>
+    </fieldset>
+}

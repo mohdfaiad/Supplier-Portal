@@ -204,6 +204,8 @@
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\MD\ItemController.cs" />
     <Compile Include="Controllers\MD\SupplierController.cs" />
+    <Compile Include="Controllers\MD\UomController.cs" />
+    <Compile Include="Controllers\SCM\SCMSupplierPlantController.cs" />
     <Compile Include="Controllers\WebAppBaseController.cs" />
     <Compile Include="Filters\**\*.cs" />
     <Compile Include="Global.asax.cs">
@@ -256,6 +258,7 @@
     <Compile Include="Models\SearchModels\LOG\SnapshotFlowDet4LeanEngineSearchModel.cs" />
     <Compile Include="Models\SearchModels\LOG\GenVanProdOrderSearchModel.cs" />
     <Compile Include="Models\SearchModels\LOG\VanOrderTraceSearchModel.cs" />
+    <Compile Include="Models\SearchModels\MD\SCMSupplierPlantSearchModel.cs" />
     <Compile Include="Models\SearchModels\MD\PickerSearchModel.cs" />
     <Compile Include="Models\SearchModels\MD\PickRuleSearchModel.cs" />
     <Compile Include="Models\SearchModels\MD\ShipperSearchModel.cs" />
@@ -1231,6 +1234,17 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Uom\Index.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Uom\List.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Uom\New.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Uom\_Edit.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Uom\_Search.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Uom\_SearchResult.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Uom\_UomConvert.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Uom\_UomConvertEdit.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Uom\_UomConvertList.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Uom\_UomConvertNew.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.MD\Uom\_UomConvertResult.cshtml" />
     <Content Include="Views\Common\_DefectCodeComboBox.cshtml" />
     <Content Include="Views\Common\_FailCodeComboBox.cshtml" />
     <Content Include="Resource\font\code128.ttf" />
@@ -1359,6 +1373,12 @@
     <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\_SearchResult.cshtml" />
     <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\_ShortSearch.cshtml" />
     <Content Include="Views\com.Sconit.Web.Controllers.MD\Item\_ShortSearchResult.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.SCM\SCMSupplierPlant\Edit.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.SCM\SCMSupplierPlant\Index.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.SCM\SCMSupplierPlant\List.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.SCM\SCMSupplierPlant\New.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.SCM\SCMSupplierPlant\_Search.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.SCM\SCMSupplierPlant\_SearchResult.cshtml" />
     <None Include="Web References\EncryptDencryptService\EncryptDencryptService.wsdl" />
     <None Include="Web References\EncryptDencryptService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>

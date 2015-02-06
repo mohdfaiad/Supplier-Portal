@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+ 	<class name="com.Sconit.Entity.SCM.SCMSupplierPlant, com.Sconit.Entity" table="SCM_SupplierPlant" lazy="false">
+		<id name="Code" column="Code" type="String" unsaved-value="null" >
+      		<generator class="assigned" />
+        </id>
+    <property name="Description" column="Desc1" type="String" length="50" />
+    <property name="SupplierCode" column="SupplierCode" type="String" length="50" />
+    <property name="SupplierName" column="SupplierName" type="String" length="50" />
+    <property name="SupplierAddress" column="SupplierAddress" type="String" length="50" />
+    <property name="SupplierContactPerson" column="SupplierContactPerson" type="String" length="50" />
+    <property name="SupplierContactPhone" column="SupplierContactPhone" type="String" length="50" />
+    <property name="PlantCode" column="PlantCode" type="String" length="50" />
+    <property name="PlantName" column="PlantName" type="String" length="50" />
+    <property name="PlantAddress" column="PlantAddress" type="String" length="50" />
+    <property name="PlantContactPerson" column="PlantContactPerson" type="String" length="50" />
+    <property name="PlantContactPhone" column="PlantContactPhone" type="String" length="50" />
+    <property name="Dock" column="Dock" type="String" length="50" />	
+  	</class>
+</hibernate-mapping>

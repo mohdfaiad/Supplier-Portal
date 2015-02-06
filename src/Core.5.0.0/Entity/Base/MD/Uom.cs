@@ -8,14 +8,14 @@ namespace com.Sconit.Entity.MD
     {
         #region O/R Mapping Properties
 
-        [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "Errors_Common_FieldRequired", ErrorMessageResourceType = typeof(Resources.ErrorMessage))]
-        [StringLength(5, ErrorMessageResourceName = "Errors_Common_FieldLengthExceed", ErrorMessageResourceType = typeof(Resources.ErrorMessage))]
-        [Display(Name = "Uom_Code", ResourceType = typeof(Resources.MD.Uom))]
+        //[Required(AllowEmptyStrings = false, ErrorMessageResourceName = "Errors_Common_FieldRequired", ErrorMessageResourceType = typeof(Resources.ErrorMessage))]
+        //[StringLength(5, ErrorMessageResourceName = "Errors_Common_FieldLengthExceed", ErrorMessageResourceType = typeof(Resources.ErrorMessage))]
+        //[Display(Name = "Uom_Code", ResourceType = typeof(Resources.MD.Uom))]
 		public string Code { get; set; }
 
-        [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "Errors_Common_FieldRequired", ErrorMessageResourceType = typeof(Resources.ErrorMessage))]
-        [StringLength(20, ErrorMessageResourceName = "Errors_Common_FieldLengthExceed", ErrorMessageResourceType = typeof(Resources.ErrorMessage))]
-        [Display(Name = "Uom_Desc", ResourceType = typeof(Resources.MD.Uom))]
+        //[Required(AllowEmptyStrings = false, ErrorMessageResourceName = "Errors_Common_FieldRequired", ErrorMessageResourceType = typeof(Resources.ErrorMessage))]
+        //[StringLength(20, ErrorMessageResourceName = "Errors_Common_FieldLengthExceed", ErrorMessageResourceType = typeof(Resources.ErrorMessage))]
+        //[Display(Name = "Uom_Desc", ResourceType = typeof(Resources.MD.Uom))]
 		public string Description { get; set; }
 		public Int32 CreateUserId { get; set; }
 		public string CreateUserName { get; set; }

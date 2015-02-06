@@ -2069,6 +2069,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PPM.zh-CN.resx</DependentUpon>
     </Compile>
+    <Compile Include="SCM\SCMSupplierPlant.Designer.cs">
+      <DependentUpon>SCMSupplierPlant.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="SCM\SCMSupplierPlant.en-US.Designer.cs">
+      <DependentUpon>SCMSupplierPlant.en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="SCM\SCMSupplierPlant.zh-CN.Designer.cs">
+      <DependentUpon>SCMSupplierPlant.zh-CN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="SCM\FlowBinding.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -4123,6 +4138,21 @@
     <EmbeddedResource Include="Report\Transceivers.zh-CN.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Transceivers.zh-CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCM\SCMSupplierPlant.en-US.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SCMSupplierPlant.en-US.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCM\SCMSupplierPlant.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SCMSupplierPlant.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCM\SCMSupplierPlant.zh-CN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SCMSupplierPlant.zh-CN.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="SCM\FlowShiftDetail.en-US.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

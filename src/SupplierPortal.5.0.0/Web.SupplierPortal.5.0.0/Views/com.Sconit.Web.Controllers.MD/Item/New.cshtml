@@ -56,19 +56,7 @@
                 }
                 @Html.ValidationMessageFor(model => model.ItemCategory)
             </div>
-            <div class="editor-label-2">
-                @Html.LabelFor(model => model.Location)
-            </div>
-            <div class="editor-field-2">
-                @{
-                   Html.RenderAction("_LocationComboBox", "Common", new
-                   {
-                       controlName = "Location"
-                   });
-                }
-                @Html.ValidationMessageFor(model => model.Location)
-            </div>
-            <div class="editor-label-2">
+            @*<div class="editor-label-2">
                 @Html.LabelFor(model => model.Bom)
             </div>
             <div class="editor-field-2">
@@ -77,19 +65,6 @@
                 }
                 @Html.ValidationMessageFor(model => model.Bom)
             </div>
-            <div class="editor-label-2">
-                @Html.LabelFor(model => model.Routing)
-            </div>
-            <div class="editor-field-2">
-                @{
-                    Html.RenderAction("_RoutingComboBox", "Common", new
-                    {
-                        controlName = "Routing"
-                    });
-                }
-                @Html.ValidationMessageFor(model => model.Routing)
-            </div>
-          
             <div class="editor-label-2">
                 @Html.LabelFor(model => model.Warranty)
             </div>
@@ -103,7 +78,7 @@
             <div class="editor-field-2">
                 @Html.Telerik().NumericTextBoxFor(model => model.WarnLeadTime).DecimalDigits(0).MinValue(0)
                 @Resources.MD.Item.Item_Day
-            </div>
+            </div>*@
             <div class="editor-label-2">
                 @Html.LabelFor(model => model.IsActive)
             </div>
@@ -114,9 +89,9 @@
                 @Html.LabelFor(model => model.IsPurchase)
             </div>
             <div class="editor-field-2">
-                @Html.CheckBox("IsPurchase", false)
+                @Html.CheckBox("IsPurchase", true)
             </div>
-            <div class="editor-label-2">
+            @*<div class="editor-label-2">
                 @Html.LabelFor(model => model.IsSales)
             </div>
             <div class="editor-field-2">
@@ -157,7 +132,7 @@
             </div>
             <div class="editor-field-2">
                 @Html.CheckBox("NotBackFlush", false)
-            </div>
+            </div>*@
         </div>
         <div class="editor-footer">
             <button type="submit" id="btnNew">

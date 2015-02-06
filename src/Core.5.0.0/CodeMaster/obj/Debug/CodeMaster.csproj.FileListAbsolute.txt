@@ -13,3 +13,8 @@ D:\GIT\Supplier-Portal\src\Core.5.0.0\CodeMaster\bin\Debug\com.Sconit.CodeMaster
 D:\GIT\Supplier-Portal\src\Core.5.0.0\CodeMaster\obj\Debug\CodeMaster.csprojResolveAssemblyReference.cache
 D:\GIT\Supplier-Portal\src\Core.5.0.0\CodeMaster\obj\Debug\com.Sconit.CodeMaster.dll
 D:\GIT\Supplier-Portal\src\Core.5.0.0\CodeMaster\obj\Debug\com.Sconit.CodeMaster.pdb
+E:\Supplier-Portal\Supplier-Portal\src\Core.5.0.0\CodeMaster\bin\Debug\com.Sconit.CodeMaster.dll
+E:\Supplier-Portal\Supplier-Portal\src\Core.5.0.0\CodeMaster\bin\Debug\com.Sconit.CodeMaster.pdb
+E:\Supplier-Portal\Supplier-Portal\src\Core.5.0.0\CodeMaster\obj\Debug\CodeMaster.csprojResolveAssemblyReference.cache
+E:\Supplier-Portal\Supplier-Portal\src\Core.5.0.0\CodeMaster\obj\Debug\com.Sconit.CodeMaster.dll
+E:\Supplier-Portal\Supplier-Portal\src\Core.5.0.0\CodeMaster\obj\Debug\com.Sconit.CodeMaster.pdb

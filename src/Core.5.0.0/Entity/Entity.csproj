@@ -77,6 +77,7 @@
     <Compile Include="Base\MD\Uom.cs" />
     <Compile Include="Base\MD\UomConversion.cs" />
     <Compile Include="Base\PRD\BomMaster.cs" />
+    <Compile Include="Base\SCM\SCMSupplierPlant.cs" />
     <Compile Include="Base\SYS\CodeDetail.cs" />
     <Compile Include="Base\SYS\CodeMaster.cs" />
     <Compile Include="Base\SYS\EntityPreference.cs" />
@@ -165,6 +166,7 @@
     <Content Include="Base\MD\Uom.hbm.xml" />
     <Content Include="Base\MD\UomConversion.hbm.xml" />
     <Content Include="Base\PRD\BomMaster.hbm.xml" />
+    <Content Include="Base\SCM\SCMSupplierPlant.hbm.xml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

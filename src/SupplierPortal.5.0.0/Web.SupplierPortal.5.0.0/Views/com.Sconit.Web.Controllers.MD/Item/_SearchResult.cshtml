@@ -12,12 +12,13 @@
             columns.Bound(o => o.ReferenceCode);
             columns.Bound(o => o.Description);
             columns.Bound(o => o.Uom);
-            columns.Bound(o => o.MinUnitCount);
-            columns.Bound(o => o.ShortCode);
-            columns.Bound(o => o.SpecifiedModel);
-            columns.Bound(o => o.ContainerDesc);
-            columns.Bound(o => o.NotBackFlush)
-                 .ClientTemplate("<input type='checkbox' disabled='disabled' name='NotBackFlush' <#= NotBackFlush? checked='checked' : '' #> />");
+            columns.Bound(o => o.ItemCategory);
+            //columns.Bound(o => o.MinUnitCount);
+            //columns.Bound(o => o.ShortCode);
+            //columns.Bound(o => o.SpecifiedModel);
+            //columns.Bound(o => o.ContainerDesc);
+            //columns.Bound(o => o.NotBackFlush)
+                 //.ClientTemplate("<input type='checkbox' disabled='disabled' name='NotBackFlush' <#= NotBackFlush? checked='checked' : '' #> />");
             columns.Bound(o => o.IsActive)
                 .ClientTemplate("<input type='checkbox' disabled='disabled' name='IsActive' <#= IsActive? checked='checked' : '' #> />");
         })

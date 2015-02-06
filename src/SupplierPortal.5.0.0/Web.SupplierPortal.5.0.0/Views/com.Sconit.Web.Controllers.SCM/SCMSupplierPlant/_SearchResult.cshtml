@@ -1,0 +1,51 @@
+﻿
+@model IEnumerable<com.Sconit.Entity.SCM.SCMSupplierPlant>
+<fieldset>
+    @(Html.Telerik().Grid(Model)
+        .Name("SCMSupplierPlantGrid")
+        .DataKeys(keys =>
+        {
+            keys.Add(p => p.Code);
+        })
+        .Columns(columns =>
+        {
+            columns.Bound(o => o.Code).ClientTemplate(Html.ActionLink("<#= Code #>", "Edit", "SCMSupplierPlant", new { ID = "<#= Code #>" }, null).ToString());
+            columns.Bound(o => o.Description);
+            columns.Bound(o => o.SupplierCode);
+            columns.Bound(o => o.SupplierName);
+            columns.Bound(o => o.SupplierAddress);
+            columns.Bound(o => o.SupplierContactPerson);
+            columns.Bound(o => o.SupplierContactPhone);
+            columns.Bound(o => o.PlantCode);
+            columns.Bound(o => o.PlantName);
+            columns.Bound(o => o.PlantAddress);
+            columns.Bound(o => o.PlantContactPerson);
+            columns.Bound(o => o.PlantContactPhone);
+            columns.Bound(o => o.Dock);
+                 })   
+                .Scrollable(c => c.Enabled(false))
+                .DataBinding(dataBinding => dataBinding.Ajax().Select("_AjaxList", "SCMSupplierPlant"))
+                .ClientEvents(events => events.OnDataBinding("SCMSupplierPlantGrid_OnDataBinding"))
+                .Pageable(settings =>
+                {
+                    settings.Total(ViewBag.Total != null ? ViewBag.Total : 0);
+                    settings.PageSize(ViewBag.PageSize);
+                })
+                .EnableCustomBinding(true)
+                .Sortable()
+                .Resizable(resizing => resizing.Columns(true))
+            )
+    <script type="text/javascript">
+        function SCMSupplierPlantGrid_OnDataBinding(e) {
+            e.data = {
+                Code: $('#Code').val(),
+                Description: $('#Description').val(),
+                SupplierCode: $('#SupplierCode').val(),
+                SupplierName: $('#SupplierName').val(),
+                PlantName: $('#PlantName').val(),
+                PlantCode: $('#PlantCode').val(),
+                
+            };
+        }
+    </script>
+</fieldset>
