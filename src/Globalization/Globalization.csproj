@@ -608,6 +608,9 @@
       <DependentUpon>Permission.zh-CN.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SCM\SCMSupplierPlant.Designer.cs" />
+    <Compile Include="SCM\SCMSupplierPlant.en-US.Designer.cs" />
+    <Compile Include="SCM\SCMSupplierPlant.zh-CN.Designer.cs" />
     <Compile Include="SYS\CodeDetail.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1177,6 +1180,9 @@
       <LastGenOutput>Permission.zh-CN.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="SCM\SCMSupplierPlant.en-US.resx" />
+    <EmbeddedResource Include="SCM\SCMSupplierPlant.resx" />
+    <EmbeddedResource Include="SCM\SCMSupplierPlant.zh-CN.resx" />
     <EmbeddedResource Include="View\KanBanCalcResult.en-US.resx" />
     <EmbeddedResource Include="View\KanBanCalcResult.resx" />
     <EmbeddedResource Include="View\KanBanCalcResult.zh-CN.resx" />
