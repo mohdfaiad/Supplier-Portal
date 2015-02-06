@@ -11,7 +11,7 @@ namespace com.Sconit.Entity.CUST
         [Display(Name = "ItemTrace_Item", ResourceType = typeof(Resources.CUST.ItemTrace))]
 		public string Item { get; set; }
 
-        [Display(Name = "IpDetail_ItemDescription", ResourceType = typeof(Resources.ORD.IpDetail))]
+        //[Display(Name = "IpDetail_ItemDescription", ResourceType = typeof(Resources.ORD.IpDetail))]
         public string ItemDescription { get; set; }
 
         //[Display(Name = "CreateUserId", ResourceType = typeof(Resources.CUST.ItemTrace))]

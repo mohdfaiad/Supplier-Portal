@@ -11,7 +11,7 @@ namespace com.Sconit.Web.Controllers.MD
     using System.Web.Routing;
     using System.Web.Security;
     using com.Sconit.Entity.MD;
-    using com.Sconit.Entity.PRD;
+    //using com.Sconit.Entity.PRD;
     using com.Sconit.Entity.SYS;
     using com.Sconit.Service;
     using com.Sconit.Web.Models;
@@ -168,14 +168,14 @@ namespace com.Sconit.Web.Controllers.MD
 
                 }
 
-                if (item.Bom != null)
-                {
-                    if (base.genericMgr.FindAll<BomMaster>("from BomMaster where Code= ? and IsActive = ? ", new object[] { item.Bom, true }).Count == 0)
-                    {
-                        canSave = false;
-                        SaveErrorMessage(Resources.MD.Item.ItemErrors_NotExisting_Bom);
-                    }
-                }
+                //if (item.Bom != null)
+                //{
+                //    if (base.genericMgr.FindAll<BomMaster>("from BomMaster where Code= ? and IsActive = ? ", new object[] { item.Bom, true }).Count == 0)
+                //    {
+                //        canSave = false;
+                //        SaveErrorMessage(Resources.MD.Item.ItemErrors_NotExisting_Bom);
+                //    }
+                //}
                 //if (item.Routing != null)
                 //{
                 //    if (base.genericMgr.FindAll<RoutingMaster>("from RoutingMaster where Code= ? and IsActive = ? ", new object[] { item.Routing, true }).Count == 0)
@@ -254,14 +254,14 @@ namespace com.Sconit.Web.Controllers.MD
             if (ModelState.IsValid)
             {
                 bool canSave = true;
-                if (item.Bom != null)
-                {
-                    if (base.genericMgr.FindAll<BomMaster>("from BomMaster where Code= ? and IsActive = ? ", new object[] { item.Bom, true }).Count == 0)
-                    {
-                        canSave = false;
-                        SaveErrorMessage(Resources.MD.Item.ItemErrors_NotExisting_Bom);
-                    }
-                }
+                //if (item.Bom != null)
+                //{
+                //    if (base.genericMgr.FindAll<BomMaster>("from BomMaster where Code= ? and IsActive = ? ", new object[] { item.Bom, true }).Count == 0)
+                //    {
+                //        canSave = false;
+                //        SaveErrorMessage(Resources.MD.Item.ItemErrors_NotExisting_Bom);
+                //    }
+                //}
                 //if (item.Routing != null)
                 //{
                 //    if (base.genericMgr.FindAll<RoutingMaster>("from RoutingMaster where Code= ? and IsActive = ? ", new object[] { item.Routing, true }).Count == 0)

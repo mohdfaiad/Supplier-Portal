@@ -207,6 +207,7 @@
     <Compile Include="Controllers\MD\PlantController.cs" />
     <Compile Include="Controllers\MD\SupplierController.cs" />
     <Compile Include="Controllers\MD\UomController.cs" />
+    <Compile Include="Controllers\SCM\SCMSupplierPlantController.cs" />
     <Compile Include="Controllers\WebAppBaseController.cs" />
     <Compile Include="Filters\**\*.cs" />
     <Compile Include="Global.asax.cs">
@@ -219,19 +220,7 @@
     <Compile Include="Installers\ServiceInstaller.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\BaseModel.cs" />
-    <Compile Include="Models\CUST\DocumentaryViewModel.cs" />
-    <Compile Include="Models\CUST\ProdBomDetForecastView.cs" />
-    <Compile Include="Models\CUST\ProdBomDetForecastChargView.cs" />
-    <Compile Include="Models\KB\ItemDailyConsumeView.cs" />
-    <Compile Include="Models\KB\KanbanOrdertime.cs" />
-    <Compile Include="Models\KB\SupplierRegion.cs" />
     <Compile Include="Models\MenuModel.cs" />
-    <Compile Include="Models\ORD\ScheduleView.cs" />
-    <Compile Include="Models\ORD\WebOrderDetail.cs" />
-    <Compile Include="Models\ReportModels\HistoryInventorySearchModel.cs" />
-    <Compile Include="Models\ReportModels\InventoryAgeSearchModel.cs" />
-    <Compile Include="Models\ReportModels\PPMModel.cs" />
-    <Compile Include="Models\ReportModels\TransceiversSearchModel.cs" />
     <Compile Include="Models\SearchModels\ACC\PermissionGroupSearchModel.cs" />
     <Compile Include="Models\SearchModels\ACC\RoleSearchModel.cs" />
     <Compile Include="Models\SearchModels\ACC\UserSearchModel.cs" />
@@ -261,6 +250,7 @@
     <Compile Include="Models\SearchModels\LOG\VanOrderTraceSearchModel.cs" />
     <Compile Include="Models\SearchModels\MD\PickerSearchModel.cs" />
     <Compile Include="Models\SearchModels\MD\PickRuleSearchModel.cs" />
+    <Compile Include="Models\SearchModels\MD\SCMSupplierPlantSearchModel.cs" />
     <Compile Include="Models\SearchModels\MD\ShipperSearchModel.cs" />
     <Compile Include="Models\SearchModels\MD\WorkCenterSearchModel.cs" />
     <Compile Include="Models\SearchModels\ORD\AliquotStartTaskSearchModel.cs" />
@@ -1418,6 +1408,12 @@
     <Content Include="Views\com.Sconit.Web.Controllers.MD\location\New.cshtml" />
     <Content Include="Views\com.Sconit.Web.Controllers.MD\location\_Search.cshtml" />
     <Content Include="Views\com.Sconit.Web.Controllers.MD\location\_SearchResult.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.SCM\SCMSupplierPlant\Edit.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.SCM\SCMSupplierPlant\Index.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.SCM\SCMSupplierPlant\List.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.SCM\SCMSupplierPlant\New.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.SCM\SCMSupplierPlant\_Search.cshtml" />
+    <Content Include="Views\com.Sconit.Web.Controllers.SCM\SCMSupplierPlant\_SearchResult.cshtml" />
     <None Include="Web References\EncryptDencryptService\EncryptDencryptService.wsdl" />
     <None Include="Web References\EncryptDencryptService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
