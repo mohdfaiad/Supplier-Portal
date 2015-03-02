@@ -107,6 +107,7 @@
     <Compile Include="MessageHolder.cs" />
     <Compile Include="OrderHolder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SCM\SCMSupplierPlant.cs" />
     <Compile Include="SecurityContextHolder.cs" />
     <Compile Include="SYS\CodeDetail.cs" />
     <Compile Include="SYS\CodeDetailDescriptionAttribute.cs" />
@@ -163,7 +164,9 @@
     <EmbeddedResource Include="Base\MD\Plant.hbm.xml" />
     <EmbeddedResource Include="Base\MD\Uom.hbm.xml" />
     <EmbeddedResource Include="Base\MD\UomConversion.hbm.xml" />
-    <Content Include="Base\SCM\SCMSupplierPlant.hbm.xml" />
+    <EmbeddedResource Include="Base\SCM\SCMSupplierPlant.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

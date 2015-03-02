@@ -58,11 +58,11 @@ namespace com.Sconit.Web.Controllers.SCM
         /// Search action
         /// </summary>
         /// <returns>rediret view</returns>
-        [SconitAuthorize(Permissions = "Url_SCMSupplierPlant_View")]
-        public ActionResult _Search()
-        {
-            return PartialView();
-        }
+        //[SconitAuthorize(Permissions = "Url_SCMSupplierPlant_View")]
+        //public ActionResult _Search()
+        //{
+        //    return PartialView();
+        //}
 
         /// <summary>
         /// List action
@@ -76,7 +76,7 @@ namespace com.Sconit.Web.Controllers.SCM
         {
             SearchCacheModel searchCacheModel = this.ProcessSearchModel(command, searchModel);
             ViewBag.PageSize = base.ProcessPageSize(command.PageSize);
-            return PartialView();
+            return View();
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace com.Sconit.Web.Controllers.SCM
         [SconitAuthorize(Permissions = "Url_SCMSupplierPlant_Edit")]
         public ActionResult New()
         {
-            return PartialView();
+            return View();
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace com.Sconit.Web.Controllers.SCM
                 }
             }
 
-            return PartialView(SCMSupplierPlant);
+            return View(SCMSupplierPlant);
         }
 
         /// <summary>
